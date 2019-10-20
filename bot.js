@@ -4,6 +4,7 @@ const token = process.env.token;
 
 client.login(token);
 
-bot.on('ready', function () {
-console.log("Issou la chancla.")
-})
+bot.on("message", async message => {
+
+
+};
