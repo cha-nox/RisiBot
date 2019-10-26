@@ -60,5 +60,12 @@ bot.on("message", async message => {
             message.channel.send(reverse);
         }; 
 
+        //Commande temporaire pour troll. [&nsfw boobs] :
+    if (command === "nsfw boobs") {
+        var boobs = new Discord.RichEmbed()
+        .setColor('RANDOM')  
+        .setImage("https://cdn.discordapp.com/attachments/389333591575756803/630076056824446976/yXEiYQ4.png")
+        message.channel.send(boobs);
+    }; 
 
 });
