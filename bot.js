@@ -4,13 +4,13 @@ const bot = new Discord.Client();
 const token = process.env.token;
 const prefix = '&';
 
-client.login(token);
+bot.login(token);
 
 
 bot.on("message", async message => {
 
     //Commande pour faire un pile ou face :
-    const args = message.content.slice(config.prefix.length).trim().split(/ +/g); 
+    const args = message.content.slice(prefix.length).trim().split(/ +/g); 
     const command = args.shift().toLowerCase();
         {
             function random(min, max){
