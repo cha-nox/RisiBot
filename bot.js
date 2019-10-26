@@ -54,7 +54,7 @@ bot.on("message", async message => {
 
     //Commande pour afficher une reverse card dans le salon. [&reverse] :
     if (command === "reverse") {
-            var embed = new Discord.RichEmbed()  //C'est le nom de l'embed, et chaque embed doit en avoir un distinct.
+            var reverse = new Discord.RichEmbed()  //C'est le nom de l'embed, et chaque embed doit en avoir un distinct.
             .setColor('RANDOM')
     .setTitle('reverse')    
             .setImage("https://cdn.discordapp.com/attachments/389333591575756803/630076056824446976/yXEiYQ4.png")    //Tu as aussi .setTumbnail(" ") pour mettre l'image en mode portrait, en petit.
