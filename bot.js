@@ -4,8 +4,3 @@ const token = process.env.token;
 const prefix = '&';
 
 client.login(token);
-
-bot.on("message", async message => {
-
-
-});
