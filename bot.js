@@ -2,12 +2,12 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const token = process.env.token;
-const prefix = '&';
 
 bot.login(token);
 
 
 bot.on("message", async message => {
+const prefix = '&';
 
 //Catégorie "Jeux" :
 
@@ -59,7 +59,6 @@ bot.on("message", async message => {
             var reverse = new Discord.RichEmbed()  //C'est le nom de l'embed, et chaque embed doit en avoir un distinct.
             .setColor('RANDOM')  
             .setImage("https://cdn.discordapp.com/attachments/389333591575756803/630076056824446976/yXEiYQ4.png") //Tu as aussi .setTumbnail(" ") pour mettre l'image en mode portrait, en petit.
-            .setFooter("Requested By | ${message.author.username}")
             message.channel.send(reverse);
         }; 
 
@@ -110,8 +109,18 @@ bot.on("message", async message => {
       if(command === "help"){
         var help = new Discord.RichEmbed()
         .setColor('RANDOM')
-        .setTitle('Liste des commandes disponibles pour le RisiBot !')    
-        .setDescription(`Liste`)
+        .setTitle('Liste des commandes disponibles pour le RisiBot ! :')    
+        .setDescription(`**__Informations :__**
+        ● **&help _(Pour afficher soit la liste de toutes les commandes.)_
+        
+        **__Jeux :__**
+        ● **&pile / &face** _(Pour jouer à Pile ou face.)
+
+        **__Divers :__**
+        ●  **&chucknorrisfact _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_
+        ●  **&reverse** _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_
+        ●  **&say <texte>** _(Pour faire dire des conneries au bot.)_
+        `)
         .setFooter("Cette liste n'est pas complète pour le moment. Elle s'agrandira a fur et à mesure du développement du bot.")
         message.channel.send(help);
     
