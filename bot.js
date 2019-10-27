@@ -110,16 +110,17 @@ const prefix = '&';
         var help = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setTitle('Liste des commandes disponibles pour le RisiBot ! :')    
-        .addField("**__Informations :__**")
-        .addField("`&help` _(Pour afficher soit la liste de toutes les commandes.)_")
-        .addField(" ")
-        .addField("**__Jeux :__**")
-        .addField("`&pile / &face` _(Pour jouer à Pile ou face.)_")
-        .addField(" ")
-        .addField("**__Divers :__**")
-        .addField("`&chucknorrisfact` _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_")
-        .addField("`&reverse**` _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_")
-        .addField("`&say <texte>**` _(Pour faire dire des conneries au bot.)_")
+        .setDescription(`**__Informations :__**
+        ● **&help** _(Pour afficher soit la liste de toutes les commandes.)_
+        
+        **__Jeux :__**
+        ● **&pile / &face** _(Pour jouer à Pile ou face.)_
+
+        **__Divers :__**
+        ●  **&chucknorrisfact** _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_
+        ●  **&reverse** _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_
+        ●  **&say <texte>** _(Pour faire dire des conneries au bot.)_
+        `)
         .setFooter("Cette liste n'est pas complète pour le moment. Elle s'agrandira a fur et à mesure du développement du bot.")
         message.channel.send(help);
     
