@@ -111,7 +111,7 @@ const prefix = '&';
         .setColor('RANDOM')
         .setTitle('Liste des commandes disponibles pour le RisiBot ! :')    
         .setDescription(`**__Informations :__**
-        ● **&help** _(Pour afficher soit la liste de toutes les commandes.)_
+        ● **&help** _(Pour afficher la liste de toutes les commandes.)_
         
         **__Jeux :__**
         ● **&pile / &face** _(Pour jouer à Pile ou face.)_
