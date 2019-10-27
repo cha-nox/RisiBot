@@ -86,20 +86,17 @@ bot.on("message", async message => {
         if (randnum == 3){
             message.channel.send("Quand Chuck Norris joue à Pile ou face, la pièce peut rester sur la tranche...");
         if (randnum == 4){
-            message.channel.send("Chuck Norris peut t'étrangler avec le fil d'un téléphone sans fil.")
+            message.channel.send("Chuck Norris peut t'étrangler avec le fil d'un téléphone sans fil.");
         }
         }
     }} 
 
-});
+    //Commande pour faire dire quelque chose au bot. [&say] :
+    if(command === "say") {
 
-//Commande pour faire dire quelque chose au bot. [&say] :
-bot.on("message", async (message, user) => {
-
-    if (command === "say"){
         const sayMessage = args.join(" ");
-        message.delete().catch(O_o=>{});
+        message.delete().catch(O_o=>{}); 
         message.channel.send(sayMessage);
-    }
+      }
 
 });
