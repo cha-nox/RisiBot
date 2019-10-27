@@ -114,10 +114,10 @@ const prefix = '&';
         ● **&help _(Pour afficher soit la liste de toutes les commandes.)_
         
         **__Jeux :__**
-        ● **&pile / &face** _(Pour jouer à Pile ou face.)
+        ● **&pile / &face** _(Pour jouer à Pile ou face.)_
 
         **__Divers :__**
-        ●  **&chucknorrisfact _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_
+        ●  **&chucknorrisfact** _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_
         ●  **&reverse** _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_
         ●  **&say <texte>** _(Pour faire dire des conneries au bot.)_
         `)
