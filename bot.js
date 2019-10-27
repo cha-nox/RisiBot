@@ -88,6 +88,9 @@ bot.on("message", async message => {
         if (randnum == 4){
             message.channel.send("Chuck Norris peut t'étrangler avec le fil d'un téléphone sans fil.");
         }
+        if (randnum == 5){
+            message.channel.send("Si c'était Chuck Norris qui codait ce bot, il fonctionnerait du premier coup et il n'y aurait pas d'erreurs.");
+        }
         }
     }} 
 
