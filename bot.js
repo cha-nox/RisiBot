@@ -64,7 +64,7 @@ bot.on("message", async message => {
     if (command === "boobs") {
         var boobs = new Discord.RichEmbed()
         .setColor('RANDOM')  
-        .setImage("https://cdn.discordapp.com/attachments/389333591575756803/630076056824446976/yXEiYQ4.png")
+        .setImage("https://media.discordapp.net/attachments/382605587034144778/637796109208518678/Blank_84137de241bbb5d823d4a467c98f0ca8.gif")
         message.channel.send(boobs);
     }; 
 
