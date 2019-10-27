@@ -106,7 +106,7 @@ const prefix = '&';
 
 //Catégorie "Informations" :
 
-      if(command === "help"){
+    if(command === "help"){
         var help = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setTitle('Liste des commandes disponibles pour le RisiBot ! :')    
@@ -123,6 +123,14 @@ const prefix = '&';
         `)
         .setFooter("Cette liste n'est pas complète pour le moment. Elle s'agrandira a fur et à mesure du développement du bot.")
         message.channel.send(help);
-    
       };
+
+      if(command === "ping") {
+        const m = await message.channel.send("▇═══ 25%");
+            m.edit(`▇▇══ 50%`);
+            m.edit(`▇▇▇═ 75%`);
+            m.edit(`▇▇▇▇ 100%`);
+          m.edit(`Ping de: \` ${new Date().getTime() - message.createdTimestamp} \` ms \n API Latence de: \` ${Math.round(client.ping)} \` ms`);    
+        }
+        
 });
