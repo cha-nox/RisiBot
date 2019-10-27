@@ -95,7 +95,7 @@ bot.on("message", async message => {
     if(command === "say") {
         
         const sayMessage = args.join(" ");
-        message.delete().catch(O_o=>{}); 
+        await message.delete(user) 
         message.channel.send(sayMessage);
       }
 
