@@ -9,7 +9,7 @@ bot.login(token);
 
 bot.on("message", async message => {
 
-//Catégorie "Divers" :
+//Catégorie "Jeux" :
 
     //Commande pour faire un pile ou face :
     const args = message.content.slice(prefix.length).trim().split(/ +/g); 
@@ -52,11 +52,14 @@ bot.on("message", async message => {
             }
             }} 
 
+//Catégorie "Divers" :
+
     //Commande pour afficher une reverse card dans le salon. [&reverse] :
     if (command === "reverse") {
             var reverse = new Discord.RichEmbed()  //C'est le nom de l'embed, et chaque embed doit en avoir un distinct.
             .setColor('RANDOM')  
-            .setImage("https://cdn.discordapp.com/attachments/389333591575756803/630076056824446976/yXEiYQ4.png")    //Tu as aussi .setTumbnail(" ") pour mettre l'image en mode portrait, en petit.
+            .setImage("https://cdn.discordapp.com/attachments/389333591575756803/630076056824446976/yXEiYQ4.png") //Tu as aussi .setTumbnail(" ") pour mettre l'image en mode portrait, en petit.
+            .setFooter("Requested By | ${message.author.username}")
             message.channel.send(reverse);
         }; 
 
@@ -95,11 +98,22 @@ bot.on("message", async message => {
     }} 
 
     //Commande pour faire dire quelque chose au bot. [&say] :
-    if(command === "say") {
+    if (command === "say") {
 
         const sayMessage = args.join(" ");
         message.delete().catch(O_o=>{}); 
         message.channel.send(sayMessage);
       }
 
+//Catégorie "Informations" :
+
+      if(command === "help"){
+        var help = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setTitle('Liste des commandes disponibles pour le RisiBot !')    
+        .setDescription(`Liste`)
+        .setFooter("Cette liste n'est pas complète pour le moment. Elle s'agrandira a fur et à mesure du développement du bot.")
+        message.channel.send(help);
+    
+      };
 });
