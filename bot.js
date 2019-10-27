@@ -92,11 +92,11 @@ bot.on("message", async message => {
     }} 
 
     //Commande pour faire dire quelque chose au bot. [&say] :
-    if(command === "say") {
-        
+    bot.on("message", async (message, user) => {
+
         const sayMessage = args.join(" ");
-        await message.delete(message.author) 
+        await message.delete(user)
         message.channel.send(sayMessage);
-      }
+    })
 
 });
