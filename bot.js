@@ -78,15 +78,15 @@ bot.on("message", async message => {
     if(command === "chucknorrisfact") {
     random();
         if (randnum == 1){
-            message.reply("Chuck Norris peut claquer une porte fermée.");
+            message.channel.send("Chuck Norris peut claquer une porte fermée.");
         }
         if (randnum == 2){
-            message.reply("Un jour, Chuck Norris a balancé une grenade sur 12 personnes, et les 12 personnes sont mortes. Puis la grenade a explosé après.");
+            message.channel.send("Un jour, Chuck Norris a balancé une grenade sur 12 personnes, et les 12 personnes sont mortes. Puis la grenade a explosé après.");
         }
         if (randnum == 3){
-            message.reply("Quand Chuck Norris joue à Pile ou face, la pièce peut rester sur la tranche...");
+            message.channel.send("Quand Chuck Norris joue à Pile ou face, la pièce peut rester sur la tranche...");
         if (randnum == 4){
-            message.reply("Chuck Norris peut t'étrangler avec le fil d'un téléphone sans fil.")
+            message.channel.send("Chuck Norris peut t'étrangler avec le fil d'un téléphone sans fil.")
         }
         }
     }} 
