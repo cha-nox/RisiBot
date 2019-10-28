@@ -87,12 +87,12 @@ const prefix = '&';
         }
         if (randnum == 3){
             message.channel.send("Quand Chuck Norris joue à Pile ou face, la pièce peut rester sur la tranche...");
+        }
         if (randnum == 4){
             message.channel.send("Chuck Norris peut t'étrangler avec le fil d'un téléphone sans fil.");
         }
         if (randnum == 5){
             message.channel.send("Si c'était Chuck Norris qui codait ce bot, il fonctionnerait du premier coup et il n'y aurait pas d'erreurs.");
-        }
         }
     }} 
 
@@ -128,9 +128,9 @@ const prefix = '&';
       if(command === "ping") {
         const m = await message.channel.send("▇═══ 25%");
             m.edit(`▇▇══ 50%`);
-            m.edit(`▇▇▇═ 75%`);
+            m.edit(`▇▇▇═ 69%`);
             m.edit(`▇▇▇▇ 100%`);
-          m.edit(`Ping de: \` ${new Date().getTime() - message.createdTimestamp} \` ms \n API Latence de: \` ${Math.round(client.ping)} \` ms`);    
+          m.edit(`Pong`);    
         }
         
 });
