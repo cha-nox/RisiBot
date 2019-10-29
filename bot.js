@@ -5,7 +5,12 @@ const token = process.env.token;
 
 bot.login(token);
 
+//Boucle pour le statut Discord du bot :
+bot.on("ready", () => {
+    client.user.setActivity(`Issou la chancla !`);
+  });
 
+//Boucle contenant les commandes :
 bot.on("message", async message => {
 const prefix = '&';
 
@@ -127,7 +132,6 @@ const prefix = '&';
 
       if(command === "ping") {
         message.channel.send(`Ping de: \` ${new Date().getTime() - message.createdTimestamp} \` ms \n API Latence de: \` ${Math.round(client.ping)} \` ms`);    
-
         }
         
 });
