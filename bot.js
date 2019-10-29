@@ -7,7 +7,7 @@ bot.login(token);
 
 //Boucle pour le statut Discord du bot :
 bot.on("ready", () => {
-    client.user.setActivity(`Issou la chancla !`);
+    bot.user.setActivity(`Issou la chancla !`);
   });
 
 //Boucle contenant les commandes :
@@ -131,7 +131,7 @@ const prefix = '&';
       };
 
       if(command === "ping") {
-        message.channel.send(`Ping de: \` ${new Date().getTime() - message.createdTimestamp} \` ms \n API Latence de: \` ${Math.round(client.ping)} \` ms`);    
+        message.channel.send(`Ping de: \` ${new Date().getTime() - message.createdTimestamp} \` ms \n API Latence de: \` ${Math.round(bot.ping)} \` ms`);    
         }
         
 });
