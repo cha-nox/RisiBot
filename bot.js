@@ -126,11 +126,8 @@ const prefix = '&';
       };
 
       if(command === "ping") {
-        const m = await message.channel.send("▇═══ 25%");
-            m.edit(`▇▇══ 50%`);
-            m.edit(`▇▇▇═ 69%`);
-            m.edit(`▇▇▇▇ 100%`);
-          m.edit(`Pong`);    
+        message.channel.send(`Ping de: \` ${new Date().getTime() - message.createdTimestamp} \` ms \n API Latence de: \` ${Math.round(client.ping)} \` ms`);    
+
         }
         
 });
