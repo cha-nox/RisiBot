@@ -199,6 +199,7 @@ const prefix = '&&';
                 var respect9 = new Discord.RichEmbed()
                 .setColor('RANDOM')
                 .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639990280614969346/Alerte_Respect_Dispary.jpg")
+                message.channel.send(respect9);
             }
         }}
         
