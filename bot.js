@@ -59,14 +59,6 @@ const prefix = '&&';
 
 //Catégorie "Divers" :
 
-    //Commande pour afficher une reverse card dans le salon. [&&reverse] :
-        if (command === "reverse") {
-            var reverse = new Discord.RichEmbed()  //C'est le nom de l'embed, et chaque embed doit en avoir un distinct.
-           .setColor('RANDOM')  
-           .setImage("https://cdn.discordapp.com/attachments/389333591575756803/630076056824446976/yXEiYQ4.png") //Tu as aussi .setTumbnail(" ") pour mettre l'image en mode portrait, en petit.
-            message.channel.send(reverse);
-        }; 
-
     //Commande temporaire pour troll. [&&boobs] :
         if (command === "boobs") {
             var boobs = new Discord.RichEmbed()
@@ -133,10 +125,21 @@ const prefix = '&&';
             message.channel.send(`Ping de \` ${new Date().getTime() - message.createdTimestamp} \` ms. \n API Latence de \` ${Math.round(bot.ping)} \` ms.`);
             }
 
+//Catégorie "Stickers" :
+
+    //Commande pour afficher une reverse card dans le salon. [&&reverse] :
+    if (command === "reverse") {
+        var reverse = new Discord.RichEmbed()  //C'est le nom de l'embed, et chaque embed doit en avoir un distinct.
+       .setColor('RANDOM')  
+       .setImage("https://cdn.discordapp.com/attachments/389333591575756803/630076056824446976/yXEiYQ4.png") //Tu as aussi .setTumbnail(" ") pour mettre l'image en mode portrait, en petit.
+        message.channel.send(reverse);
+    }; 
+
+    //Commande pour afficher un meme sur le manque de respect. [&&respect] :
         {
             function random(min, max){
                 min = Math.ceil(1);
-                max = Math.floor(2);
+                max = Math.floor(8);
                 randnum = Math.floor(Math.random() * (max - min +1) +min);
             }
         if(command === "respect"){
@@ -144,7 +147,7 @@ const prefix = '&&';
             if (randnum == 1){
                 var respect1 = new Discord.RichEmbed()
                 .setColor('RANDOM')  
-                .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639919162545930271/18194982_2112951462264918_8985794969497464227_n.jpg") 
+                .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639983272528707588/telechargement.jpg") 
                 message.channel.send(respect1);
             }
             if (randnum == 2){
@@ -152,6 +155,42 @@ const prefix = '&&';
                 .setColor('RANDOM')
                 .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639964529031118879/Faut_retrouver_le_respect.jpg")
                 message.channel.send(respect2);
+            }
+                if (randnum == 3){
+                var respect3 = new Discord.RichEmbed()
+                .setColor('RANDOM')  
+                .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639919162545930271/18194982_2112951462264918_8985794969497464227_n.jpg") 
+                message.channel.send(respect3);
+            }
+            if (randnum == 4){
+                var respect4 = new Discord.RichEmbed()
+                .setColor('RANDOM')  
+                .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639983266207760384/images_1.jpg") 
+                message.channel.send(respect4);
+            }
+            if (randnum == 5){
+                var respect5 = new Discord.RichEmbed()
+                .setColor('RANDOM')  
+                .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639983269009555486/images.jpg") 
+                message.channel.send(respect5);
+            }
+            if (randnum == 6){
+                var respect6 = new Discord.RichEmbed()
+                .setColor('RANDOM')  
+                .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639983264907657236/d6s9WS6z_400x400.jpg") 
+                message.channel.send(respect6);
+            }
+            if (randnum == 7){
+                var respect7 = new Discord.RichEmbed()
+                .setColor('RANDOM')  
+                .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639983261296230446/1405.jpg") 
+                message.channel.send(respect7);
+            }
+            if (randnum == 8){
+                var respect8 = new Discord.RichEmbed()
+                .setColor('RANDOM')  
+                .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639983256871239711/images_2.jpg") 
+                message.channel.send(respect8);
             }
         }}
         
