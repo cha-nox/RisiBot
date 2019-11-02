@@ -71,7 +71,7 @@ const prefix = '&&';
         {
             function random(min, max){
                 min = Math.ceil(1);
-                max = Math.floor(5);
+                max = Math.floor(6);
                 randnum = Math.floor(Math.random() * (max - min +1) +min);
             }
         if(command === "chucknorrisfact") {
@@ -90,6 +90,9 @@ const prefix = '&&';
             }
             if (randnum == 5){
                 message.channel.send("Si c'était Chuck Norris qui codait ce bot, il fonctionnerait du premier coup et il n'y aurait pas d'erreurs.");
+            }
+            if (randnum == 6){
+                message.channel.send("Quand Chuck Norris fume un joint, c'est le joint qui est défoncé.")
             }
         }}  
 
@@ -139,7 +142,7 @@ const prefix = '&&';
         {
             function random(min, max){
                 min = Math.ceil(1);
-                max = Math.floor(8);
+                max = Math.floor(9);
                 randnum = Math.floor(Math.random() * (max - min +1) +min);
             }
         if(command === "respect"){
@@ -191,6 +194,11 @@ const prefix = '&&';
                 .setColor('RANDOM')  
                 .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639983256871239711/images_2.jpg") 
                 message.channel.send(respect8);
+            }
+            if(randnum == 9){
+                var respect9 = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639990280614969346/Alerte_Respect_Dispary.jpg")
             }
         }}
         
