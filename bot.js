@@ -139,68 +139,23 @@ const prefix = '&&';
     }; 
 
     //Commande pour afficher un meme sur le manque de respect. [&&respect] :
-        {
-            function random(min, max){
-                min = Math.ceil(1);
-                max = Math.floor(9);
-                randnum = Math.floor(Math.random() * (max - min +1) +min);
-            }
         if(command === "respect"){
-        random();
-            if (randnum == 1){
-                var respect1 = new Discord.RichEmbed()
-                .setColor('RANDOM')  
-                .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639983272528707588/telechargement.jpg") 
-                message.channel.send(respect1);
-            }
-            if (randnum == 2){
-                var respect2 = new Discord.RichEmbed()
-                .setColor('RANDOM')
-                .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639964529031118879/Faut_retrouver_le_respect.jpg")
-                message.channel.send(respect2);
-            }
-                if (randnum == 3){
-                var respect3 = new Discord.RichEmbed()
-                .setColor('RANDOM')  
-                .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639919162545930271/18194982_2112951462264918_8985794969497464227_n.jpg") 
-                message.channel.send(respect3);
-            }
-            if (randnum == 4){
-                var respect4 = new Discord.RichEmbed()
-                .setColor('RANDOM')  
-                .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639983266207760384/images_1.jpg") 
-                message.channel.send(respect4);
-            }
-            if (randnum == 5){
-                var respect5 = new Discord.RichEmbed()
-                .setColor('RANDOM')  
-                .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639983269009555486/images.jpg") 
-                message.channel.send(respect5);
-            }
-            if (randnum == 6){
-                var respect6 = new Discord.RichEmbed()
-                .setColor('RANDOM')  
-                .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639983264907657236/d6s9WS6z_400x400.jpg") 
-                message.channel.send(respect6);
-            }
-            if (randnum == 7){
-                var respect7 = new Discord.RichEmbed()
-                .setColor('RANDOM')  
-                .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639983261296230446/1405.jpg") 
-                message.channel.send(respect7);
-            }
-            if (randnum == 8){
-                var respect8 = new Discord.RichEmbed()
-                .setColor('RANDOM')  
-                .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639983256871239711/images_2.jpg") 
-                message.channel.send(respect8);
-            }
-            if(randnum == 9){
-                var respect9 = new Discord.RichEmbed()
-                .setColor('RANDOM')
-                .setImage("https://cdn.discordapp.com/attachments/576854376451407873/639990280614969346/Alerte_Respect_Dispary.jpg")
-                message.channel.send(respect9);
-            }
-        }}
+            var respect_links = [
+                "https://cdn.discordapp.com/attachments/576854376451407873/639983272528707588/telechargement.jpg",
+                "https://cdn.discordapp.com/attachments/576854376451407873/639964529031118879/Faut_retrouver_le_respect.jpg",
+                "https://cdn.discordapp.com/attachments/576854376451407873/639919162545930271/18194982_2112951462264918_8985794969497464227_n.jpg",
+                "https://cdn.discordapp.com/attachments/576854376451407873/639983266207760384/images_1.jpg",
+                "https://cdn.discordapp.com/attachments/576854376451407873/639983269009555486/images.jpg",
+                "https://cdn.discordapp.com/attachments/576854376451407873/639983264907657236/d6s9WS6z_400x400.jpg",
+                "https://cdn.discordapp.com/attachments/576854376451407873/639983261296230446/1405.jpg",
+                "https://cdn.discordapp.com/attachments/576854376451407873/639983256871239711/images_2.jpg",
+                "https://cdn.discordapp.com/attachments/576854376451407873/639990280614969346/Alerte_Respect_Dispary.jpg"
+            ];
         
+            var respect_images = respect_links[Math.floor(Math.random() * respect_links.length)];
+            var respect_embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setImage(respect_images)
+            message.channel.send(respect_embed);
+        };
 });
