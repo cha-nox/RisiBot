@@ -68,33 +68,20 @@ const prefix = '&&';
         };
 
     //Commande pour afficher des Chuck Norris facts au hasard. [&&chucknorrisfact] :
-        {
-            function random(min, max){
-                min = Math.ceil(1);
-                max = Math.floor(6);
-                randnum = Math.floor(Math.random() * (max - min +1) +min);
-            }
+        
         if(command === "chucknorrisfact") {
-        random();
-            if (randnum == 1){
-                message.channel.send("Chuck Norris peut claquer une porte fermée.");
-            }
-            if (randnum == 2){
-                message.channel.send("Un jour, Chuck Norris a balancé une grenade sur 12 personnes, et les 12 personnes sont mortes. Puis la grenade a explosé après.");
-            }
-            if (randnum == 3){
-                message.channel.send("Quand Chuck Norris joue à Pile ou face, la pièce peut rester sur la tranche...");
-            }
-            if (randnum == 4){
-                message.channel.send("Chuck Norris peut t'étrangler avec le fil d'un téléphone sans fil.");
-            }
-            if (randnum == 5){
-                message.channel.send("Si c'était Chuck Norris qui codait ce bot, il fonctionnerait du premier coup et il n'y aurait pas d'erreurs.");
-            }
-            if (randnum == 6){
-                message.channel.send("Quand Chuck Norris fume un joint, c'est le joint qui est défoncé.")
-            }
-        }}  
+            var facts_lists = [
+                "Chuck Norris peut claquer une porte fermée.",
+                "Un jour, Chuck Norris a balancé une grenade sur 12 personnes, et les 12 personnes sont mortes. Puis la grenade a explosé après.",
+                "Quand Chuck Norris joue à Pile ou face, la pièce peut rester sur la tranche...",
+                "Chuck Norris peut t'étrangler avec le fil d'un téléphone sans fil.",
+                "Si c'était Chuck Norris qui codait ce bot, il fonctionnerait du premier coup et il n'y aurait pas d'erreurs.",
+                "Quand Chuck Norris fume un joint, c'est le joint qui est défoncé."
+            ];
+
+            var chucknorrisfact = facts_lists[Math.floor(Math.random() * facts_lists.length)];
+            message.channel.send(chucknorrisfact);
+        }
 
     //Commande pour faire dire quelque chose au bot. [&&say] :
          if (command === "say") {
@@ -111,15 +98,18 @@ const prefix = '&&';
             .setColor('RANDOM')
             .setTitle('Liste des commandes disponibles pour le RisiBot ! :')    
             .setDescription(`**__Informations :__**
-            ● **&help** _(Pour afficher la liste de toutes les commandes.)_
-        
+            ● **&&help** _(Pour afficher la liste de toutes les commandes.)_
+
+            **__Stickers :__**
+            ● **&&reverse** _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_
+            ● **&&respect** _(Quand tu sens que le respect est mort et que tu veux l'exprimer en beauté.)_
+
             **__Jeux :__**
-            ● **&pile / &face** _(Pour jouer à Pile ou face.)_
+            ● **&&pile / &&face** _(Pour jouer à Pile ou face.)_
 
             **__Divers :__**
-            ●  **&chucknorrisfact** _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_
-            ●  **&reverse** _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_
-            ●  **&say <texte>** _(Pour faire dire des conneries au bot.)_`)
+            ● **&&chucknorrisfact** _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_
+            ● **&&say <texte>** _(Pour faire dire des conneries au bot.)_`)
             .setFooter("Cette liste n'est pas complète pour le moment. Elle s'agrandira a fur et à mesure du développement du bot.")
             message.channel.send(help);
         };
