@@ -55,7 +55,7 @@ const prefix = '&&';
                 if (randnum == 3){
                 message.reply("Euh, la pièce est restée sur la tranche...");
             }
-            }} 
+        }} 
 
 //Catégorie "Divers" :
 
@@ -71,12 +71,24 @@ const prefix = '&&';
         
         if(command === "chucknorrisfact") {
             var facts_lists = [
+                "Chuck Norris a déjà compté jusqu'à l'infini deux fois.",
+                "La Mort se demande souvent ce qu'il y a après Chuck Norris",
+                "Les extraterrestres ont peur de se faire capturer par Chuck Norris.",
+                "Les suisses ne sont pas neutres. Ils attendent juste de savoir de quel côté est Chuck Norris.",
+                "Quand il était petit, Chuck Norris n'envoyait pas de lettre au Père Noël. Il lui envoyait des ultimatums.",
+                "Chuck Norris est né dans une maison en rondins qu'il a construite lui-même.",
+                "Chuck Norris n'a pas de père. Personne ne nique la mère de Chuck Norris !",
+                "Si Chuck Norris n'existait pas, il s'inventerait.",
                 "Chuck Norris peut claquer une porte fermée.",
                 "Un jour, Chuck Norris a balancé une grenade sur 12 personnes, et les 12 personnes sont mortes. Puis la grenade a explosé après.",
                 "Quand Chuck Norris joue à Pile ou face, la pièce peut rester sur la tranche...",
                 "Chuck Norris peut t'étrangler avec le fil d'un téléphone sans fil.",
                 "Si c'était Chuck Norris qui codait ce bot, il fonctionnerait du premier coup et il n'y aurait pas d'erreurs.",
-                "Quand Chuck Norris fume un joint, c'est le joint qui est défoncé."
+                "Quand Chuck Norris fume un joint, c'est le joint qui est défoncé.",
+                "Chuck Norris a fini Super Mario Bros sans sauter.",
+                "Chuck Norris joue à la console sans télé. Il trouve ça trop facile, sinon.",
+                "En France, on dit aux petits enfants que le Grand Méchant Loup viendra les manger s'ils ne finissent pas leur assiette. Aux États-Unis, on leur parle de Chuck Norris. C'est pour ça qu'il y a autant d'enfants obèses en Amérique.",
+                "Quand Chuck Norris utilise Windows, il ne plante pas."
             ];
 
             var chucknorrisfact = facts_lists[Math.floor(Math.random() * facts_lists.length)];
