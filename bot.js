@@ -8,7 +8,7 @@ bot.login(token);
 //Boucle pour le statut Discord du bot :
 bot.on("ready", () => {
     bot.user.setActivity(`Regarde le monde partir en steak.`);
-  });
+});
 
 //Boucle contenant les commandes :
 bot.on("message", async message => {
@@ -53,7 +53,7 @@ const prefix = '&&';
                     message.reply("Tu es tombé sur pile, pas de CHANCE.");
                 }
                 if (randnum == 3){
-                message.reply("Euh, la pièce est restée sur la tranche...");
+                    message.reply("Euh, la pièce est restée sur la tranche...");
             }
         }} 
 
@@ -83,27 +83,27 @@ const prefix = '&&';
 
             var fake_hack = fake_hacks_list[Math.floor(Math.random() * fake_hacks_list.length)];
             const troll_hack = await message.channel.send(`_Connerie en cours. Veuillez patienter._
-            **---------- __0%__**`);
+            → **---------- __0%__**`);
             troll_hack.edit(`_Connerie en cours. Veuillez patienter._
-            **●--------- __10%__`);
+            → **●--------- __10%__**`);
             troll_hack.edit(`_Connerie en cours. Veuillez patienter._
-            **●●-------- __20%__`);
+            → **●●-------- __20%__**`);
             troll_hack.edit(`_Connerie en cours. Veuillez patienter._
-            **●●●------- __30%__`);
+            → **●●●------- __30%__**`);
             troll_hack.edit(`_Connerie en cours. Veuillez patienter._
-            **●●●●------ __40%__`);
+            → **●●●●------ __40%__**`);
             troll_hack.edit(`_Connerie en cours. Veuillez patienter._
-            **●●●●●----- __50%__`);
+            → **●●●●●----- __50%__**`);
             troll_hack.edit(`_Connerie en cours. Veuillez patienter._
-            **●●●●●●---- __60%__`);
+            → **●●●●●●---- __60%__**`);
             troll_hack.edit(`_Connerie en cours. Veuillez patienter._
-            **●●●●●●●--- __69%__`);
+            → **●●●●●●●--- __69%__**`);
             troll_hack.edit(`_Connerie en cours. Veuillez patienter._
-            **●●●●●●●●-- __80%__`);
+            → **●●●●●●●●-- __80%__**`);
             troll_hack.edit(`_Connerie en cours. Veuillez patienter._
-            **●●●●●●●●●- __90%__`);
+            → **●●●●●●●●●- __90%__**`);
             troll_hack.edit(`_Connerie en cours. Veuillez patienter._
-            **●●●●●●●●●● __100%__`);
+            → **●●●●●●●●●● __100%__**`);
             troll_hack.edit(`_Voyons voir ce que ça donne..._`);
             troll_hack.edit(fake_hack);
         }
