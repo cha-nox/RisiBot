@@ -67,10 +67,52 @@ const prefix = '&&';
             message.channel.send(boobs);
         };
 
+    //Commande de faux hacks. [&&hack <user>] :
+        if(command === "hack"){
+        
+            let member = message.mentions.members.first();
+            if(!member)
+            return message.reply("Si tu ne mentionne pas un utilisateur valide, je ne risque pas de faire grand chose.");
+ 
+            var fake_hacks_list = [
+                "J'avais la flemme de hack ce type, en fait...",
+                "T'as vraiment cru que j'étais un bot de hacking, couillon ?!",
+                "Euh... t'aimerais pas savoir ce que j'ai trouvé sur cette personne, en fait...",
+                "Sainte mère de Dieu, il en a au moins pour 4 Go de lolicons sur son PC !"
+            ]
+
+            var fake_hack = fake_hacks_list[Math.floor(Math.random() * fake_hacks_list.length)];
+            const troll_hack = await message.channel.send(`_Connerie en cours. Veuillez patienter._
+            **---------- __0%__**`);
+            troll_hack.edit(`_Connerie en cours. Veuillez patienter._
+            **●--------- __10%__`);
+            troll_hack.edit(`_Connerie en cours. Veuillez patienter._
+            **●●-------- __20%__`);
+            troll_hack.edit(`_Connerie en cours. Veuillez patienter._
+            **●●●------- __30%__`);
+            troll_hack.edit(`_Connerie en cours. Veuillez patienter._
+            **●●●●------ __40%__`);
+            troll_hack.edit(`_Connerie en cours. Veuillez patienter._
+            **●●●●●----- __50%__`);
+            troll_hack.edit(`_Connerie en cours. Veuillez patienter._
+            **●●●●●●---- __60%__`);
+            troll_hack.edit(`_Connerie en cours. Veuillez patienter._
+            **●●●●●●●--- __69%__`);
+            troll_hack.edit(`_Connerie en cours. Veuillez patienter._
+            **●●●●●●●●-- __80%__`);
+            troll_hack.edit(`_Connerie en cours. Veuillez patienter._
+            **●●●●●●●●●- __90%__`);
+            troll_hack.edit(`_Connerie en cours. Veuillez patienter._
+            **●●●●●●●●●● __100%__`);
+            troll_hack.edit(`_Voyons voir ce que ça donne..._`);
+            troll_hack.edit(fake_hack);
+        }
+
     //Commande pour afficher des Chuck Norris facts au hasard. [&&chucknorrisfact] :
         
         if(command === "chucknorrisfact") {
-            var facts_lists = [
+           
+            var facts_list = [
                 "Chuck Norris a déjà compté jusqu'à l'infini deux fois.",
                 "La Mort se demande souvent ce qu'il y a après Chuck Norris",
                 "Les extraterrestres ont peur de se faire capturer par Chuck Norris.",
@@ -88,10 +130,11 @@ const prefix = '&&';
                 "Chuck Norris a fini Super Mario Bros sans sauter.",
                 "Chuck Norris joue à la console sans télé. Il trouve ça trop facile, sinon.",
                 "En France, on dit aux petits enfants que le Grand Méchant Loup viendra les manger s'ils ne finissent pas leur assiette. Aux États-Unis, on leur parle de Chuck Norris. C'est pour ça qu'il y a autant d'enfants obèses en Amérique.",
-                "Quand Chuck Norris utilise Windows, il ne plante pas."
+                "Quand Chuck Norris utilise Windows, il ne plante pas.",
+                "Un jour, Chuck Norris a perdu son alliance. Depuis, c'est le bordel sur la terre du milieu."
             ];
 
-            var chucknorrisfact = facts_lists[Math.floor(Math.random() * facts_lists.length)];
+            var chucknorrisfact = facts_list[Math.floor(Math.random() * facts_list.length)];
             message.channel.send(chucknorrisfact);
         }
 
