@@ -131,7 +131,15 @@ const prefix = '&&';
                 "Chuck Norris joue à la console sans télé. Il trouve ça trop facile, sinon.",
                 "En France, on dit aux petits enfants que le Grand Méchant Loup viendra les manger s'ils ne finissent pas leur assiette. Aux États-Unis, on leur parle de Chuck Norris. C'est pour ça qu'il y a autant d'enfants obèses en Amérique.",
                 "Quand Chuck Norris utilise Windows, il ne plante pas.",
-                "Un jour, Chuck Norris a perdu son alliance. Depuis, c'est le bordel sur la terre du milieu."
+                "Un jour, Chuck Norris a perdu son alliance. Depuis, c'est le bordel sur la terre du milieu.",
+                "Chuck Norris se souvient très bien de son futur.",
+                "Un jour, Chuck Norris a fait un bras de fer contre One Punch Man ; le perdant devait se raser le crâne.",
+                "Les petits enfants portent des pyjamas Super Man. Super Man porte des pyjamas Chuck Norris.",
+                "Chuck Norris est la raison pour laquelle Charlie se cache.",
+                "La Lune tourne autour de la Terre pour échapper au regard de Chuck Norris.",
+                "Chuck Norris peut tirer une balle de fusil à mains nues.",
+                "Chuck Norris envoie ses e-mails par la Poste.",
+                "Chuck Norris regarde la télé avec sa radio."
             ];
 
             var chucknorrisfact = facts_list[Math.floor(Math.random() * facts_list.length)];
@@ -178,7 +186,7 @@ const prefix = '&&';
     //Commande pour afficher une reverse card dans le salon. [&&reverse] :
     if (command === "reverse") {
         var reverse = new Discord.RichEmbed()  //C'est le nom de l'embed, et chaque embed doit en avoir un distinct.
-       .setColor('RANDOM')  
+       .setColor('RANDOM')
        .setImage("https://cdn.discordapp.com/attachments/389333591575756803/630076056824446976/yXEiYQ4.png") //Tu as aussi .setTumbnail(" ") pour mettre l'image en mode portrait, en petit.
         message.channel.send(reverse);
     }; 
