@@ -80,7 +80,8 @@ ou
         message.channel.send(either)
         .then(function(message){
         message.react("✔")
-        message.react("✖")  
+        message.react("✖")
+        }).catch(function(){
         });
     }
 
