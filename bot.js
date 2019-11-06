@@ -2,6 +2,8 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const token = process.env.token;
+const prefix = '&&';
+
 
 bot.login(token);
 
@@ -12,31 +14,31 @@ bot.on("ready", () => {
 
 //Boucle contenant les commandes :
 bot.on("message", async message => {
-const prefix = '&&';
+
+const args = message.content.slice(prefix.length).trim().split(/ +/g); 
+const command = args.shift().toLowerCase();
 
 //Catégorie "Jeux" :
 
     //Commande pour faire un pile ou face [&&pile/&&face]:
-    const args = message.content.slice(prefix.length).trim().split(/ +/g); 
-    const command = args.shift().toLowerCase();
         {
             function random(min, max){
                 min = Math.ceil(1);  //C'est le minimum qu'il peut choisir.
                 max = Math.floor(3); //C'est le maximum qu'il peut choisir.
                 randnum = Math.floor(Math.random() * (max - min +1) +min); //On définit le randnum : en gros, chaque random est numéroté.
             }
-        if(command === "pile") {
-        random();  //On initialise le random.        
-            if (randnum == 1){ //Chaque nouveau random est numéroté comme ça.
-                message.reply("Et tu tombes sur pile, c'est gagné !"); //Le message que tu envoies. (Réponse du bot, quoi.)
-            }
-            if (randnum == 2){   //idem
-                message.reply("Tu es tombé sur face, pas de CHANCE.");
-            }
-            if (randnum == 3){   //J'avais collé ça dans ma version sur calculatrice... xD
-                message.reply("Euh, la pièce est restée sur la tranche...");
-            }
-        }} 
+        if(message.content.startsWith(prefix + "pile")) {
+            random();  //On initialise le random.        
+                if (randnum == 1){ //Chaque nouveau random est numéroté comme ça.
+                    message.reply("Et tu tombes sur pile, c'est gagné !"); //Le message que tu envoies. (Réponse du bot, quoi.)
+                }
+                if (randnum == 2){   //idem
+                    message.reply("Tu es tombé sur face, pas de CHANCE.");
+                }
+                if (randnum == 3){   //J'avais collé ça dans ma version sur calculatrice... xD
+                    message.reply("Euh, la pièce est restée sur la tranche...");
+                }
+            }} 
 
         {
             function random(min, max){
@@ -44,42 +46,47 @@ const prefix = '&&';
                 max = Math.floor(3);
                 randnum = Math.floor(Math.random() * (max - min +1) +min);
                 }
-        if(command === "face") {
-            random(); 
-                if (randnum == 1){
-                    message.reply("Et tu tombes sur face, c'est gagné !");
-                }
-                if (randnum == 2){
-                    message.reply("Tu es tombé sur pile, pas de CHANCE.");
-                }
-                if (randnum == 3){
-                    message.reply("Euh, la pièce est restée sur la tranche...");
+    if(message.content.startsWith(prefix + "face")) {
+        random(); 
+            if (randnum == 1){
+                message.reply("Et tu tombes sur face, c'est gagné !");
             }
-        }}
+            if (randnum == 2){
+                message.reply("Tu es tombé sur pile, pas de CHANCE.");
+            }
+            if (randnum == 3){
+                message.reply("Euh, la pièce est restée sur la tranche...");
+        }
+    }}
 
     //Commande pour faire un Either.io sur Discord. [&&either] :
-    if(message.content.startsWith(prefix + "either")){
-        let args = message.content.split(" ").slice(1);
-        let tTE = args.join(" ")
-         var either = new Discord.RichEmbed()
-        .setTitle("**Est-ce que tu préfères...**")
-        .setAuthor(message.author.username)
-        .addField(tTE, "Répondre avec :white_check_mark: ou :x:")
+    if(message.content.startsWith(prefix + "either")) {
+        var either_list = [
+            `:regional_indicator_a: ...être chauve ?
+ou
+:b: ...être manchot ?`,
+            `:regional_indicator_a: ...le RisiBot ?
+ou
+:b: ... Kagura ?`
+        ];
+
+        var either = new Discord.RichEmbed()
         .setColor('RANDOM')
+        .setTitle("**Est-ce que tu préfères...**")
+        .setDescription(either_list)
+        .addFooter("Répondre avec les réactions :regional_indicator_a: ou :b:.")
         .setTimestamp()
         message.channel.send(either)
         .then(function(message){
         message.react("✔")
-        message.react("✖")
-        }).catch(function(){    
+        message.react("✖")  
         });
-        message.delete()
     }
 
 //Catégorie "Divers" :
 
     //Commande temporaire pour troll. [&&boobs] :
-        if (command === "boobs") {
+        if(message.content.startsWith(prefix + "boobs")) {
             var boobs = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setImage("https://media.discordapp.net/attachments/382605587034144778/637796109208518678/Blank_84137de241bbb5d823d4a467c98f0ca8.gif")
@@ -87,7 +94,7 @@ const prefix = '&&';
         };
 
     //Commande de faux hacks. [&&hack <user>] :
-        if(command === "hack"){
+        if(message.content.startsWith(prefix + "hack")) {
         
             let member = message.mentions.members.first();
             if(!member)
@@ -129,7 +136,7 @@ const prefix = '&&';
 
     //Commande pour afficher des Chuck Norris facts au hasard. [&&chucknorrisfact] :
         
-        if(command === "chucknorrisfact") {
+        if(message.content.startsWith(prefix + "chucknorrisfact")) {
            
             var facts_list = [
                 "Chuck Norris a déjà compté jusqu'à l'infini deux fois.",
@@ -167,7 +174,7 @@ const prefix = '&&';
         }
 
     //Commande pour faire dire quelque chose au bot. [&&say] :
-         if (command === "say") {
+        if(message.content.startsWith(prefix + "say")) {
             const sayMessage = args.join(" ");
             message.delete().catch(O_o=>{}); 
             message.channel.send(sayMessage);
@@ -176,7 +183,7 @@ const prefix = '&&';
 //Catégorie "Informations" :
 
     //Commande pour afficher la liste des commandes disponibles du bot. [&&help]
-        if(command === "help"){
+        if(message.content.startsWith(prefix + "help")) {
             var help = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setTitle('Liste des commandes disponibles pour le RisiBot ! :')    
@@ -197,22 +204,22 @@ const prefix = '&&';
             message.channel.send(help);
         };
     //Commande de ping. [&&ping] :
-        if(command === "ping") {
+        if(message.content.startsWith(prefix + "ping")) {
             message.channel.send(`Ping de \` ${new Date().getTime() - message.createdTimestamp} \` ms. \nAPI Latence de \` ${Math.round(bot.ping)} \` ms.`);
             }
 
 //Catégorie "Stickers" :
 
     //Commande pour afficher une reverse card dans le salon. [&&reverse] :
-    if (command === "reverse") {
-        var reverse = new Discord.RichEmbed()  //C'est le nom de l'embed, et chaque embed doit en avoir un distinct.
-       .setColor('RANDOM')
-       .setImage("https://cdn.discordapp.com/attachments/389333591575756803/630076056824446976/yXEiYQ4.png") //Tu as aussi .setTumbnail(" ") pour mettre l'image en mode portrait, en petit.
-        message.channel.send(reverse);
-    }; 
+        if(message.content.startsWith(prefix + "reverse")) {
+            var reverse = new Discord.RichEmbed()  //C'est le nom de l'embed, et chaque embed doit en avoir un distinct.
+            .setColor('RANDOM')
+            .setImage("https://cdn.discordapp.com/attachments/389333591575756803/630076056824446976/yXEiYQ4.png") //Tu as aussi .setTumbnail(" ") pour mettre l'image en mode portrait, en petit.
+            message.channel.send(reverse);
+        }; 
 
     //Commande pour afficher un meme sur le manque de respect. [&&respect] :
-        if(command === "respect"){
+        if(message.content.startsWith(prefix + "respect")) {
             var respect_links = [
                 "https://cdn.discordapp.com/attachments/576854376451407873/639983272528707588/telechargement.jpg",
                 "https://cdn.discordapp.com/attachments/576854376451407873/639964529031118879/Faut_retrouver_le_respect.jpg",
