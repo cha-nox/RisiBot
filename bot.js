@@ -32,13 +32,13 @@ const command = args.shift().toLowerCase();
                 if (randnum == 1){ //Chaque nouveau random est numéroté comme ça.
                     message.reply("Et tu tombes sur pile, c'est gagné !"); //Le message que tu envoies. (Réponse du bot, quoi.)
                 }
-                if (randnum == 2){   //idem
+                if (randnum == 2){   //Idem
                     message.reply("Tu es tombé sur face, pas de CHANCE.");
                 }
                 if (randnum == 3){   //J'avais collé ça dans ma version sur calculatrice... xD
                     message.reply("Euh, la pièce est restée sur la tranche...");
                 }
-            }} 
+        }} 
 
         {
             function random(min, max){
@@ -46,44 +46,70 @@ const command = args.shift().toLowerCase();
                 max = Math.floor(3);
                 randnum = Math.floor(Math.random() * (max - min +1) +min);
                 }
-    if(message.content.startsWith(prefix + "face")) {
-        random(); 
-            if (randnum == 1){
-                message.reply("Et tu tombes sur face, c'est gagné !");
+        if(message.content.startsWith(prefix + "face")) {
+            random(); 
+                if (randnum == 1){
+                    message.reply("Et tu tombes sur face, c'est gagné !");
+                }
+                if (randnum == 2){
+                    message.reply("Tu es tombé sur pile, pas de CHANCE.");
+                }
+                if (randnum == 3){
+                    message.reply("Euh, la pièce est restée sur la tranche...");
             }
-            if (randnum == 2){
-                message.reply("Tu es tombé sur pile, pas de CHANCE.");
-            }
-            if (randnum == 3){
-                message.reply("Euh, la pièce est restée sur la tranche...");
-        }
-    }}
+        }}
+
+    //Commande pour créer des cadavres exquis. [&&cadavresexquis] :
+        if (command === "cadavresexquis") {
+            var sujets_liste = [
+                "Une bande de soviétiques",
+                "Emmanuel Macron",
+                "Le vieux schnok du quartier"
+            ];
+
+            var verbes_liste = [
+                "bande",
+                "complote",
+                "marche",
+            ];
+
+            var compléments_liste = [
+                "avec amour.",
+                "comme un con",
+                "contre un arbre"
+            ];
+
+            var sujet = sujets_liste[Math.floor(Math.random() * respect_links.length)];
+            var verbe = verbes_liste[Math.floor(Math.random() * respect_links.length)];
+            var complément = compléments_liste[Math.floor(Math.random() * respect_links.length)];
+            message.channel.send(sujet + verbe + complément);
+        };
 
     //Commande pour faire un Either.io sur Discord. [&&either] :
-    if(message.content.startsWith(prefix + "either")) {
-        var either_list = [
-            `:regional_indicator_a: ...être chauve ?
+        if(message.content.startsWith(prefix + "either")) {
+            var either_list = [
+                `:regional_indicator_a: ...être chauve ?
 ou
 :b: ...être manchot ?`,
-            `:regional_indicator_a: ...le RisiBot ?
+                `:regional_indicator_a: ...le RisiBot ?
 ou
-:b: ... Kagura ?`
-        ];
+:b: ...Kagura ?`
+            ];
 
-        var either = either_list[Math.floor(Math.random() * facts_list.length)];
-        var either_embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setTitle("**Est-ce que tu préfères...**")
-        .setDescription(either)
-        .addFooter("Répondre avec les réactions :regional_indicator_a: ou :b:.")
-        .setTimestamp()
-        message.channel.send(either_embed)
-        .then(function(message){
-        message.react("✔")
-        message.react("✖")
-        }).catch(function(){
-        });
-    }
+            var either = either_list[Math.floor(Math.random() * facts_list.length)];
+            var either_embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setTitle("**Est-ce que tu préfères...**")
+            .setDescription(either)
+            .addFooter("Répondre avec les réactions :regional_indicator_a: ou :b:.")
+            .setTimestamp()
+            message.channel.send(either_embed)
+            .then(function(message){
+            message.react("✔")
+            message.react("✖")
+            }).catch(function(){
+            });
+        }
 
 //Catégorie "Divers" :
 
@@ -137,7 +163,6 @@ ou
         }
 
     //Commande pour afficher des Chuck Norris facts au hasard. [&&chucknorrisfact] :
-        
         if(message.content.startsWith(prefix + "chucknorrisfact")) {
            
             var facts_list = [
@@ -168,7 +193,8 @@ ou
                 "Chuck Norris peut tirer une balle de fusil à mains nues.",
                 "Chuck Norris envoie ses e-mails par la Poste.",
                 "Chuck Norris regarde la télé avec sa radio.",
-                "Chuck Norris a inventé le lance-flammes en pissant sur un briquet."
+                "Chuck Norris a inventé le lance-flammes en pissant sur un briquet.",
+                "Chuck Norris peut supprimer la corbeille."
             ];
 
             var chucknorrisfact = facts_list[Math.floor(Math.random() * facts_list.length)];
