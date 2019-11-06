@@ -62,7 +62,7 @@ const prefix = '&&';
         let args = message.content.split(" ").slice(1);
         let tTE = args.join(" ")
          var either = new Discord.RichEmbed()
-        .setDescription("Sondage")
+        .setTitle("**Est-ce que tu préfères...**")
         .setAuthor(message.author.username)
         .addField(tTE, "Répondre avec :white_check_mark: ou :x:")
         .setColor('RANDOM')
