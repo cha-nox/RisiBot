@@ -55,14 +55,33 @@ const prefix = '&&';
                 if (randnum == 3){
                     message.reply("Euh, la pièce est restée sur la tranche...");
             }
-        }} 
+        }}
+
+    //Commande pour faire un Either.io sur Discord. [&&either] :
+    if(message.content.startsWith(prefix + "either")){
+        let args = message.content.split(" ").slice(1);
+        let tTE = args.join(" ")
+         var either = new Discord.RichEmbed()
+        .setDescription("Sondage")
+        .setAuthor(message.author.username)
+        .addField(tTE, "Répondre avec :white_check_mark: ou :x:")
+        .setColor('RANDOM')
+        .setTimestamp()
+        message.channel.send(either)
+        .then(function(message){
+        message.react("✔")
+        message.react("✖")
+        }).catch(function(){    
+        });
+        message.delete()
+    }
 
 //Catégorie "Divers" :
 
     //Commande temporaire pour troll. [&&boobs] :
         if (command === "boobs") {
             var boobs = new Discord.RichEmbed()
-            .setColor('RANDOM')  
+            .setColor('RANDOM')
             .setImage("https://media.discordapp.net/attachments/382605587034144778/637796109208518678/Blank_84137de241bbb5d823d4a467c98f0ca8.gif")
             message.channel.send(boobs);
         };
@@ -79,7 +98,7 @@ const prefix = '&&';
                 "T'as vraiment cru que j'étais un bot de hacking, couillon ?!",
                 "Euh... t'aimerais pas savoir ce que j'ai trouvé sur cette personne, en fait...",
                 "Sainte mère de Dieu, il en a au moins pour 4 Go de lolicons sur son PC !"
-            ]
+            ];
 
             var fake_hack = fake_hacks_list[Math.floor(Math.random() * fake_hacks_list.length)];
             const troll_hack = await message.channel.send(`_Connerie en cours. Veuillez patienter._
@@ -139,7 +158,8 @@ const prefix = '&&';
                 "La Lune tourne autour de la Terre pour échapper au regard de Chuck Norris.",
                 "Chuck Norris peut tirer une balle de fusil à mains nues.",
                 "Chuck Norris envoie ses e-mails par la Poste.",
-                "Chuck Norris regarde la télé avec sa radio."
+                "Chuck Norris regarde la télé avec sa radio.",
+                "Chuck Norris a inventé le lance-flammes en pissant sur un briquet."
             ];
 
             var chucknorrisfact = facts_list[Math.floor(Math.random() * facts_list.length)];
@@ -178,7 +198,7 @@ const prefix = '&&';
         };
     //Commande de ping. [&&ping] :
         if(command === "ping") {
-            message.channel.send(`Ping de \` ${new Date().getTime() - message.createdTimestamp} \` ms. \n API Latence de \` ${Math.round(bot.ping)} \` ms.`);
+            message.channel.send(`Ping de \` ${new Date().getTime() - message.createdTimestamp} \` ms. \nAPI Latence de \` ${Math.round(bot.ping)} \` ms.`);
             }
 
 //Catégorie "Stickers" :
