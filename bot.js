@@ -77,7 +77,7 @@ ou
         .setDescription(either)
         .addFooter("Répondre avec les réactions :regional_indicator_a: ou :b:.")
         .setTimestamp()
-        message.channel.send(either)
+        message.channel.send(either_embed)
         .then(function(message){
         message.react("✔")
         message.react("✖")
