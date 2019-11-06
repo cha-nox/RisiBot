@@ -62,21 +62,24 @@ const command = args.shift().toLowerCase();
     //Commande pour créer des cadavres exquis. [&&cadavresexquis] :
         if(message.content.startsWith(prefix + "cadavresexquis")) {
             var sujets_liste = [
-                "Une bande de soviétiques",
-                "Emmanuel Macron",
-                "Le vieux schnok du quartier"
+                "Une bande de soviétiques ",
+                "Emmanuel Macron ",
+                "Le vieux schnok du quartier ",
+                "Un manchot "
             ];
 
             var verbes_liste = [
-                "bande",
-                "complote",
-                "marche",
+                "bande ",
+                "complote ",
+                "marche ",
+                "pisse "
             ];
 
             var compléments_liste = [
                 "avec amour.",
-                "comme un con",
-                "contre un arbre"
+                "comme un con.",
+                "contre un arbre.",
+                "sur un cheval."
             ];
 
             var sujet = sujets_liste[Math.floor(Math.random() * sujets_liste.length)];
@@ -97,14 +100,11 @@ ou
             ];
 
             var either = either_list[Math.floor(Math.random() * either_list.length)];
-            let args = message.content.split(" ").slice(1);
-            let tTE = args.join(" ")
             var either_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setTitle("**Est-ce que tu préfères...**")
             .setDescription(either)
-            .setFooter(tTE, "Répondre avec les réactions :regional_indicator_a: ou :b:.")
-            .setTimestamp()
+            .setFooter("Répondre avec les réactions :regional_indicator_a: ou :b:.")
             message.channel.send(either_embed)
             .then(function(message){
             message.react("✔")
