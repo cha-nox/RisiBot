@@ -85,7 +85,11 @@ const command = args.shift().toLowerCase();
             var sujet = sujets_liste[Math.floor(Math.random() * sujets_liste.length)];
             var verbe = verbes_liste[Math.floor(Math.random() * verbes_liste.length)];
             var complément = compléments_liste[Math.floor(Math.random() * compléments_liste.length)];
-            message.channel.send(sujet + verbe + complément);
+            var cadavres_exquis = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setDescription(sujet + verbe + complément)
+            .setFooter(`Demandé par ${message.author.username}.`)
+            message.channel.send(cadavres_exquis);
         };
 
     //Commande pour faire un Either.io sur Discord. [&&either] :
