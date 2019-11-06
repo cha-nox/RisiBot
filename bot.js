@@ -70,10 +70,11 @@ ou
 :b: ... Kagura ?`
         ];
 
-        var either = new Discord.RichEmbed()
+        var either = either_list[Math.floor(Math.random() * facts_list.length)];
+        var either_embed = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setTitle("**Est-ce que tu préfères...**")
-        .setDescription(either_list)
+        .setDescription(either)
         .addFooter("Répondre avec les réactions :regional_indicator_a: ou :b:.")
         .setTimestamp()
         message.channel.send(either)
