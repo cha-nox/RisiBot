@@ -60,7 +60,7 @@ const command = args.shift().toLowerCase();
         }}
 
     //Commande pour créer des cadavres exquis. [&&cadavresexquis] :
-        if (command === "cadavresexquis") {
+        if(message.content.startsWith(prefix + "cadavresexquis")) {
             var sujets_liste = [
                 "Une bande de soviétiques",
                 "Emmanuel Macron",
@@ -97,11 +97,13 @@ ou
             ];
 
             var either = either_list[Math.floor(Math.random() * facts_list.length)];
+            let args = message.content.split(" ").slice(1);
+            let tTE = args.join(" ")
             var either_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setTitle("**Est-ce que tu préfères...**")
             .setDescription(either)
-            .addFooter("Répondre avec les réactions :regional_indicator_a: ou :b:.")
+            .setFooter(tTE, "Répondre avec les réactions :regional_indicator_a: ou :b:.")
             .setTimestamp()
             message.channel.send(either_embed)
             .then(function(message){
@@ -234,7 +236,7 @@ ou
     //Commande de ping. [&&ping] :
         if(message.content.startsWith(prefix + "ping")) {
             message.channel.send(`Ping de \` ${new Date().getTime() - message.createdTimestamp} \` ms. \nAPI Latence de \` ${Math.round(bot.ping)} \` ms.`);
-            }
+        }
 
 //Catégorie "Stickers" :
 
