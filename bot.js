@@ -79,9 +79,9 @@ const command = args.shift().toLowerCase();
                 "contre un arbre"
             ];
 
-            var sujet = sujets_liste[Math.floor(Math.random() * respect_links.length)];
-            var verbe = verbes_liste[Math.floor(Math.random() * respect_links.length)];
-            var complément = compléments_liste[Math.floor(Math.random() * respect_links.length)];
+            var sujet = sujets_liste[Math.floor(Math.random() * sujets_liste.length)];
+            var verbe = verbes_liste[Math.floor(Math.random() * verbes_liste.length)];
+            var complément = compléments_liste[Math.floor(Math.random() * compléments_liste.length)];
             message.channel.send(sujet + verbe + complément);
         };
 
@@ -96,7 +96,7 @@ ou
 :b: ...Kagura ?`
             ];
 
-            var either = either_list[Math.floor(Math.random() * facts_list.length)];
+            var either = either_list[Math.floor(Math.random() * either_list.length)];
             let args = message.content.split(" ").slice(1);
             let tTE = args.join(" ")
             var either_embed = new Discord.RichEmbed()
