@@ -88,7 +88,7 @@ const command = args.shift().toLowerCase();
             var cadavres_exquis = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setTitle(sujet + verbe + complément)
-            .setFooter(`*Demandé par ${message.author.username}.*`)
+            .setFooter(`Demandé par ${message.author.username}.`)
             message.channel.send(cadavres_exquis);
         };
 
