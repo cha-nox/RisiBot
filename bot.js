@@ -96,29 +96,29 @@ const command = args.shift().toLowerCase();
         if(message.content.startsWith(prefix + "either")) {
             var either_list = [
                 `:regional_indicator_a: ...être chauve ?
-ou
+        **OU**
 :b: ...être manchot ?`,
                 `:regional_indicator_a: ...le RisiBot ?
-ou
-:b: ...Kagura ?`
+        **OU**
+:b: ...Kagura ?`,
+                `;regional_indicator_a: ...Staline ?
+        **OU**                
+:b: ...Hitler ?`
             ];
 
             var either = either_list[Math.floor(Math.random() * either_list.length)];
-            let args = message.content.split(" ").slice(1);
-            let tTE = args.join(" ")
             var either_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setTitle("**Est-ce que tu préfères...**")
             .setDescription(either)
-            .setFooter(tTE, "Répondre avec les réactions :regional_indicator_a: ou :b:.")
+            .setFooter("Répondre avec les réactions A ou B.")
             .setTimestamp()
             message.channel.send(either_embed)
             .then(function(message){
-            message.react("✔")
-            message.react("✖")
-            }).catch(function(){
-            });
-        }
+            message.react("🇦")
+            message.react("🅱")
+            })
+        };
 
 //Catégorie "Divers" :
 
