@@ -101,7 +101,7 @@ const command = args.shift().toLowerCase();
                 `:regional_indicator_a: ...le RisiBot ?
         **OU**
 :b: ...Kagura ?`,
-                `;regional_indicator_a: ...Staline ?
+                `:regional_indicator_a: ...Staline ?
         **OU**                
 :b: ...Hitler ?`
             ];
@@ -115,8 +115,8 @@ const command = args.shift().toLowerCase();
             .setTimestamp()
             message.channel.send(either_embed)
             .then(function(message){
-            message.react("🇦")
             message.react("🅱")
+            message.react("🇦")
             })
         };
 
