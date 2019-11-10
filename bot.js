@@ -121,7 +121,7 @@ const command = args.shift().toLowerCase();
             message.react("🅱")
             }).catch(function(){
             });
-        }
+        };
 
 //Catégorie "Divers" :
 
