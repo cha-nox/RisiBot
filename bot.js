@@ -116,8 +116,7 @@ const command = args.shift().toLowerCase();
             message.channel.send(either_embed)
             .then(function(message){
             message.react("🇦")
-            })
-            .then(function(message){
+
             message.react("🅱")
             })
         };
