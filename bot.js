@@ -96,14 +96,11 @@ const command = args.shift().toLowerCase();
         if(message.content.startsWith(prefix + "either")) {
             var either_list = [
                 `:regional_indicator_a: ...être chauve ?
-        **OU**
+ou
 :b: ...être manchot ?`,
                 `:regional_indicator_a: ...le RisiBot ?
-        **OU**
-:b: ...Kagura ?`,
-                `;regional_indicator_a: ...Staline ?
-        **OU**                
-:b: ...Hitler ?`
+ou
+:b: ...Kagura ?`
             ];
 
             var either = either_list[Math.floor(Math.random() * either_list.length)];
@@ -113,15 +110,15 @@ const command = args.shift().toLowerCase();
             .setColor('RANDOM')
             .setTitle("**Est-ce que tu préfères...**")
             .setDescription(either)
-            .setFooter(tTE, "Répondre avec les réactions A ou B.")
+            .setFooter(tTE, "Répondre avec les réactions :regional_indicator_a: ou :b:.")
             .setTimestamp()
             message.channel.send(either_embed)
             .then(function(message){
-            message.react("🇦")
-            message.react("🅱")
+            message.react("✔")
+            message.react("✖")
             }).catch(function(){
             });
-        };
+        }
 
 //Catégorie "Divers" :
 
