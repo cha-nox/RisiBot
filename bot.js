@@ -66,7 +66,7 @@ const command = args.shift().toLowerCase();
                 "Emmanuel Macron ",
                 "Le vieux schnok du quartier ",
                 "Un manchot ",
-                `${message.author.user} `
+                `${message.author.reply()} `
             ];
 
             var verbes_liste = [
