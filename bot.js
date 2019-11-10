@@ -96,23 +96,29 @@ const command = args.shift().toLowerCase();
         if(message.content.startsWith(prefix + "either")) {
             var either_list = [
                 `:regional_indicator_a: ...être chauve ?
-ou
+        **OU**
 :b: ...être manchot ?`,
                 `:regional_indicator_a: ...le RisiBot ?
-ou
-:b: ...Kagura ?`
+        **OU**
+:b: ...Kagura ?`,
+                `;regional_indicator_a: ...Staline ?
+        **OU**                
+:b: ...Hitler ?`
             ];
 
             var either = either_list[Math.floor(Math.random() * either_list.length)];
+            let args = message.content.split(" ").slice(1);
+            let tTE = args.join(" ")
             var either_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setTitle("**Est-ce que tu préfères...**")
             .setDescription(either)
-            .setFooter("Répondre avec les réactions :regional_indicator_a: ou :b:.")
+            .setFooter(tTE, "Répondre avec les réactions A ou B.")
+            .setTimestamp()
             message.channel.send(either_embed)
             .then(function(message){
-            message.react("✔")
-            message.react("✖")
+            message.react("🇦")
+            message.react("🅱")
             }).catch(function(){
             });
         }
@@ -223,6 +229,7 @@ ou
             .setTitle('Liste des commandes disponibles pour le RisiBot ! :')    
             .setDescription(`**__Informations :__**
             ● **&&help** _(Pour afficher la liste de toutes les commandes.)_
+            ● **&&ping** _(Pour connaitre le ping du bot et la latence de l'API Discord.)_
 
             **__Stickers :__**
             ● **&&reverse** _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_
@@ -230,16 +237,19 @@ ou
 
             **__Jeux :__**
             ● **&&pile / &&face** _(Pour jouer à Pile ou face.)_
+            ● **&&either** _(Le jeu Either.io adapté sur mesure sur Discord.)_
+            ● **&&cadavresexquis** _(Une phrase amusante se crée aléatoirement rien que pour vous.)_
 
             **__Divers :__**
             ● **&&chucknorrisfact** _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_
-            ● **&&say <texte>** _(Pour faire dire des conneries au bot.)_`)
+            ● **&&say <texte>** _(Pour faire dire des conneries au bot.)_
+            ● **&&hack <user>** _(Pour récolter quelques dossiers comprométants sur Céléstin.)_`)
             .setFooter("Cette liste n'est pas complète pour le moment. Elle s'agrandira a fur et à mesure du développement du bot.")
             message.channel.send(help);
         };
     //Commande de ping. [&&ping] :
         if(message.content.startsWith(prefix + "ping")) {
-            message.channel.send(`Ping de \` ${new Date().getTime() - message.createdTimestamp} \` ms. \nAPI Latence de \` ${Math.round(bot.ping)} \` ms.`);
+            message.channel.send(`Ping de \` ${new Date().getTime() - message.createdTimestamp} \` ms. \nLatence de l'API de \` ${Math.round(bot.ping)} \` ms.`);
         }
 
 //Catégorie "Stickers" :
