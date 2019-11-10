@@ -96,14 +96,14 @@ const command = args.shift().toLowerCase();
         if(message.content.startsWith(prefix + "either")) {
             var either_list = [
                 `:regional_indicator_a: ...être chauve ?
-        **OU**
-:b: ...être manchot ?`,
+                **OU**
+                :b: ...être manchot ?`,
                 `:regional_indicator_a: ...le RisiBot ?
-        **OU**
-:b: ...Kagura ?`,
+                **OU**
+                :b: ...Kagura ?`,
                 `:regional_indicator_a: ...Staline ?
-        **OU**                
-:b: ...Hitler ?`
+                **OU**              
+                :b: ...Hitler ?`
             ];
 
             var either = either_list[Math.floor(Math.random() * either_list.length)];
@@ -115,8 +115,10 @@ const command = args.shift().toLowerCase();
             .setTimestamp()
             message.channel.send(either_embed)
             .then(function(message){
-            message.react("🅱")
             message.react("🇦")
+            })
+            .then(function(message){
+            message.react("🅱")
             })
         };
 
