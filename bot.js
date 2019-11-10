@@ -89,6 +89,7 @@ const command = args.shift().toLowerCase();
             .setColor('RANDOM')
             .setTitle(sujet + verbe + complément)
             .setFooter(`Demandé par ${message.author.username}.`)
+            .setTimestamp()
             message.channel.send(cadavres_exquis);
         };
 
@@ -112,12 +113,10 @@ const command = args.shift().toLowerCase();
             .setTitle("**Est-ce que tu préfères...**")
             .setDescription(either)
             .setFooter("Répondre avec les réactions A ou B.")
-            .setTimestamp()
             message.channel.send(either_embed)
             .then(function(message){
             message.react("🇦")
-
-            message.react("🅱")
+            await message.react("🅱")
             })
         };
 
