@@ -67,7 +67,7 @@ const command = args.shift().toLowerCase();
                 "Le vieux schnok du quartier ",
                 "Un manchot ",
                 `${message.author.username} `,
-                `${random.user.username}`
+                `${user.username}`
             ];
 
             var verbes_liste = [
