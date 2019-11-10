@@ -65,21 +65,24 @@ const command = args.shift().toLowerCase();
                 "Une bande de soviétiques ",
                 "Emmanuel Macron ",
                 "Le vieux schnok du quartier ",
-                "Un manchot "
+                "Un manchot ",
+                `${message.author.user} `
             ];
 
             var verbes_liste = [
                 "bande ",
                 "complote ",
                 "marche ",
-                "pisse "
+                "pisse ",
+                "se suicide "
             ];
 
             var compléments_liste = [
                 "avec amour.",
                 "comme un con.",
                 "contre un arbre.",
-                "sur un cheval."
+                "sur un cheval.",
+                "sans vergogne."
             ];
 
             var sujet = sujets_liste[Math.floor(Math.random() * sujets_liste.length)];
@@ -104,7 +107,16 @@ const command = args.shift().toLowerCase();
                 :b: ...Kagura ?`,
                 `:regional_indicator_a: ...Staline ?
                 **OU**              
-                :b: ...Hitler ?`
+                :b: ...Hitler ?`,
+                `:regional_indicator_a: ...ne plus jamais pouvoir t'habiller ?
+                **OU**
+                :b: ...ne plus jamais pouvoir te laver ?`,
+                `:regional_indicator_a: ...faire le métier que tu détestes le plus toute ta vie, ne jamais partir à la retraite, et vivre jusqu'à l'âge de 160 ans ?
+                **OU**
+                :b: ...être rejeté(e) et détesté(e) par tous les gens que tu aimes et vivre dans la solitude jusqu'à l'âge de 357 ans ?`,
+                `:regional_indicator_a: ...ne jamais pouvoir avoir de rapports sexuels ?
+                **OU**
+                :b: ...ne plus jamais pouvoir jouer aux jeux vidéos ?`
             ];
 
             var either = either_list[Math.floor(Math.random() * either_list.length)];
@@ -138,10 +150,12 @@ const command = args.shift().toLowerCase();
             return message.reply("Si tu ne mentionne pas un utilisateur valide, je ne risque pas de faire grand chose.");
  
             var fake_hacks_list = [
-                "J'avais la flemme de hack ce type, en fait...",
+                "J'avais la flemme de hack ce type, en fait.",
                 "T'as vraiment cru que j'étais un bot de hacking, couillon ?!",
                 "Euh... t'aimerais pas savoir ce que j'ai trouvé sur cette personne, en fait...",
-                "Sainte mère de Dieu, il en a au moins pour 4 Go de lolicons sur son PC !"
+                "Sainte mère de Dieu, il en a au moins pour 4 Go de lolicons sur son PC !",
+                `Je me suis aperçu que je me suis trompé de cible et que j'ai hacké la Maison Blanche...
+                Prépare-toi à voir les gros hélicoptères noirs arriver !`
             ];
 
             var fake_hack = fake_hacks_list[Math.floor(Math.random() * fake_hacks_list.length)];
