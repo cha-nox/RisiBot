@@ -67,7 +67,7 @@ const command = args.shift().toLowerCase();
                 "Le vieux schnok du quartier ",
                 "Un manchot ",
                 `${message.author.username} `,
-                `${user.username}`
+                "Un communiste "
             ];
 
             var verbes_liste = [
@@ -75,7 +75,8 @@ const command = args.shift().toLowerCase();
                 "complote ",
                 "marche ",
                 "pisse ",
-                "se suicide "
+                "se suicide ",
+                "se prend une sodomie à sec "
             ];
 
             var compléments_liste = [
@@ -83,7 +84,8 @@ const command = args.shift().toLowerCase();
                 "comme un con.",
                 "contre un arbre.",
                 "sur un cheval.",
-                "sans vergogne."
+                "sans vergogne.",
+                "avec un verre de vodka."
             ];
 
             var sujet = sujets_liste[Math.floor(Math.random() * sujets_liste.length)];
@@ -146,8 +148,8 @@ const command = args.shift().toLowerCase();
     //Commande de faux hacks. [&&hack <user>] :
         if(message.content.startsWith(prefix + "hack")) {
         
-            let member = message.mentions.members.first();
-            if(!member)
+            let troll_hack_target = message.mentions.members.first();
+            if(!troll_hack_target)
             return message.reply("Si tu ne mentionne pas un utilisateur valide, je ne risque pas de faire grand chose.");
  
             var fake_hacks_list = [
@@ -218,7 +220,41 @@ const command = args.shift().toLowerCase();
                 "Chuck Norris envoie ses e-mails par la Poste.",
                 "Chuck Norris regarde la télé avec sa radio.",
                 "Chuck Norris a inventé le lance-flammes en pissant sur un briquet.",
-                "Chuck Norris peut supprimer la corbeille."
+                "Chuck Norris peut supprimer la corbeille.",
+                "La mort se demande souvent ce qu'il y a après Chuck Norris.",
+                "Quand Chuck Norris entre dans une pièce sombre, il n'allume pas la lumière. Il éteint l'obscurité.",
+                "Chuck Norris dort avec la lumière allumée. Pas parce qu'il a peur du noir, mais parce que le noir a peur de lui.",
+                "Un jour, Chuck Norris a visité les Îles vierges. Depuis, elles s'appellent juste les Îles...",
+                "Les amnésiques se souviennent quand-même de Chuck Norris.",
+                "Les aveugles peuvent voir Chuck Norris.",
+                "Chuck Norris apparaît en couleur sur les vieux écrans de télévision en noir et blanc.",
+                "Quand Google ne sait pas quelque chose, il demande à Chuck Norris.",
+                "Le seule endroit où tu peux taper Chuck Norris, c'est la barre de recherche de Google.",
+                "Chuck Norris peut abattre 11 cibles sur les 10 qu'il a devant lui... et avec seulement 9 balles.",
+                "Chuck Norris dort avec un oreiller sous son arme.",
+                "Chuck Norris peut éteindre un incendie avec un bidon d'essence.",
+                `Chuck Norris peut tuer les amis imaginaires de ${message.author.username}.`,
+                "Chuck Norris sait parler le braille.",
+                "Chuck Norris peut entendre la langue des signes.",
+                "Chuck Norris était censé mourrir il y a 20 ans, mais la Mort n'a jamais eu le courage de lui dire.",
+                "Un jour, un serpent a mordu la jambe de Chuck Norris. Après avoir terriblement souffert pendant 4 jours, le serpent a fini par mourir.",
+                "À la fin du livre des records, il est écrit que tous les records sont en réalité détenus par Chuck Norris, et que les performances citées dans le livre sont celles qui se rapproche le plus de celles de Chuck.",
+                "Quand la nuit tombe, Chuck Norris la ramasse.",
+                "Chuck Norris peut faire une roue avant avec un monocycle.",
+                "La peur des araignées s'appelle l'arachnophobie. La peur des espaces publics s'appelle l'agoraphobie. La peur de Chuck Norris s'appelle la logique.",
+                "Chuck Norris mange sa soupe avec une fourchette.",
+                "Un jour, Chuck Norris est allé sur Mars. Depuis, il n'y a plus aucune trace de forme de vie sur la planète rouge.",
+                "Voldemort a peur de prononcer le nom de Chu... de *vous savez qui*.",
+                "Chuck Norris est le père de Dark Vador.",
+                "La gravité, c'est ce qui fait que la Terre tient sous Chuck Norris.",
+                "Chuck Norris dort les yeux ouverts.",
+                "Chuck Norris joue à Pokemon Go avec un téléphone fixe.",
+                "Chuck Norris joue à la roulette russe avec un chargeur plein. Et il gagne à chaque fois.",
+                "Un jour, Chuck Norris à eu un 0/20 à un contrôle de Latin. Depuis, c'est une langue morte.",
+                "Il n'y a pas de théorie de l'évolution, il y a juste une liste d'espèces que Chuck Norris autorise à survivre.",
+                "La seule chose qui arrive a la cheville de Chuck Norris, c'est sa chaussette.",
+                "Les fantômes se racontent des histoires de Chuck Norris pour se faire peur.",
+                "Chuck Norris ne ment pas. C'est la vérité qui se trompe." 
             ];
 
             var chucknorrisfact = facts_list[Math.floor(Math.random() * facts_list.length)];
@@ -242,6 +278,7 @@ const command = args.shift().toLowerCase();
             .setDescription(`**__Informations :__**
             ● **&&help** _(Pour afficher la liste de toutes les commandes.)_
             ● **&&ping** _(Pour connaitre le ping du bot et la latence de l'API Discord.)_
+            ● **suggest** _(Des questions ? Des remarques ? Des idées de commandes, de Chuck Norris fact, et autres possibilité à proposer ? Soumettez-moi tout cela via cette commande, et je m'en occuperai moi-même dans les pls brefs délais !)_
 
             **__Stickers :__**
             ● **&&reverse** _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_
