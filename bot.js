@@ -102,24 +102,12 @@ const command = args.shift().toLowerCase();
     //Commande pour faire un Either.io sur Discord. [&&either] :
         if(message.content.startsWith(prefix + "either")) {
             var either_list = [
-                `:regional_indicator_a: ...être chauve ?
-                **OU**
-                :b: ...être manchot ?`,
-                `:regional_indicator_a: ...le RisiBot ?
-                **OU**
-                :b: ...Kagura ?`,
-                `:regional_indicator_a: ...Staline ?
-                **OU**              
-                :b: ...Hitler ?`,
-                `:regional_indicator_a: ...ne plus jamais pouvoir t'habiller ?
-                **OU**
-                :b: ...ne plus jamais pouvoir te laver ?`,
-                `:regional_indicator_a: ...faire le métier que tu détestes le plus toute ta vie, ne jamais partir à la retraite, et vivre jusqu'à l'âge de 160 ans ?
-                **OU**
-                :b: ...être rejeté(e) et détesté(e) par tous les gens que tu aimes et vivre dans la solitude jusqu'à l'âge de 357 ans ?`,
-                `:regional_indicator_a: ...ne jamais pouvoir avoir de rapports sexuels ?
-                **OU**
-                :b: ...ne plus jamais pouvoir jouer aux jeux vidéos ?`
+                `:regional_indicator_a: ...être chauve ? \n**OU** \n:b: ...être manchot ?`,
+                `:regional_indicator_a: ...le RisiBot ? \n**OU** \n:b: ...Kagura ?`,
+                `:regional_indicator_a: ...Staline ? \n**OU** \n:b: ...Hitler ?`,
+                `:regional_indicator_a: ...ne plus jamais pouvoir t'habiller ?\n**OU** \n:b: ...ne plus jamais pouvoir te laver ?`,
+                `:regional_indicator_a: ...faire le métier que tu détestes le plus toute ta vie, ne jamais partir à la retraite, et vivre jusqu'à l'âge de 160 ans ? \n**OU** \n:b: ...être rejeté(e) et détesté(e) par tous les gens que tu aimes et vivre dans la solitude jusqu'à l'âge de 357 ans ?`,
+                `:regional_indicator_a: ...ne jamais pouvoir avoir de rapports sexuels ? \n**OU** \n:b: ...ne plus jamais pouvoir jouer aux jeux vidéos ?`
             ];
 
             var either = either_list[Math.floor(Math.random() * either_list.length)];
@@ -137,8 +125,13 @@ const command = args.shift().toLowerCase();
 
 //Catégorie "Divers" :
 
-    //Commande temporaire pour troll. [&&boobs] :
-        if(message.content.startsWith(prefix + "boobs")) {
+    //Fausses commandes NSFW. [&&nsfw <truc pas très catho>] :
+        if(message.content.startsWith(prefix + "nsfw")){
+            message.reply("Si tu ne me dis pas ce que tu cherches, je ne peux pas savoir ce que je dois te mettre, si ce n'est ma ||main|| dans ton ||faciès||.")
+        };
+        
+        //"Tu voulais du NSFW ? Mais c'était moi, Dio !"
+        if(message.content.startsWith(prefix + "nsfw" + "boobs")) {
             var boobs = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setImage("https://media.discordapp.net/attachments/382605587034144778/637796109208518678/Blank_84137de241bbb5d823d4a467c98f0ca8.gif")
@@ -188,7 +181,7 @@ const command = args.shift().toLowerCase();
             troll_hack.edit(fake_hack);
         }
 
-    //Commande pour afficher des Chuck Norris facts au hasard. [&&chucknorrisfact] :
+    //Commande pour afficher des Chuck Norris facts. [&&chucknorrisfact] :
         if(message.content.startsWith(prefix + "chucknorrisfact")) {
            
             var facts_list = [
@@ -254,7 +247,9 @@ const command = args.shift().toLowerCase();
                 "Il n'y a pas de théorie de l'évolution, il y a juste une liste d'espèces que Chuck Norris autorise à survivre.",
                 "La seule chose qui arrive a la cheville de Chuck Norris, c'est sa chaussette.",
                 "Les fantômes se racontent des histoires de Chuck Norris pour se faire peur.",
-                "Chuck Norris ne ment pas. C'est la vérité qui se trompe." 
+                "Chuck Norris ne ment pas. C'est la vérité qui se trompe.",
+                `Chuck Norris détient la liste de tous les amateurs de Boku No Pico. D'ailleurs, il a remarqué que ${message.author.username} regarde très souvent.`,
+                "Le meunier fabrique de la farine avec du blé. Chuck Norris, lui, peut fabriquer du blé avec de alla farine."
             ];
 
             var chucknorrisfact = facts_list[Math.floor(Math.random() * facts_list.length)];
@@ -271,28 +266,12 @@ const command = args.shift().toLowerCase();
 //Catégorie "Informations" :
 
     //Commande pour afficher la liste des commandes disponibles du bot. [&&help]
+        //Informations, Stickers, Jeux, Divers.
         if(message.content.startsWith(prefix + "help")) {
             var help = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setTitle('Liste des commandes disponibles pour le RisiBot ! :')    
-            .setDescription(`**__Informations :__**
-            ● **&&help** _(Pour afficher la liste de toutes les commandes.)_
-            ● **&&ping** _(Pour connaitre le ping du bot et la latence de l'API Discord.)_
-            ● **suggest** _(Des questions ? Des remarques ? Des idées de commandes, de Chuck Norris fact, et autres possibilité à proposer ? Soumettez-moi tout cela via cette commande, et je m'en occuperai moi-même dans les pls brefs délais !)_
-
-            **__Stickers :__**
-            ● **&&reverse** _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_
-            ● **&&respect** _(Quand tu sens que le respect est mort et que tu veux l'exprimer en beauté.)_
-
-            **__Jeux :__**
-            ● **&&pile / &&face** _(Pour jouer à Pile ou face.)_
-            ● **&&either** _(Le jeu Either.io adapté sur mesure sur Discord.)_
-            ● **&&cadavresexquis** _(Une phrase amusante se crée aléatoirement rien que pour vous.)_
-
-            **__Divers :__**
-            ● **&&chucknorrisfact** _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_
-            ● **&&say <texte>** _(Pour faire dire des conneries au bot.)_
-            ● **&&hack <user>** _(Pour récolter quelques dossiers comprométants sur Céléstin.)_`)
+            .setDescription("**__Informations :__**\n● `&&help` _(Pour afficher la liste de toutes les commandes.)_\n● `&&ping` _(Pour connaitre le ping du bot et la latence de l'API Discord.)_\n● `&&suggest` _(Des questions ? Des remarques ? Des idées de commandes, de Chuck Norris fact, et autres possibilité à proposer ? Soumettez-moi tout cela via cette commande, et je m'en occuperai moi-même dans les pls brefs délais !)_\n \n**__Stickers :__**\n● `&&reverse` _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_\n● `&&respect` _(Quand tu sens que le respect est mort et que tu veux l'exprimer en beauté.)_\n \n**__Jeux :__**\n● `&&pile / &&face` _(Pour jouer à Pile ou face.)_\n● `&&either` _(Le jeu Either.io adapté sur mesure sur Discord.)_\n● `&&cadavresexquis` _(Une phrase amusante se crée aléatoirement rien que pour vous.)_\n \n**__Divers :__**\n● `&&chucknorrisfact` _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_\n● `&&say` <texte>** _(Pour faire dire des conneries au bot.)_\n● **&&hack <user>** _(Pour récolter quelques dossiers comprométants sur Céléstin.)_")
             .setFooter("Cette liste n'est pas complète pour le moment. Elle s'agrandira a fur et à mesure du développement du bot.")
             message.channel.send(help);
         };
