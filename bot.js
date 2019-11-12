@@ -102,12 +102,13 @@ const command = args.shift().toLowerCase();
     //Commande pour faire un Either.io sur Discord. [&&either] :
         if(message.content.startsWith(prefix + "either")) {
             var either_list = [
-                `:regional_indicator_a: ...être chauve ? \n**OU** \n:b: ...être manchot ?`,
-                `:regional_indicator_a: ...le RisiBot ? \n**OU** \n:b: ...Kagura ?`,
-                `:regional_indicator_a: ...Staline ? \n**OU** \n:b: ...Hitler ?`,
-                `:regional_indicator_a: ...ne plus jamais pouvoir t'habiller ?\n**OU** \n:b: ...ne plus jamais pouvoir te laver ?`,
-                `:regional_indicator_a: ...faire le métier que tu détestes le plus toute ta vie, ne jamais partir à la retraite, et vivre jusqu'à l'âge de 160 ans ? \n**OU** \n:b: ...être rejeté(e) et détesté(e) par tous les gens que tu aimes et vivre dans la solitude jusqu'à l'âge de 357 ans ?`,
-                `:regional_indicator_a: ...ne jamais pouvoir avoir de rapports sexuels ? \n**OU** \n:b: ...ne plus jamais pouvoir jouer aux jeux vidéos ?`
+                `:regional_indicator_a: ...être chauve ?\n**OU**\n:b: ...être manchot ?`,
+                `:regional_indicator_a: ...le RisiBot ?\n**OU**\n:b: ...Kagura ?`,
+                `:regional_indicator_a: ...Staline ?\n**OU**\n:b: ...Hitler ?`,
+                `:regional_indicator_a: ...ne plus jamais pouvoir t'habiller ?\n**OU**\n:b: ...ne plus jamais pouvoir te laver ?`,
+                `:regional_indicator_a: ...faire le métier que tu détestes le plus toute ta vie, ne jamais partir à la retraite, et vivre jusqu'à l'âge de 160 ans ?\n**OU**\n:b: ...être rejeté(e) et détesté(e) par tous les gens que tu aimes et vivre dans la solitude jusqu'à l'âge de 357 ans ?`,
+                `:regional_indicator_a: ...ne jamais pouvoir avoir de rapports sexuels ?\n**OU**\n:b: ...ne plus jamais pouvoir jouer aux jeux vidéos ?`,
+                `:regional_indicator_a: ...être très sociable mais toujours être préoccupé par les problèmes des autres ?\n**OU**\n:b: ...être antisocial et ne jamais te soucier des autres ?`
             ];
 
             var either = either_list[Math.floor(Math.random() * either_list.length)];
@@ -271,7 +272,7 @@ const command = args.shift().toLowerCase();
             var help = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setTitle('Liste des commandes disponibles pour le RisiBot ! :')    
-            .setDescription("**__Informations :__**\n● `&&help` _(Pour afficher la liste de toutes les commandes.)_\n● `&&ping` _(Pour connaitre le ping du bot et la latence de l'API Discord.)_\n● `&&suggest` _(Des questions ? Des remarques ? Des idées de commandes, de Chuck Norris fact, et autres possibilité à proposer ? Soumettez-moi tout cela via cette commande, et je m'en occuperai moi-même dans les pls brefs délais !)_\n \n**__Stickers :__**\n● `&&reverse` _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_\n● `&&respect` _(Quand tu sens que le respect est mort et que tu veux l'exprimer en beauté.)_\n \n**__Jeux :__**\n● `&&pile / &&face` _(Pour jouer à Pile ou face.)_\n● `&&either` _(Le jeu Either.io adapté sur mesure sur Discord.)_\n● `&&cadavresexquis` _(Une phrase amusante se crée aléatoirement rien que pour vous.)_\n \n**__Divers :__**\n● `&&chucknorrisfact` _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_\n● `&&say` <texte>** _(Pour faire dire des conneries au bot.)_\n● **&&hack <user>** _(Pour récolter quelques dossiers comprométants sur Céléstin.)_")
+            .setDescription("**__Informations :__**\n● `&&help` _(Pour afficher la liste de toutes les commandes.)_\n● `&&ping` _(Pour connaitre le ping du bot et la latence de l'API Discord.)_\n● `&&suggest <Insérez une suggestion ici.>` _(Des questions ? Des remarques ? Des idées de commandes, de Chuck Norris fact, et autres possibilité à proposer ? Soumettez-moi tout cela via cette commande, et je m'en occuperai moi-même dans les pls brefs délais !)_\n \n**__Stickers :__**\n● `&&reverse` _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_\n● `&&respect` _(Quand tu sens que le respect est mort et que tu veux l'exprimer en beauté.)_\n \n**__Jeux :__**\n● `&&pile / &&face` _(Pour jouer à Pile ou face.)_\n● `&&either` _(Le jeu Either.io adapté sur mesure sur Discord.)_\n● `&&cadavresexquis` _(Une phrase amusante se crée aléatoirement rien que pour vous.)_\n \n**__Divers :__**\n● `&&chucknorrisfact` _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_\n● `&&say <texte>` _(Pour faire dire des conneries au bot.)_\n● `&&hack <user>` _(Pour récolter quelques dossiers comprométants sur Céléstin.)_\n● `&&nsfw <truc pas très catho> _(Les connaisseurs sauront à quoi sert cette commande. Pour les autres, je ne vous explique pas, vous êtes probablement encore jeunes et innocents. Ou du moins plus pour très longtemps... :smirk:")
             .setFooter("Cette liste n'est pas complète pour le moment. Elle s'agrandira a fur et à mesure du développement du bot.")
             message.channel.send(help);
         };
