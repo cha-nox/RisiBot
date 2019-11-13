@@ -292,7 +292,8 @@ const command = args.shift().toLowerCase();
                 .setTitle("Une suggestion vous a été proposé ! :")
                 .setDescription(sayMessage)
                 .setColor("RANDOM")
-                bot.fetchUser("382500192907165717",false).then(user => {user.send(suggestion)
+                bot.fetchUser("382500192907165717",false)
+                .then(user => {user.send(suggestion)
             });
 
             message.reply("Moi et mon créateur vous remercions de cette proposition. Nous l'examinerons dès que possible !");
