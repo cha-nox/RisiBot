@@ -281,6 +281,23 @@ const command = args.shift().toLowerCase();
             message.channel.send(`Ping de \` ${new Date().getTime() - message.createdTimestamp} \` ms. \nLatence de l'API de \` ${Math.round(bot.ping)} \` ms.`);
         }
 
+    //Commande pour laisser des suggestions pour le bot. (Le gens fait la commande avec sa suggestion, le bot me la renvoie en mp puis delete la commande.) [&&suggest] :
+        if(message.content.startsWith(prefix + "suggest")){
+            let sayMessage = args.join(" ");
+
+            if(!message.channel.guild) return;
+                message.react('👍')
+                var suggestion = new Discord.RichEmbed()
+                .setAuthor(message.author.username , "#" , message.author.discriminator , message.author.avatarURL)
+                .setTitle("Une suggestion vous a été proposé ! :")
+                .setDescription(sayMessage)
+                .setColor("RANDOM")
+                client.fetchUser("382500192907165717",false).then(user => {user.send(suggestion)
+            });
+
+            message.reply("Moi et mon créateur vous remercions de cette proposition. Nous l'examinerons dès que possible !");
+        };
+
 //Catégorie "Stickers" :
 
     //Commande pour afficher une reverse card dans le salon. [&&reverse] :
