@@ -128,16 +128,16 @@ const command = args.shift().toLowerCase();
 //Catégorie "Divers" :
 
     //Fausses commandes NSFW. [&&nsfw <truc pas très catho>] :
-        if(message.content.startsWith(prefix + "nsfw")){
-            message.reply("Si tu ne me dis pas ce que tu cherches, je ne peux pas savoir ce que je dois te mettre, si ce n'est ma ||main|| dans ton ||faciès||.")
-        };
-        
-        //"Tu voulais du NSFW ? Mais c'était moi, Dio !"
-        if(command === "nsfw" + "boobs") {
-            var boobs = new Discord.RichEmbed()
-            .setColor('RANDOM')
-            .setImage("https://media.discordapp.net/attachments/382605587034144778/637796109208518678/Blank_84137de241bbb5d823d4a467c98f0ca8.gif")
-            message.channel.send(boobs);
+        if(command === "nsfw") {
+            let boobs = args[0]
+
+            if(boobs != "boobs")
+            message.reply("Si tu ne me dis pas ce que tu cherches, je ne peux pas savoir ce que je dois te mettre, si ce n'est ma ||main|| dans ton ||faciès||.");
+
+            var fake_boobs = [
+                "https://media.discordapp.net/attachments/382605587034144778/637796109208518678/Blank_84137de241bbb5d823d4a467c98f0ca8.gif"
+            ];
+            message.channel.send(fake_boobs);
         };
 
     //Commande de faux hacks. [&&hack <user>] :
@@ -289,7 +289,7 @@ const command = args.shift().toLowerCase();
             if(!message.channel.guild) return;
                 message.react('👍')
                 var suggestion = new Discord.RichEmbed()
-                .setAuthor(message.author.username + message.author.discriminator)
+                .setAuthor(message.author.username + "#" + message.author.discriminator)
                 .setThumbnail(message.author.avatarURL)
                 .setTitle("Une suggestion vous a été proposé ! :")
                 .setDescription(sayMessage)
