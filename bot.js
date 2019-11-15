@@ -2,17 +2,19 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const token = process.env.token;
-const prefix = '&&';
 
 bot.login(token);
 
 //Boucle pour le statut Discord du bot :
 bot.on("ready", () => {
-    bot.user.setActivity("WATCHING" + "le monde partir en steak.");
+    bot.user.setActivity("WATCHING le monde partir en steak.");
 });
 
 //Boucle contenant les commandes :
 bot.on("message", async message => {
+
+const prefix = '&&';
+if (message.content.indexOf(prefix) !== 0) return;
 
 const args = message.content.slice(prefix.length).trim().split(/ +/g); 
 const command = args.shift().toLowerCase();
@@ -287,7 +289,8 @@ const command = args.shift().toLowerCase();
             if(!message.channel.guild) return;
                 message.react('👍')
                 var suggestion = new Discord.RichEmbed()
-                .setAuthor(message.author.username , message.author.discriminator , message.author.avatarURL)
+                .setAuthor(message.author.username)
+                .setThumbnail(message.author.avatarURL)
                 .setTitle("Une suggestion vous a été proposé ! :")
                 .setDescription(sayMessage)
                 .setColor("RANDOM")
