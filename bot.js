@@ -129,16 +129,16 @@ const command = args.shift().toLowerCase();
 
     //Fausses commandes NSFW. [&&nsfw <truc pas très catho>] :
         if(command === "nsfw") {
-    let boob = args[0]
-if(boob != "boobs")
-message.reply("Si tu ne me dis pas ce que tu cherches, je ne peux pas savoir ce que je dois te mettre, si ce n'est ma ||main|| dans ton ||faciès||.");
-
-if(boob = "boobs")
-    var boobs = new Discord.RichEmbed()
-    .setColor('RANDOM')
-    .setImage("https://media.discordapp.net/attachments/382605587034144778/637796109208518678/Blank_84137de241bbb5d823d4a467c98f0ca8.gif")
-    message.channel.send(boobs);
-};
+            let arg = args[0]
+            if(!arg)
+            message.reply("Si tu ne me dis pas ce que tu cherches, je ne peux pas savoir ce que je dois te mettre, si ce n'est ma ||main|| dans ton ||faciès||.");
+    
+            if(arg = "boobs")
+                var boobs = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setImage("https://media.discordapp.net/attachments/382605587034144778/637796109208518678/Blank_84137de241bbb5d823d4a467c98f0ca8.gif")
+                message.channel.send(boobs);
+        };
 
     //Commande de faux hacks. [&&hack <user>] :
         if(message.content.startsWith(prefix + "hack")) {
