@@ -128,7 +128,8 @@ const command = args.shift().toLowerCase();
 //Catégorie "Divers" :
 
     //Fausses commandes NSFW. [&&nsfw <truc pas très catho>] :
-        if(command === "nsfw") {
+        if(message.content.startsWith(prefix + "nsfw")) {
+
             let arg = args[0]
             if(!arg)
             message.reply("Si tu ne me dis pas ce que tu cherches, je ne peux pas savoir ce que je dois te mettre, si ce n'est ma ||main|| dans ton ||faciès||.");
