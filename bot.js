@@ -129,7 +129,7 @@ const command = args.shift().toLowerCase();
 
     //Fausses commandes NSFW. [&&nsfw <truc pas très catho>] :
         if(command === "nsfw") {
-            let nsfw_arg = args
+            let nsfw_arg = args[1]
 
             if(!nsfw_arg)
             message.reply("Si tu ne me dis pas ce que tu cherches, je ne peux pas savoir ce que je dois te mettre, si ce n'est ma ||main|| dans ton ||faciès||.");
