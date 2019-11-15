@@ -7,7 +7,7 @@ bot.login(token);
 
 //Boucle pour le statut Discord du bot :
 bot.on("ready", () => {
-    bot.user.setActivity("WATCHING le monde partir en steak.");
+    bot.user.setActivity("Watching le monde partir en steak.");
 });
 
 //Boucle contenant les commandes :
@@ -289,7 +289,7 @@ const command = args.shift().toLowerCase();
             if(!message.channel.guild) return;
                 message.react('👍')
                 var suggestion = new Discord.RichEmbed()
-                .setAuthor(message.author.username)
+                .setAuthor(message.author.username , message.author.discriminator)
                 .setThumbnail(message.author.avatarURL)
                 .setTitle("Une suggestion vous a été proposé ! :")
                 .setDescription(sayMessage)
