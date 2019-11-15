@@ -4,12 +4,11 @@ const bot = new Discord.Client();
 const token = process.env.token;
 const prefix = '&&';
 
-
 bot.login(token);
 
 //Boucle pour le statut Discord du bot :
 bot.on("ready", () => {
-    bot.user.setActivity(`Regarde le monde partir en steak.`);
+    bot.user.setActivity("WATCHING" + "le monde partir en steak.");
 });
 
 //Boucle contenant les commandes :
@@ -132,7 +131,7 @@ const command = args.shift().toLowerCase();
         };
         
         //"Tu voulais du NSFW ? Mais c'était moi, Dio !"
-        if(message.content.startsWith(prefix + "nsfw" + "boobs")) {
+        if(command === "nsfw" + "boobs") {
             var boobs = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setImage("https://media.discordapp.net/attachments/382605587034144778/637796109208518678/Blank_84137de241bbb5d823d4a467c98f0ca8.gif")
@@ -288,7 +287,7 @@ const command = args.shift().toLowerCase();
             if(!message.channel.guild) return;
                 message.react('👍')
                 var suggestion = new Discord.RichEmbed()
-                .setAuthor(message.author.username , "#" , message.author.discriminator , message.author.avatarURL)
+                .setAuthor(message.author.username , message.author.discriminator , message.author.avatarURL)
                 .setTitle("Une suggestion vous a été proposé ! :")
                 .setDescription(sayMessage)
                 .setColor("RANDOM")
