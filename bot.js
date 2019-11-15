@@ -289,7 +289,7 @@ const command = args.shift().toLowerCase();
             if(!message.channel.guild) return;
                 message.react('👍')
                 var suggestion = new Discord.RichEmbed()
-                .setAuthor(message.author.username , message.author.discriminator)
+                .setAuthor(message.author.username + message.author.discriminator)
                 .setThumbnail(message.author.avatarURL)
                 .setTitle("Une suggestion vous a été proposé ! :")
                 .setDescription(sayMessage)
