@@ -7,7 +7,7 @@ bot.login(token);
 
 //Boucle pour le statut Discord du bot :
 bot.on("ready", () => {
-    bot.user.setActivity("Watching le monde partir en steak.");
+    bot.user.setActivity("faire chier Céléstin.");
 });
 
 //Boucle contenant les commandes :
@@ -129,30 +129,26 @@ const command = args.shift().toLowerCase();
 
     //Fausses commandes NSFW. [&&nsfw <truc pas très catho>] :
         if(command === "nsfw") {
-            let nsfw_arg = args[0]
+            message.reply("Si tu ne me dis pas ce que tu cherches, je ne peux pas savoir ce que je dois te mettre, si ce n'est ma ||main|| dans ton ||faciès||.\nMais sinon, voilà ce que tu peux chercher :\n● `&&boobs`\n● `&&dick`");
+        };
 
-            if(!nsfw_arg){
-                message.reply("Si tu ne me dis pas ce que tu cherches, je ne peux pas savoir ce que je dois te mettre, si ce n'est ma ||main|| dans ton ||faciès||.");
-            };
+        if(command = "boobs"){
+            var boobs_embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setImage("https://media.discordapp.net/attachments/382605587034144778/637796109208518678/Blank_84137de241bbb5d823d4a467c98f0ca8.gif")
+            .setFooter(`Demandé par ${message.author.username}#${message.author.discriminator}.`)
+            .setTimestamp()
+            message.channel.send(boobs_embed);
+        };
 
-            if(nsfw_arg = "boobs"){
-                var boobs_embed = new Discord.RichEmbed()
-                .setColor('RANDOM')
-                .setImage("https://media.discordapp.net/attachments/382605587034144778/637796109208518678/Blank_84137de241bbb5d823d4a467c98f0ca8.gif")
-                .setFooter(`Demandé par ${message.author.username}#${message.author.discriminator}.`)
-                .setTimestamp()
-                message.channel.send(boobs_embed);
-            };
-
-            if(nsfw_arg = "dick"){
-                var dick_embed = new Discord.RichEmbed()
-                .setColor('RANDOM')
-                .setImage("https://media.discordapp.net/attachments/419199325684367360/645052037729615883/Dick_pick.jpg?width=268&height=473")
-                .setFooter(`Demandé par ${message.author.username}#${message.author.discriminator}.`)
-                .setTimestamp()
-                message.channel.send(dick_embed);
-            };
-
+        if(command = "dick"){
+            var dick_embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setDescription("Here is a dick pick !")
+            .setImage("https://media.discordapp.net/attachments/419199325684367360/645052037729615883/Dick_pick.jpg?width=268&height=473")
+            .setFooter(`Demandé par ${message.author.username}#${message.author.discriminator}.`)
+            .setTimestamp()
+            message.channel.send(dick_embed);
         };
 
     //Commande de faux hacks. [&&hack <user>] :
@@ -288,7 +284,7 @@ const command = args.shift().toLowerCase();
             var help = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setTitle('Liste des commandes disponibles pour le RisiBot ! :')    
-            .setDescription("**__Informations :__**\n● `&&help` _(Pour afficher la liste de toutes les commandes.)_\n● `&&ping` _(Pour connaitre le ping du bot et la latence de l'API Discord.)_\n● `&&suggest <Insérez une suggestion ici.>` _(Des questions ? Des remarques ? Des idées de commandes, de Chuck Norris fact, et autres possibilité à proposer ? Soumettez-moi tout cela via cette commande, et je m'en occuperai moi-même dans les pls brefs délais !)_\n \n**__Stickers :__**\n● `&&reverse` _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_\n● `&&respect` _(Quand tu sens que le respect est mort et que tu veux l'exprimer en beauté.)_\n \n**__Jeux :__**\n● `&&pile / &&face` _(Pour jouer à Pile ou face.)_\n● `&&either` _(Le jeu Either.io adapté sur mesure sur Discord.)_\n● `&&cadavresexquis` _(Une phrase amusante se crée aléatoirement rien que pour vous.)_\n \n**__Divers :__**\n● `&&chucknorrisfact` _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_\n● `&&say <texte>` _(Pour faire dire des conneries au bot.)_\n● `&&hack <user>` _(Pour récolter quelques dossiers comprométants sur Céléstin.)_\n● `&&nsfw <truc pas très catho>` _(Les connaisseurs sauront à quoi sert cette commande. Pour les autres, je ne vous explique pas, vous êtes probablement encore jeunes et innocents. Ou du moins plus pour très longtemps... :smirk:)_")
+            .setDescription("**__Informations :__**\n● `&&help` _(Pour afficher la liste de toutes les commandes.)_\n● `&&ping` _(Pour connaitre le ping du bot et la latence de l'API Discord.)_\n● `&&suggest <Insérez une suggestion ici.>` _(Des questions ? Des remarques ? Des idées de commandes, de Chuck Norris fact, et autres possibilité à proposer ? Soumettez-moi tout cela via cette commande, et je m'en occuperai moi-même dans les pls brefs délais !)_\n \n**__Stickers :__**\n● `&&reverse` _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_\n● `&&respect` _(Quand tu sens que le respect est mort et que tu veux l'exprimer en beauté.)_\n \n**__Jeux :__**\n● `&&pile / &&face` _(Pour jouer à Pile ou face.)_\n● `&&either` _(Le jeu Either.io adapté sur mesure sur Discord.)_\n● `&&cadavresexquis` _(Une phrase amusante se crée aléatoirement rien que pour vous.)_\n \n**__Divers :__**\n● `&&chucknorrisfact` _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_\n● `&&say <texte>` _(Pour faire dire des conneries au bot.)_\n● `&&hack <user>` _(Pour récolter quelques dossiers comprométants sur Céléstin.)_\n● `&&nsfw` _(Les connaisseurs sauront à quoi sert cette commande. Pour les autres, je ne vous explique pas, vous êtes probablement encore jeunes et innocents. Ou du moins plus pour très longtemps... :smirk:)_")
             .setFooter("Cette liste n'est pas complète pour le moment. Elle s'agrandira a fur et à mesure du développement du bot.")
             message.channel.send(help);
         };
