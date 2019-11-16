@@ -135,21 +135,22 @@ const command = args.shift().toLowerCase();
                 message.reply("Si tu ne me dis pas ce que tu cherches, je ne peux pas savoir ce que je dois te mettre, si ce n'est ma ||main|| dans ton ||faciès||.");
             };
 
-            if(arg = "boobs"){
+            if(nsfw_arg = "boobs"){
                 var boobs_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
                 .setImage("https://media.discordapp.net/attachments/382605587034144778/637796109208518678/Blank_84137de241bbb5d823d4a467c98f0ca8.gif")
+                .setFooter(`Demandé par ${message.author.username}#${message.author.discriminator}.`)
+                .setTimestamp()
                 message.channel.send(boobs_embed);
             };
 
-            if(arg = "dick"){
+            if(nsfw_arg = "dick"){
                 var dick_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
                 .setImage("https://media.discordapp.net/attachments/419199325684367360/645052037729615883/Dick_pick.jpg?width=268&height=473")
-                .setFooter(`Demandé par ${message.author.discriminator}#${message.author.discriminator}.`)
+                .setFooter(`Demandé par ${message.author.username}#${message.author.discriminator}.`)
                 .setTimestamp()
                 message.channel.send(dick_embed);
-
             };
 
         };
