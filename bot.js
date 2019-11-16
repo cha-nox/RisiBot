@@ -132,7 +132,7 @@ const command = args.shift().toLowerCase();
             message.reply("Si tu ne me dis pas ce que tu cherches, je ne peux pas savoir ce que je dois te mettre, si ce n'est ma ||main|| dans ton ||faciès||.\nMais sinon, voilà ce que tu peux chercher :\n● `&&boobs`\n● `&&dick`");
         };
 
-        if(command = "boobs"){
+        if(command === "boobs"){
             var boobs_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setImage("https://media.discordapp.net/attachments/382605587034144778/637796109208518678/Blank_84137de241bbb5d823d4a467c98f0ca8.gif")
@@ -141,7 +141,7 @@ const command = args.shift().toLowerCase();
             message.channel.send(boobs_embed);
         };
 
-        if(command = "dick"){
+        if(command === "dick"){
             var dick_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setDescription("Here is a dick pick !")
