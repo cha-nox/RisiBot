@@ -13,11 +13,16 @@ bot.on("ready", () => {
 //Boucle contenant les commandes :
 bot.on("message", async message => {
 
-const prefix = '&&';
-if (message.content.indexOf(prefix) !== 0) return;
+    const prefix = '&&';
+    if (message.content.indexOf(prefix) !== 0) return;
 
-const args = message.content.slice(prefix.length).trim().split(/ +/g); 
-const command = args.shift().toLowerCase();
+    const args = message.content.slice(prefix.length).trim().split(/ +/g); 
+    const command = args.shift().toLowerCase();
+
+//Commande test. [&&test] :
+        if(command === "test"){
+            message.channel.send(`Test = ${random.user.mentions} | Par ${message.author.mentions}.`);
+        };
 
 //Catégorie "Jeux" :
 
@@ -116,7 +121,7 @@ const command = args.shift().toLowerCase();
             var either_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setTitle("**Est-ce que tu préfères...**")
-            .setDescription(either)
+           .setDescription(either)
             .setFooter("Répondre avec les réactions A ou B.")
             message.channel.send(either_embed)
             .then(function(message){
@@ -300,16 +305,24 @@ const command = args.shift().toLowerCase();
             if(!message.channel.guild) return;
                 message.react('👍')
                 var suggestion = new Discord.RichEmbed()
-                .setAuthor(message.author.username + "#" + message.author.discriminator)
+                .setAuthor(message.author.username + "#" + message.author.discriminator + " vous propose la suggestion suivante ! :")
                 .setThumbnail(message.author.avatarURL)
-                .setTitle("Une suggestion vous a été proposé ! :")
                 .setDescription(sayMessage)
-                .setColor("RANDOM")
+                .setColor('RANDOM')
                 bot.fetchUser("382500192907165717",false)
                 .then(user => {user.send(suggestion)
             });
 
             message.reply("Moi et mon créateur vous remercions de cette proposition. Nous l'examinerons dès que possible !");
+        };
+
+        if(command === "invite"){
+		   var invite_embed = new Discord.RichEmbed()
+		   .setTitle("● Ne cliquez pas ici pour m'ajouter à votre serveur ! ●")
+           .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${client.user.id}` + "&scope=bot&permissions=2146958847")
+           .setFooter(`Demandé par ${message.author.username}#${message.author.discriminator}.`)
+           .setTimestamp()
+		   message.channel.send(invite_embed);
         };
 
 //Catégorie "Stickers" :
