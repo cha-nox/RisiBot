@@ -1,3 +1,9 @@
+//Penser à créer une commande d'avertissement [&warn] avec avertissement en mp, proposition de ban après 5 avertissements, etc.
+//Penser à modifier le statut du bot (passer sur le ".setActivity").
+//Problème des commandes NSFW ; tout remettre en une commande avec arguments.
+//Penser à tester le "${message.author.mentions}".
+//Tester le &invite.
+
 //Pas touche aux premières constantes. Sinon, ça va moins bien marcher.
 const Discord = require('discord.js');
 const bot = new Discord.Client();
@@ -13,20 +19,20 @@ bot.on("ready", () => {
 //Boucle contenant les commandes :
 bot.on("message", async message => {
 
-    const prefix = '&&';
+    const prefix = '&';
     if (message.content.indexOf(prefix) !== 0) return;
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g); 
     const command = args.shift().toLowerCase();
 
-//Commande test. [&&test] :
-        if(command === "test"){
-            message.channel.send(`Test = <@${random.user.id}> | Par <@${message.author.id}>.`);
+//Commande test. [&test] :
+        if(command === "test"){          //Faut voir lequel des deux bordels pose problème.
+            message.channel.send(`Test = <@${member.user.id}> | Par <@${message.author.id}>.`);
         };
 
 //Catégorie "Jeux" :
 
-    //Commande pour faire un pile ou face [&&pile/&&face]:
+    //Commande pour faire un pile ou face [&pile/&face]:
         {
             function random(min, max){
                 min = Math.ceil(1);  //C'est le minimum qu'il peut choisir.
@@ -65,7 +71,7 @@ bot.on("message", async message => {
             }
         }}
 
-    //Commande pour créer des cadavres exquis. [&&cadavresexquis] :
+    //Commande pour créer des cadavres exquis. [&cadavresexquis] :
         if(message.content.startsWith(prefix + "cadavresexquis")) {
             var sujets_liste = [
                 "Une bande de soviétiques ",
@@ -105,7 +111,7 @@ bot.on("message", async message => {
             message.channel.send(cadavres_exquis);
         };
 
-    //Commande pour faire un Either.io sur Discord. [&&either] :
+    //Commande pour faire un Either.io sur Discord. [&either] :
         if(message.content.startsWith(prefix + "either")) {
             var either_list = [
                 `:regional_indicator_a: ...être chauve ?\n**OU**\n:b: ...être manchot ?`,
@@ -132,9 +138,9 @@ bot.on("message", async message => {
 
 //Catégorie "Divers" :
 
-    //Fausses commandes NSFW. [&&nsfw <truc pas très catho>] :
+    //Fausses commandes NSFW. [&nsfw <truc pas très catho>] :
         if(command === "nsfw") {
-            message.reply("Si tu ne me dis pas ce que tu cherches, je ne peux pas savoir ce que je dois te mettre, si ce n'est ma ||main|| dans ton ||faciès||.\nMais sinon, voilà ce que tu peux chercher :\n● `&&boobs`\n● `&&dick`");
+            message.reply("Si tu ne me dis pas ce que tu cherches, je ne peux pas savoir ce que je dois te mettre, si ce n'est ma ||main|| dans ton ||faciès||.\nMais sinon, voilà ce que tu peux chercher :\n● `&boobs`\n● `&dick`");
         };
 
         if(command === "boobs"){
@@ -156,7 +162,7 @@ bot.on("message", async message => {
             message.channel.send(dick_embed);
         };
 
-    //Commande de faux hacks. [&&hack <user>] :
+    //Commande de faux hacks. [&hack <user>] :
         if(message.content.startsWith(prefix + "hack")) {
         
             let troll_hack_target = message.mentions.members.first();
@@ -199,7 +205,7 @@ bot.on("message", async message => {
             troll_hack.edit(fake_hack);
         }
 
-    //Commande pour afficher des Chuck Norris facts. [&&chucknorrisfact] :
+    //Commande pour afficher des Chuck Norris facts. [&chucknorrisfact] :
         if(message.content.startsWith(prefix + "chucknorrisfact")) {
            
             var facts_list = [
@@ -274,7 +280,7 @@ bot.on("message", async message => {
             message.channel.send(chucknorrisfact);
         }
 
-    //Commande pour faire dire quelque chose au bot. [&&say] :
+    //Commande pour faire dire quelque chose au bot. [&say] :
         if(message.content.startsWith(prefix + "say")) {
             const sayMessage = args.join(" ");
             message.delete().catch(O_o=>{}); 
@@ -283,22 +289,22 @@ bot.on("message", async message => {
 
 //Catégorie "Informations" :
 
-    //Commande pour afficher la liste des commandes disponibles du bot. [&&help]
+    //Commande pour afficher la liste des commandes disponibles du bot. [&help]
         //Informations, Stickers, Jeux, Divers.
         if(message.content.startsWith(prefix + "help")) {
             var help = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setTitle('Liste des commandes disponibles pour le RisiBot ! :')    
-            .setDescription("**__Informations :__**\n● `&&help` _(Pour afficher la liste de toutes les commandes.)_\n● `&&ping` _(Pour connaitre le ping du bot et la latence de l'API Discord.)_\n● `&&suggest <Insérez une suggestion ici.>` _(Des questions ? Des remarques ? Des idées de commandes, de Chuck Norris fact, et autres possibilité à proposer ? Soumettez-moi tout cela via cette commande, et je m'en occuperai moi-même dans les pls brefs délais !)_\n \n**__Stickers :__**\n● `&&reverse` _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_\n● `&&respect` _(Quand tu sens que le respect est mort et que tu veux l'exprimer en beauté.)_\n \n**__Jeux :__**\n● `&&pile / &&face` _(Pour jouer à Pile ou face.)_\n● `&&either` _(Le jeu Either.io adapté sur mesure sur Discord.)_\n● `&&cadavresexquis` _(Une phrase amusante se crée aléatoirement rien que pour vous.)_\n \n**__Divers :__**\n● `&&chucknorrisfact` _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_\n● `&&say <texte>` _(Pour faire dire des conneries au bot.)_\n● `&&hack <user>` _(Pour récolter quelques dossiers comprométants sur Céléstin.)_\n● `&&nsfw` _(Les connaisseurs sauront à quoi sert cette commande. Pour les autres, je ne vous explique pas, vous êtes probablement encore jeunes et innocents. Ou du moins plus pour très longtemps... :smirk:)_")
+            .setDescription("**__Informations :__**\n● `&help` _(Pour afficher la liste de toutes les commandes.)_\n● `&invite` _(Pour inviter le bot sur ton serveur.)_\n● `&ping` _(Pour connaitre le ping du bot et la latence de l'API Discord.)_\n● `&suggest <Insérez une suggestion ici.>` _(Des questions ? Des remarques ? Des idées de commandes, de Chuck Norris fact, et autres possibilité à proposer ? Soumettez-moi tout cela via cette commande, et je m'en occuperai moi-même dans les pls brefs délais !)_\n \n**__Stickers :__**\n● `&reverse` _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_\n● `&respect` _(Quand tu sens que le respect est mort et que tu veux l'exprimer en beauté.)_\n \n**__Jeux :__**\n● `&pile / &face` _(Pour jouer à Pile ou face.)_\n● `&either` _(Le jeu Either.io adapté sur mesure sur Discord.)_\n● `&cadavresexquis` _(Une phrase amusante se crée aléatoirement rien que pour vous.)_\n \n**__Divers :__**\n● `&chucknorrisfact` _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_\n● `&say <texte>` _(Pour faire dire des conneries au bot.)_\n● `&hack <user>` _(Pour récolter quelques dossiers comprométants sur Céléstin.)_\n● `&nsfw` _(Les connaisseurs sauront à quoi sert cette commande. Pour les autres, je ne vous explique pas, vous êtes probablement encore jeunes et innocents. Ou du moins plus pour très longtemps... :smirk:)_")
             .setFooter("Cette liste n'est pas complète pour le moment. Elle s'agrandira a fur et à mesure du développement du bot.")
             message.channel.send(help);
         };
-    //Commande de ping. [&&ping] :
+    //Commande de ping. [&ping] :
         if(message.content.startsWith(prefix + "ping")) {
             message.channel.send(`Ping de \` ${new Date().getTime() - message.createdTimestamp} \` ms. \nLatence de l'API de \` ${Math.round(bot.ping)} \` ms.`);
         }
 
-    //Commande pour laisser des suggestions pour le bot. (Le gens fait la commande avec sa suggestion, le bot me la renvoie en mp puis delete la commande.) [&&suggest] :
+    //Commande pour laisser des suggestions pour le bot. (Le gens fait la commande avec sa suggestion, le bot me la renvoie en mp puis delete la commande.) [&suggest] :
         if(message.content.startsWith(prefix + "suggest")){
             let sayMessage = args.join(" ");
 
@@ -327,7 +333,7 @@ bot.on("message", async message => {
 
 //Catégorie "Stickers" :
 
-    //Commande pour afficher une reverse card dans le salon. [&&reverse] :
+    //Commande pour afficher une reverse card dans le salon. [&reverse] :
         if(message.content.startsWith(prefix + "reverse")) {
             var reverse = new Discord.RichEmbed()  //C'est le nom de l'embed, et chaque embed doit en avoir un distinct.
             .setColor('RANDOM')
@@ -335,7 +341,7 @@ bot.on("message", async message => {
             message.channel.send(reverse);
         }; 
 
-    //Commande pour afficher un meme sur le manque de respect. [&&respect] :
+    //Commande pour afficher un meme sur le manque de respect. [&respect] :
         if(message.content.startsWith(prefix + "respect")) {
             var respect_links = [
                 "https://cdn.discordapp.com/attachments/576854376451407873/639983272528707588/telechargement.jpg",
