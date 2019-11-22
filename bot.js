@@ -1,9 +1,3 @@
-//Penser à créer une commande d'avertissement [&warn] avec avertissement en mp, proposition de ban après 5 avertissements, etc.
-//Penser à modifier le statut du bot (passer sur le ".setActivity").
-//Problème des commandes NSFW ; tout remettre en une commande avec arguments.
-//Penser à tester le "${message.author.mentions}".
-//Tester le &invite.
-
 //Pas touche aux premières constantes. Sinon, ça va moins bien marcher.
 const Discord = require('discord.js');
 const bot = new Discord.Client();
@@ -27,7 +21,7 @@ bot.on("message", async message => {
 
 //Commande test. [&test] :
         if(command === "test"){          //Faut voir lequel des deux bordels pose problème.
-            message.channel.send(`Test = <@${member.user.id}> | Par <@${message.author.id}>.`);
+            message.channel.send(`Test = <@{member.user.id}> | Par <@${message.author.id}>.`);
         };
 
 //Catégorie "Jeux" :
@@ -324,8 +318,9 @@ bot.on("message", async message => {
 
         if(command === "invite"){
 		   var invite_embed = new Discord.RichEmbed()
-		   .setTitle("● Ne cliquez pas ici pour m'ajouter à votre serveur ! ●")
+		   .setTitle("Ne cliquez pas ici pour m'ajouter à votre serveur !...")
            .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${bot.user.id}` + "&scope=bot&permissions=2146958847")
+           .setDescription(`Par contre, si vous n'êtes pas satisfait(e) ou ne rembourse pas.`)
            .setFooter(`Demandé par ${message.author.username}#${message.author.discriminator}.`)
            .setTimestamp()
 		   message.channel.send(invite_embed);
@@ -334,7 +329,7 @@ bot.on("message", async message => {
 //Catégorie "Stickers" :
 
     //Commande pour afficher une reverse card dans le salon. [&reverse] :
-        if(message.content.startsWith(prefix + "reverse")) {
+        if(command === "reverse"){
             var reverse = new Discord.RichEmbed()  //C'est le nom de l'embed, et chaque embed doit en avoir un distinct.
             .setColor('RANDOM')
             .setImage("https://cdn.discordapp.com/attachments/389333591575756803/630076056824446976/yXEiYQ4.png") //Tu as aussi .setTumbnail(" ") pour mettre l'image en mode portrait, en petit.
