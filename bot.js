@@ -325,7 +325,7 @@ bot.on("message", async message => {
         if(command === "invite"){
 		   var invite_embed = new Discord.RichEmbed()
 		   .setTitle("● Ne cliquez pas ici pour m'ajouter à votre serveur ! ●")
-           .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${client.user.id}` + "&scope=bot&permissions=2146958847")
+           .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${bot.user.id}` + "&scope=bot&permissions=2146958847")
            .setFooter(`Demandé par ${message.author.username}#${message.author.discriminator}.`)
            .setTimestamp()
 		   message.channel.send(invite_embed);
