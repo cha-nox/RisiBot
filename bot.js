@@ -21,7 +21,7 @@ bot.on("message", async message => {
 
 //Commande test. [&test] :
         if(command === "test"){
-            message.channel.send(`Test = <@${message.guild.members.random()}> | Par <@${message.author.id}>.`);
+            message.channel.send(`test_pas_ouf.exe = ${message.guild.members.random()} | Par <@${message.author.id}>.`);
         };
 
 //Catégorie "Jeux" :
@@ -158,10 +158,13 @@ bot.on("message", async message => {
 
     //Commande de faux hacks. [&hack <user>] :
         if(message.content.startsWith(prefix + "hack")) {
+            if(!message.channel.guild)
+                return message.channel.send("Désolé, mais cette commande n'est pas disponible en messages privés.");
+
         
             let troll_hack_target = message.mentions.members.first();
             if(!troll_hack_target)
-            return message.reply("Si tu ne mentionne pas un utilisateur valide, je ne risque pas de faire grand chose.");
+                return message.reply("Si tu ne mentionne pas un utilisateur valide, je ne risque pas de faire grand chose.");
  
             var fake_hacks_list = [
                 "J'avais la flemme de hack ce type, en fait.",
@@ -201,7 +204,7 @@ bot.on("message", async message => {
 
     //Commande pour afficher des Chuck Norris facts. [&chucknorrisfact] :
         if(message.content.startsWith(prefix + "chucknorrisfact")) {
-           
+
             var facts_list = [
                 "Chuck Norris a déjà compté jusqu'à l'infini deux fois.",
                 "La Mort se demande souvent ce qu'il y a après Chuck Norris",
@@ -301,16 +304,14 @@ bot.on("message", async message => {
     //Commande pour laisser des suggestions pour le bot. (Le gens fait la commande avec sa suggestion, le bot me la renvoie en mp puis delete la commande.) [&suggest] :
         if(message.content.startsWith(prefix + "suggest")){
             let sayMessage = args.join(" ");
-
-            if(!message.channel.guild) return;
-                message.react('👍')
-                var suggestion = new Discord.RichEmbed()
-                .setAuthor(message.author.username + "#" + message.author.discriminator + " vous propose la suggestion suivante ! :")
-                .setThumbnail(message.author.avatarURL)
-                .setDescription(sayMessage)
-                .setColor('RANDOM')
-                bot.fetchUser("382500192907165717",false)
-                .then(user => {user.send(suggestion)
+            message.react('👍')
+            var suggestion = new Discord.RichEmbed()
+            .setAuthor(message.author.username + "#" + message.author.discriminator + " vous propose la suggestion suivante ! :")
+            .setThumbnail(message.author.avatarURL)
+            .setDescription(sayMessage)
+            .setColor('RANDOM')
+            bot.fetchUser("382500192907165717",false)
+            .then(user => {user.send(suggestion)
             });
 
             message.reply("Moi et mon créateur vous remercions de cette proposition. Nous l'examinerons dès que possible !");
