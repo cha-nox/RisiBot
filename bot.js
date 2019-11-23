@@ -21,7 +21,7 @@ bot.on("message", async message => {
 
 //Commande test. [&test] :
         if(command === "test"){
-            message.channel.send(`Test = <@${random.guild.member.id}> | Par <@${message.author.id}>.`);
+            message.channel.send(`Test = <@${message.guild.members.random()}> | Par <@${message.author.id}>.`);
         };
 
 //Catégorie "Jeux" :
