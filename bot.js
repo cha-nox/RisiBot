@@ -20,8 +20,8 @@ bot.on("message", async message => {
     const command = args.shift().toLowerCase();
 
 //Commande test. [&test] :
-        if(command === "test"){          //Faut voir lequel des deux bordels pose problème.
-            message.channel.send(`Test = <@${random.user.id}> | Par <@${message.author.id}>.`);
+        if(command === "test"){
+            message.channel.send(`Test = <@${guild.members.random()}> | Par <@${message.author.id}>.`);
         };
 
 //Catégorie "Jeux" :
