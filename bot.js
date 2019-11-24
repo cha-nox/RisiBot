@@ -21,8 +21,29 @@ bot.on("message", async message => {
 
 //Commande test. [&test] :
         if(command === "test"){
-            message.channel.send(`test_pas_ouf.exe = ${message.guild.members.random()} | Par <@${message.author.id}>.`);
+
+            var tuck1 = [
+                `${message.guild.members.random()}`,
+                `<@${message.author.id}>`
+            ];
+
+            var tuck2 = [
+                `1test_pas_ouf.exe = ${tuck1} | Par <@${message.author.id}>.`,
+                `2test_pas_ouf.exe = ${tuck1} | Par <@${message.author.id}>.`,
+                `3test_pas_ouf.exe = ${tuck1} | Par <@${message.author.id}>.`
+            ];
+            message.channel.send(tuck2);
         };
+
+//Évènements :
+        let event = [`👌`];
+        let fondintext = false;
+        for (var i in event){
+        if (message.content.toLocaleLowerCase().includes(event[i].toLocaleLowerCase()))
+        fondintext = true;
+        if(fondintext){
+        message.channel.send(`👆`);
+        }}
 
 //Catégorie "Jeux" :
 
@@ -98,10 +119,10 @@ bot.on("message", async message => {
             var verbe = verbes_liste[Math.floor(Math.random() * verbes_liste.length)];
             var complément = compléments_liste[Math.floor(Math.random() * compléments_liste.length)];
             var cadavres_exquis = new Discord.RichEmbed()
-            .setColor('RANDOM')
-            .setTitle(sujet + verbe + complément)
-            .setFooter(`Demandé par ${message.author.username}.`)
-            .setTimestamp()
+                .setColor('RANDOM')
+                .setTitle(sujet + verbe + complément)
+                .setFooter(`Demandé par ${message.author.username}.`)
+                .setTimestamp()
             message.channel.send(cadavres_exquis);
         };
 
@@ -119,10 +140,10 @@ bot.on("message", async message => {
 
             var either = either_list[Math.floor(Math.random() * either_list.length)];
             var either_embed = new Discord.RichEmbed()
-            .setColor('RANDOM')
-            .setTitle("**Est-ce que tu préfères...**")
-           .setDescription(either)
-            .setFooter("Répondre avec les réactions A ou B.")
+                .setColor('RANDOM')
+                .setTitle("**Est-ce que tu préfères...**")
+                .setDescription(either)
+                .setFooter("Répondre avec les réactions A ou B.")
             message.channel.send(either_embed)
             .then(function(message){
             message.react("🇦")
@@ -134,26 +155,41 @@ bot.on("message", async message => {
 
     //Fausses commandes NSFW. [&nsfw <truc pas très catho>] :
         if(command === "nsfw") {
-            message.reply("Si tu ne me dis pas ce que tu cherches, je ne peux pas savoir ce que je dois te mettre, si ce n'est ma ||main|| dans ton ||faciès||.\nMais sinon, voilà ce que tu peux chercher :\n● `&boobs`\n● `&dick`");
+            message.reply("Si tu ne me dis pas ce que tu cherches, je ne peux pas savoir ce que je dois te mettre, si ce n'est ma ||main|| dans ton ||faciès||.\nMais sinon, voilà ce que tu peux chercher :\n● `&boobs`\n● `&dick`\n● `&lolicon`");
         };
 
         if(command === "boobs"){
             var boobs_embed = new Discord.RichEmbed()
-            .setColor('RANDOM')
-            .setImage("https://media.discordapp.net/attachments/382605587034144778/637796109208518678/Blank_84137de241bbb5d823d4a467c98f0ca8.gif")
-            .setFooter(`Demandé par ${message.author.username}#${message.author.discriminator}.`)
-            .setTimestamp()
+                .setColor('RANDOM')
+                .setImage("https://media.discordapp.net/attachments/382605587034144778/637796109208518678/Blank_84137de241bbb5d823d4a467c98f0ca8.gif")
+                .setFooter(`Demandé par ${message.author.username}#${message.author.discriminator}.`)
+                .setTimestamp()
             message.channel.send(boobs_embed);
         };
 
         if(command === "dick"){
             var dick_embed = new Discord.RichEmbed()
-            .setColor('RANDOM')
-            .setDescription("Here is a dick pick !")
-            .setImage("https://media.discordapp.net/attachments/419199325684367360/645052037729615883/Dick_pick.jpg?width=268&height=473")
-            .setFooter(`Demandé par ${message.author.username}#${message.author.discriminator}.`)
-            .setTimestamp()
+                .setColor('RANDOM')
+                .setDescription("Here is a dick pick !")
+                .setImage("https://media.discordapp.net/attachments/419199325684367360/645052037729615883/Dick_pick.jpg?width=268&height=473")
+                .setFooter(`Demandé par ${message.author.username}#${message.author.discriminator}.`)
+                .setTimestamp()
             message.channel.send(dick_embed);
+        };
+
+        if(command === "lolicon"){
+            var loli_list = [
+                "https://media.discordapp.net/attachments/444241116082995225/648211507892584476/tenor.png",
+                "https://media.discordapp.net/attachments/444241116082995225/648213084829384715/932931506666fcbd6b414bb0e9fe7f9a.jpeg?width=455&height=474",
+                "https://media.discordapp.net/attachments/444241116082995225/648213111563747361/original.jpg?width=434&height=473"
+            ];
+            var loli_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setTitle("Il n'y a vraiment que des pédophiles pour utiliser ce genre de commande !")
+                .setImage(loli_list)
+                .setFooter(`Demandé par ${message.author.username}#${message.author.discriminator}.`)
+                .setTimestamp()
+            message.channel.send(loli_embed);
         };
 
     //Commande de faux hacks. [&hack <user>] :
@@ -161,7 +197,6 @@ bot.on("message", async message => {
             if(!message.channel.guild)
                 return message.channel.send("Désolé, mais cette commande n'est pas disponible en messages privés.");
 
-        
             let troll_hack_target = message.mentions.members.first();
             if(!troll_hack_target)
                 return message.reply("Si tu ne mentionne pas un utilisateur valide, je ne risque pas de faire grand chose.");
@@ -279,10 +314,13 @@ bot.on("message", async message => {
 
     //Commande pour faire dire quelque chose au bot. [&say] :
         if(message.content.startsWith(prefix + "say")) {
+            if(!message.channel.guild)
+                return message.channel.send("Désolé, mais cette commande n'est pas disponible en messages privés.");
+
             const sayMessage = args.join(" ");
             message.delete().catch(O_o=>{}); 
             message.channel.send(sayMessage);
-        }
+        };
 
 //Catégorie "Informations" :
 
@@ -290,10 +328,10 @@ bot.on("message", async message => {
         //Informations, Stickers, Jeux, Divers.
         if(message.content.startsWith(prefix + "help")) {
             var help = new Discord.RichEmbed()
-            .setColor('RANDOM')
-            .setTitle('Liste des commandes disponibles pour le RisiBot ! :')    
-            .setDescription("**__Informations :__**\n● `&help` _(Pour afficher la liste de toutes les commandes.)_\n● `&invite` _(Pour inviter le bot sur ton serveur.)_\n● `&ping` _(Pour connaitre le ping du bot et la latence de l'API Discord.)_\n● `&suggest <Insérez une suggestion ici.>` _(Des questions ? Des remarques ? Des idées de commandes, de Chuck Norris fact, et autres possibilité à proposer ? Soumettez-moi tout cela via cette commande, et je m'en occuperai moi-même dans les pls brefs délais !)_\n \n**__Stickers :__**\n● `&reverse` _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_\n● `&respect` _(Quand tu sens que le respect est mort et que tu veux l'exprimer en beauté.)_\n \n**__Jeux :__**\n● `&pile / &face` _(Pour jouer à Pile ou face.)_\n● `&either` _(Le jeu Either.io adapté sur mesure sur Discord.)_\n● `&cadavresexquis` _(Une phrase amusante se crée aléatoirement rien que pour vous.)_\n \n**__Divers :__**\n● `&chucknorrisfact` _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_\n● `&say <texte>` _(Pour faire dire des conneries au bot.)_\n● `&hack <user>` _(Pour récolter quelques dossiers comprométants sur Céléstin.)_\n● `&nsfw` _(Les connaisseurs sauront à quoi sert cette commande. Pour les autres, je ne vous explique pas, vous êtes probablement encore jeunes et innocents. Ou du moins plus pour très longtemps... :smirk:)_")
-            .setFooter("Cette liste n'est pas complète pour le moment. Elle s'agrandira a fur et à mesure du développement du bot.")
+                .setColor('RANDOM')
+                .setTitle('Liste des commandes disponibles pour le RisiBot ! :')    
+                .setDescription("**__Informations :__**\n● `&help` _(Pour afficher la liste de toutes les commandes.)_\n● `&invite` _(Pour inviter le bot sur ton serveur.)_\n● `&ping` _(Pour connaitre le ping du bot et la latence de l'API Discord.)_\n● `&suggest <Insérez une suggestion ici.>` _(Des questions ? Des remarques ? Des idées de commandes, de Chuck Norris fact, et autres possibilité à proposer ? Soumettez-moi tout cela via cette commande, et je m'en occuperai moi-même dans les pls brefs délais !)_\n \n**__Stickers :__**\n● `&reverse` _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_\n● `&respect` _(Quand tu sens que le respect est mort et que tu veux l'exprimer en beauté.)_\n \n**__Jeux :__**\n● `&pile / &face` _(Pour jouer à Pile ou face.)_\n● `&either` _(Le jeu Either.io adapté sur mesure sur Discord.)_\n● `&cadavresexquis` _(Une phrase amusante se crée aléatoirement rien que pour vous.)_\n \n**__Divers :__**\n● `&chucknorrisfact` _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_\n● `&say <texte>` _(Pour faire dire des conneries au bot.)_\n● `&hack <user>` _(Pour récolter quelques dossiers comprométants sur Céléstin.)_\n● `&nsfw` _(Les connaisseurs sauront à quoi sert cette commande. Pour les autres, je ne vous explique pas, vous êtes probablement encore jeunes et innocents. Ou du moins plus pour très longtemps... :smirk:)_")
+                .setFooter("Cette liste n'est pas complète pour le moment. Elle s'agrandira a fur et à mesure du développement du bot.")
             message.channel.send(help);
         };
     //Commande de ping. [&ping] :
@@ -306,10 +344,10 @@ bot.on("message", async message => {
             let sayMessage = args.join(" ");
             message.react('👍')
             var suggestion = new Discord.RichEmbed()
-            .setAuthor(message.author.username + "#" + message.author.discriminator + " vous propose la suggestion suivante ! :")
-            .setThumbnail(message.author.avatarURL)
-            .setDescription(sayMessage)
-            .setColor('RANDOM')
+                .setAuthor(message.author.username + "#" + message.author.discriminator + " vous propose la suggestion suivante ! :")
+                .setThumbnail(message.author.avatarURL)
+                .setDescription(sayMessage)
+                .setColor('RANDOM')
             bot.fetchUser("382500192907165717",false)
             .then(user => {user.send(suggestion)
             });
@@ -319,11 +357,11 @@ bot.on("message", async message => {
 
         if(command === "invite"){
 		   var invite_embed = new Discord.RichEmbed()
-		   .setTitle("Ne cliquez pas ici pour m'ajouter à votre serveur !...")
-           .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${bot.user.id}` + "&scope=bot&permissions=2146958847")
-           .setDescription(`Par contre, si vous n'êtes pas satisfait(e) ou ne rembourse pas.`)
-           .setFooter(`Demandé par ${message.author.username}#${message.author.discriminator}.`)
-           .setTimestamp()
+    		   .setTitle("Ne cliquez pas ici pour m'ajouter à votre serveur !...")
+               .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${bot.user.id}` + "&scope=bot&permissions=2146958847")
+               .setDescription(`Par contre, si vous n'êtes pas satisfait(e) ou ne rembourse pas.`)
+               .setFooter(`Demandé par ${message.author.username}#${message.author.discriminator}.`)
+               .setTimestamp()
 		   message.channel.send(invite_embed);
         };
 
@@ -332,8 +370,8 @@ bot.on("message", async message => {
     //Commande pour afficher une reverse card dans le salon. [&reverse] :
         if(command === "reverse"){
             var reverse = new Discord.RichEmbed()  //C'est le nom de l'embed, et chaque embed doit en avoir un distinct.
-            .setColor('RANDOM')
-            .setImage("https://cdn.discordapp.com/attachments/389333591575756803/630076056824446976/yXEiYQ4.png") //Tu as aussi .setTumbnail(" ") pour mettre l'image en mode portrait, en petit.
+                .setColor('RANDOM')
+                .setImage("https://cdn.discordapp.com/attachments/389333591575756803/630076056824446976/yXEiYQ4.png") //Tu as aussi .setTumbnail(" ") pour mettre l'image en mode portrait, en petit.
             message.channel.send(reverse);
         }; 
 
@@ -353,8 +391,8 @@ bot.on("message", async message => {
         
             var respect_images = respect_links[Math.floor(Math.random() * respect_links.length)];
             var respect_embed = new Discord.RichEmbed()
-            .setColor('RANDOM')
-            .setImage(respect_images)
+                .setColor('RANDOM')
+                .setImage(respect_images)
             message.channel.send(respect_embed);
         };
 });
