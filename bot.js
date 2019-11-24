@@ -27,7 +27,7 @@ bot.on("message", async message => {
                 `<@${message.author.id}>`
             ];
 
-            var tuck02 = tuck01[Math.floor(Math.random() * tuck02.length)];
+            var tuck02 = tuck01[Math.floor(Math.random() * tuck01.length)];
             var tuck03= [
                 `1test_pas_ouf.exe = ${tuck02} | Par <@${message.author.id}>.`,
                 `2test_pas_ouf.exe = ${tuck02} | Par <@${message.author.id}>.`,
@@ -38,14 +38,15 @@ bot.on("message", async message => {
         };
 
 //Évènements :
-        let event = [`👌`];
-        let fondintext = false;
-        for (var i in event){
-        if (message.content.toLocaleLowerCase().includes(event[i].toLocaleLowerCase()))
-        fondintext = true;
-        if(fondintext){
-        message.channel.send(`👆`);
-        }}
+        let eventr = ['👌'];
+        let fondintextr = false;
+        for (var i in eventr){
+        if (message.content.toLocaleLowerCase().includes(eventr[i].toLocaleLowerCase()))
+        fondintextr = true;
+        if(fondintextr){
+        message.channel.send('👆');
+        }
+        }
 
 //Catégorie "Jeux" :
 
