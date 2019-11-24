@@ -22,17 +22,19 @@ bot.on("message", async message => {
 //Commande test. [&test] :
         if(command === "test"){
 
-            var tuck1 = [
+            var tuck01 = [
                 `${message.guild.members.random()}`,
                 `<@${message.author.id}>`
             ];
 
-            var tuck2 = [
-                `1test_pas_ouf.exe = ${tuck1} | Par <@${message.author.id}>.`,
-                `2test_pas_ouf.exe = ${tuck1} | Par <@${message.author.id}>.`,
-                `3test_pas_ouf.exe = ${tuck1} | Par <@${message.author.id}>.`
+            var tuck02 = tuck01[Math.floor(Math.random() * tuck02.length)];
+            var tuck03= [
+                `1test_pas_ouf.exe = ${tuck02} | Par <@${message.author.id}>.`,
+                `2test_pas_ouf.exe = ${tuck02} | Par <@${message.author.id}>.`,
+                `3test_pas_ouf.exe = ${tuck02} | Par <@${message.author.id}>.`
             ];
-            message.channel.send(tuck2);
+            var tuck04 = tuck03[Math.floor(Math.random() * tuck03.length)];
+            message.channel.send(tuck04);
         };
 
 //Évènements :
@@ -183,10 +185,11 @@ bot.on("message", async message => {
                 "https://media.discordapp.net/attachments/444241116082995225/648213084829384715/932931506666fcbd6b414bb0e9fe7f9a.jpeg?width=455&height=474",
                 "https://media.discordapp.net/attachments/444241116082995225/648213111563747361/original.jpg?width=434&height=473"
             ];
+            var loli = loli_list[Math.floor(Math.random() * loli_list.length)];
             var loli_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
                 .setTitle("Il n'y a vraiment que des pédophiles pour utiliser ce genre de commande !")
-                .setImage(loli_list)
+                .setImage(loli)
                 .setFooter(`Demandé par ${message.author.username}#${message.author.discriminator}.`)
                 .setTimestamp()
             message.channel.send(loli_embed);
