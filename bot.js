@@ -38,15 +38,14 @@ bot.on("message", async message => {
         };
 
 //Évènements :
-        let eventr = ['👌'];
-        let fondintextr = false;
-        for (var i in eventr){
+        let event = ['👌'];
+        let fondintext = false;
+        for (var i in event){
         if (message.content.toLocaleLowerCase().includes(eventr[i].toLocaleLowerCase()))
         fondintextr = true;
-        if(fondintextr){
+        if(fondintext){
         message.channel.send('👆');
-        }
-        }
+        }}
 
 //Catégorie "Jeux" :
 
