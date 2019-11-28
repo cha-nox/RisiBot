@@ -28,7 +28,7 @@ bot.on("message", async message => {
             ];
 
             var tuck02 = tuck01[Math.floor(Math.random() * tuck01.length)];
-            var tuck03= [
+            var tuck03 = [
                 `1test_pas_ouf.exe = ${tuck02} | Par <@${message.author.id}>.`,
                 `2test_pas_ouf.exe = ${tuck02} | Par <@${message.author.id}>.`,
                 `3test_pas_ouf.exe = ${tuck02} | Par <@${message.author.id}>.`
@@ -209,8 +209,7 @@ bot.on("message", async message => {
                 "T'as vraiment cru que j'étais un bot de hacking, couillon ?!",
                 "Euh... t'aimerais pas savoir ce que j'ai trouvé sur cette personne, en fait...",
                 "Sainte mère de Dieu, il en a au moins pour 4 Go de lolicons sur son PC !",
-                `Je me suis aperçu que je me suis trompé de cible et que j'ai hacké la Maison Blanche...
-                Prépare-toi à voir les gros hélicoptères noirs arriver !`
+                `Je me suis aperçu que je me suis trompé de cible et que j'ai hacké la Maison Blanche...\nPrépare-toi à voir les gros hélicoptères noirs arriver !`
             ];
 
             var fake_hack = fake_hacks_list[Math.floor(Math.random() * fake_hacks_list.length)];
@@ -242,9 +241,14 @@ bot.on("message", async message => {
 
     //Commande pour afficher des Chuck Norris facts. [&chucknorrisfact] :
         if(message.content.startsWith(prefix + "chucknorrisfact")) {
+            var chuck_norris_facts_tuck01 = [
+                `${message.guild.members.random()}`,
+                `<@${message.author.id}>`
+            ];
 
+            var chuck_norris_facts_tuck02 = chuck_norris_facts_tuck01[Math.floor(Math.random() * chuck_norris_facts_tuck01.length)];
             var facts_list = [
-                "Chuck Norris a déjà compté jusqu'à l'infini deux fois.",
+                "Chuck Norris a déjà compté jusqu'à l'infini. Deux fois !",
                 "La Mort se demande souvent ce qu'il y a après Chuck Norris",
                 "Les extraterrestres ont peur de se faire capturer par Chuck Norris.",
                 "Les suisses ne sont pas neutres. Ils attendent juste de savoir de quel côté est Chuck Norris.",
@@ -285,7 +289,7 @@ bot.on("message", async message => {
                 "Chuck Norris peut abattre 11 cibles sur les 10 qu'il a devant lui... et avec seulement 9 balles.",
                 "Chuck Norris dort avec un oreiller sous son arme.",
                 "Chuck Norris peut éteindre un incendie avec un bidon d'essence.",
-                `Chuck Norris peut tuer les amis imaginaires de ${message.author.username}.`,
+                `Chuck Norris peut tuer les amis imaginaires de ${chuck_norris_facts_tuck02}.`,
                 "Chuck Norris sait parler le braille.",
                 "Chuck Norris peut entendre la langue des signes.",
                 "Chuck Norris était censé mourrir il y a 20 ans, mais la Mort n'a jamais eu le courage de lui dire.",
@@ -307,7 +311,7 @@ bot.on("message", async message => {
                 "La seule chose qui arrive a la cheville de Chuck Norris, c'est sa chaussette.",
                 "Les fantômes se racontent des histoires de Chuck Norris pour se faire peur.",
                 "Chuck Norris ne ment pas. C'est la vérité qui se trompe.",
-                `Chuck Norris détient la liste de tous les amateurs de Boku No Pico. D'ailleurs, il a remarqué que ${message.author.username} regarde très souvent.`,
+                `Chuck Norris détient la liste de tous les amateurs de Boku No Pico. D'ailleurs, il a remarqué que ${chuck_norris_facts_tuck02} regarde très souvent.`,
                 "Le meunier fabrique de la farine avec du blé. Chuck Norris, lui, peut fabriquer du blé avec de alla farine."
             ];
 
@@ -362,7 +366,7 @@ bot.on("message", async message => {
 		   var invite_embed = new Discord.RichEmbed()
     		   .setTitle("Ne cliquez pas ici pour m'ajouter à votre serveur !...")
                .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${bot.user.id}` + "&scope=bot&permissions=2146958847")
-               .setDescription(`Par contre, si vous n'êtes pas satisfait(e) ou ne rembourse pas.`)
+               .addField(`Par contre, si vous n'êtes pas satisfait(e) ou ne rembourse pas.`)
                .setFooter(`Demandé par ${message.author.username}#${message.author.discriminator}.`)
                .setTimestamp()
 		   message.channel.send(invite_embed);
