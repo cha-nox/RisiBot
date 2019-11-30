@@ -39,11 +39,11 @@ bot.on("message", async message => {
 
 //Évènements :
         let event = ['👌'];
-        let fondintext = false;
+        let fondintextr = false;
         for (var i in event){
         if (message.content.toLocaleLowerCase().includes(eventr[i].toLocaleLowerCase()))
         fondintextr = true;
-        if(fondintext){
+        if(fondintextr){
         message.channel.send('👆');
         }}
 
@@ -90,16 +90,17 @@ bot.on("message", async message => {
 
     //Commande pour créer des cadavres exquis. [&cadavresexquis] :
         if(message.content.startsWith(prefix + "cadavresexquis")) {
-            var sujets_liste = [
+            var sujets_liste = [ //7
                 "Une bande de soviétiques ",
                 "Emmanuel Macron ",
                 "Le vieux schnok du quartier ",
                 "Un manchot ",
-                `${message.author.username} `,
+                `<@${message.author.id}> `,
+                `${message.guild.members.random()} `,
                 "Un communiste "
             ];
 
-            var verbes_liste = [
+            var verbes_liste = [ //6
                 "bande ",
                 "complote ",
                 "marche ",
@@ -108,7 +109,7 @@ bot.on("message", async message => {
                 "se prend une sodomie à sec "
             ];
 
-            var compléments_liste = [
+            var compléments_liste = [ //6
                 "avec amour.",
                 "comme un con.",
                 "contre un arbre.",
@@ -160,7 +161,7 @@ bot.on("message", async message => {
             message.reply("Si tu ne me dis pas ce que tu cherches, je ne peux pas savoir ce que je dois te mettre, si ce n'est ma ||main|| dans ton ||faciès||.\nMais sinon, voilà ce que tu peux chercher :\n● `&boobs`\n● `&dick`\n● `&lolicon`");
         };
 
-        if(command === "boobs"){
+        if(command === "nsfw " + "boobs"){
             var boobs_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
                 .setImage("https://media.discordapp.net/attachments/382605587034144778/637796109208518678/Blank_84137de241bbb5d823d4a467c98f0ca8.gif")
@@ -169,7 +170,7 @@ bot.on("message", async message => {
             message.channel.send(boobs_embed);
         };
 
-        if(command === "dick"){
+        if(command === "nsfw " + "dick"){
             var dick_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
                 .setDescription("Here is a dick pick !")
@@ -179,7 +180,7 @@ bot.on("message", async message => {
             message.channel.send(dick_embed);
         };
 
-        if(command === "lolicon"){
+        if(command === "nsfw " + "lolicon"){
             var loli_list = [
                 "https://media.discordapp.net/attachments/444241116082995225/648211507892584476/tenor.png",
                 "https://media.discordapp.net/attachments/444241116082995225/648213084829384715/932931506666fcbd6b414bb0e9fe7f9a.jpeg?width=455&height=474",
@@ -366,7 +367,7 @@ bot.on("message", async message => {
 		   var invite_embed = new Discord.RichEmbed()
     		   .setTitle("Ne cliquez pas ici pour m'ajouter à votre serveur !...")
                .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${bot.user.id}` + "&scope=bot&permissions=2146958847")
-               .addField(`Par contre, si vous n'êtes pas satisfait(e) ou ne rembourse pas.`)
+               .setDescription(`Par contre, si vous n'êtes pas satisfait(e), on ne rembourse pas.`)
                .setFooter(`Demandé par ${message.author.username}#${message.author.discriminator}.`)
                .setTimestamp()
 		   message.channel.send(invite_embed);
