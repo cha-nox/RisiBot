@@ -41,7 +41,7 @@ bot.on("message", async message => {
         let event = ['👌'];
         let fondintextr = false;
         for (var i in event){
-        if (message.content.toLocaleLowerCase().includes(eventr[i].toLocaleLowerCase()))
+        if (message.content.toLocaleLowerCase().includes(event[i].toLocaleLowerCase()))
         fondintextr = true;
         if(fondintextr){
         message.channel.send('👆');
