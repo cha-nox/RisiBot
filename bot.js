@@ -39,13 +39,13 @@ bot.on("message", async message => {
 
 //Évènements :
         let event = ['👌'];
-        let fondintextr = false;
+        let fondintext = false;
         for (var i in event){
         if (message.content.toLocaleLowerCase().includes(event[i].toLocaleLowerCase()))
-        fondintextr = true;
-        if(fondintextr){
+        fondintext = true;
+        if(fondintext){
         message.channel.send('👆');
-        }}
+        }};
 
 //Catégorie "Jeux" :
 
@@ -161,7 +161,7 @@ bot.on("message", async message => {
             message.reply("Si tu ne me dis pas ce que tu cherches, je ne peux pas savoir ce que je dois te mettre, si ce n'est ma ||main|| dans ton ||faciès||.\nMais sinon, voilà ce que tu peux chercher :\n● `&boobs`\n● `&dick`\n● `&lolicon`");
         };
 
-        if(command === "nsfw " + "boobs"){
+        if(command === "boobs"){
             var boobs_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
                 .setImage("https://media.discordapp.net/attachments/382605587034144778/637796109208518678/Blank_84137de241bbb5d823d4a467c98f0ca8.gif")
@@ -170,7 +170,7 @@ bot.on("message", async message => {
             message.channel.send(boobs_embed);
         };
 
-        if(command === "nsfw " + "dick"){
+        if(command === "dick"){
             var dick_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
                 .setDescription("Here is a dick pick !")
@@ -180,7 +180,7 @@ bot.on("message", async message => {
             message.channel.send(dick_embed);
         };
 
-        if(command === "nsfw " + "lolicon"){
+        if(command === "lolicon"){
             var loli_list = [
                 "https://media.discordapp.net/attachments/444241116082995225/648211507892584476/tenor.png",
                 "https://media.discordapp.net/attachments/444241116082995225/648213084829384715/932931506666fcbd6b414bb0e9fe7f9a.jpeg?width=455&height=474",
