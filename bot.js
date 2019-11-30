@@ -38,7 +38,7 @@ bot.on("message", async message => {
         };
 
 //Évènements :
-        let event = ['👌'];
+        let event = ['muckard'];
         let fondintext = false;
         for (var i in event){
         if (message.content.toLocaleLowerCase().includes(event[i].toLocaleLowerCase()))
