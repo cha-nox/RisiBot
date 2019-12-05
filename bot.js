@@ -10,6 +10,21 @@ bot.on("ready", () => {
     bot.user.setActivity("faire chier Céléstin.");
 });
 
+//Boucle contenant les évènements :
+bot.on("message", async message =>{
+    //Pour réagir aux 👌 :
+        let event = ['👌'];
+            let fondintext = false;
+            for (var i in event){
+            if (message.content.toLowerCase().includes(event[i].toLowerCase()))
+            fondintext = true;
+            if(fondintext){
+            message.channel.send('👆');
+        }};
+
+
+});
+
 //Boucle contenant les commandes :
 bot.on("message", async message => {
 
@@ -37,16 +52,6 @@ bot.on("message", async message => {
             var tuck04 = tuck03[Math.floor(Math.random() * tuck03.length)];
             message.channel.send(tuck04);
         };
-
-//Évènements :
-        let event = ['👌'];
-        let fondintext = false;
-        for (var i in event){
-        if (message.content.toLowerCase().includes(event[i].toLowerCase()))
-        fondintext = true;
-        if(fondintext){
-        message.channel.send('👆');
-        }};
 
 //Catégorie "Jeux" :
 
