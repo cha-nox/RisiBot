@@ -21,7 +21,8 @@ bot.on("message", async message => {
 
 //Commande test. [&test] :
         if(command === "test"){
-
+            if(message.author.id !== "[INSéREZ MON ID ICI]")
+                return message.channel.send("NOPE MON FRèRE");
             var tuck01 = [
                 `${message.guild.members.random()}`,
                 `<@${message.author.id}>`
@@ -313,7 +314,8 @@ bot.on("message", async message => {
                 "Les fantômes se racontent des histoires de Chuck Norris pour se faire peur.",
                 "Chuck Norris ne ment pas. C'est la vérité qui se trompe.",
                 `Chuck Norris détient la liste de tous les amateurs de Boku No Pico. D'ailleurs, il a remarqué que ${chuck_norris_facts_tuck02} regarde très souvent.`,
-                "Le meunier fabrique de la farine avec du blé. Chuck Norris, lui, peut fabriquer du blé avec de alla farine."
+                "Le meunier fabrique de la farine avec du blé. Chuck Norris, lui, peut fabriquer du blé avec de la farine.",
+                "Chuck Norris sait où se trouve le papa de Stromaé."
             ];
 
             var chucknorrisfact = facts_list[Math.floor(Math.random() * facts_list.length)];
@@ -338,7 +340,7 @@ bot.on("message", async message => {
             var help = new Discord.RichEmbed()
                 .setColor('RANDOM')
                 .setTitle('Liste des commandes disponibles pour le RisiBot ! :')    
-                .setDescription("**__Informations :__**\n● `&help` _(Pour afficher la liste de toutes les commandes.)_\n● `&invite` _(Pour inviter le bot sur ton serveur.)_\n● `&ping` _(Pour connaitre le ping du bot et la latence de l'API Discord.)_\n● `&suggest <Insérez une suggestion ici.>` _(Des questions ? Des remarques ? Des idées de commandes, de Chuck Norris fact, et autres possibilité à proposer ? Soumettez-moi tout cela via cette commande, et je m'en occuperai moi-même dans les pls brefs délais !)_\n \n**__Stickers :__**\n● `&reverse` _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_\n● `&respect` _(Quand tu sens que le respect est mort et que tu veux l'exprimer en beauté.)_\n \n**__Jeux :__**\n● `&pile / &face` _(Pour jouer à Pile ou face.)_\n● `&either` _(Le jeu Either.io adapté sur mesure sur Discord.)_\n● `&cadavresexquis` _(Une phrase amusante se crée aléatoirement rien que pour vous.)_\n \n**__Divers :__**\n● `&chucknorrisfact` _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_\n● `&say <texte>` _(Pour faire dire des conneries au bot.)_\n● `&hack <user>` _(Pour récolter quelques dossiers comprométants sur Céléstin.)_\n● `&nsfw` _(Les connaisseurs sauront à quoi sert cette commande. Pour les autres, je ne vous explique pas, vous êtes probablement encore jeunes et innocents. Ou du moins plus pour très longtemps... :smirk:)_")
+                .setDescription("**__Informations :__**\n● `&help` _(Pour afficher la liste de toutes les commandes.)_\n● `&invite` _(Pour inviter le bot sur ton serveur.)_\n● `&ping` _(Pour connaitre le temps de réponse (ping) du bot et la latence de l'API Discord.)_\n● `&suggest <Insérez une suggestion ici.>` _(Des questions ? Des remarques ? Des idées de commandes, de Chuck Norris fact, et autres possibilité à proposer ? Soumettez-moi tout cela via cette commande, et je m'en occuperai moi-même dans les plus brefs délais !)_\n \n**__Stickers :__**\n● `&reverse` _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_\n● `&respect` _(Quand tu sens que le respect est mort et que tu veux l'exprimer en beauté.)_\n \n**__Jeux :__**\n● `&pile/&face` _(Pour jouer à Pile ou face.)_\n● `&either` _(Le jeu Either.io adapté sur mesure sur Discord.)_\n● `&cadavresexquis` _(Une phrase amusante se crée aléatoirement rien que pour vous.)_\n \n**__Divers :__**\n● `&chucknorrisfact` _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_\n● `&say <texte>` _(Pour faire dire des conneries au bot.)_\n● `&hack <user>` _(Pour récolter quelques dossiers comprométants sur Céléstin.)_\n● `&nsfw` _(Les connaisseurs sauront à quoi sert cette commande. Pour les autres, je ne vous explique pas, vous êtes probablement encore jeunes et innocents. Ou du moins plus pour très longtemps... :smirk:)_")
                 .setFooter("Cette liste n'est pas complète pour le moment. Elle s'agrandira a fur et à mesure du développement du bot.")
             message.channel.send(help);
         };
