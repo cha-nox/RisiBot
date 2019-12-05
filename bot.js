@@ -21,7 +21,7 @@ bot.on("message", async message => {
 
 //Commande test. [&test] :
         if(command === "test"){
-            if(message.author.id !== "382500192907165717")
+            if(message.author.id !== "382500192907165717" || "246395977450258432")
                 return message.channel.send("Désolée, mais cette commande n'est utilisable qu'à des fins expérimentales par les personnes qui contribuent à mon développement. Si vous souhaitez l'utiliser et apporter votre maigre soutien, veuillez ~~aller vous faire foutre~~ postuler via la commande `&suggest` ou vous adresser directement à ma créatrice.");
             var tuck01 = [
                 `${message.guild.members.random()}`,
