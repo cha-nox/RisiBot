@@ -13,16 +13,24 @@ bot.on("ready", () => {
 //Boucle contenant les évènements :
 bot.on("message", async message =>{
     //Pour réagir aux 👌 :
-        let event = ['👌'];
-            let fondintext = false;
-            for (var i in event){
-            if (message.content.toLowerCase().includes(event[i].toLowerCase()))
-            fondintext = true;
-            if(fondintext){
-            message.channel.send('👆');
+        let ok_hand_event = ['👌'];
+            let ok_hand_fondintext = false;
+            for (var i in ok_hand_event){
+                if (message.content.toLowerCase().includes(ok_hand_event[i].toLowerCase()))
+                ok_hand_fondintext = true;
+            if(ok_hand_fondintext){
+                message.channel.send('👆');
         }};
-
-
+        
+    //Pour mettre un sticker :larry: :
+        let larry_event = [":larry:"];
+            let larry_fondintext = false;
+            for (var a in larry_event){
+                if (message.content.toLowerCase().includes(ok_hand_event[a].toLowerCase()))
+                larry_fondintext = true;
+            if(larry_fondintext){
+                message.channel.send("https://cdn.discordapp.com/emojis/540223339411537932.png");
+        }};
 });
 
 //Boucle contenant les commandes :
@@ -36,7 +44,7 @@ bot.on("message", async message => {
 
 //Commande test. [&test] :
         if(command === "test"){
-            if(message.author.id !== "382500192907165717" || "246395977450258432")
+            if(message.author.id !== "382500192907165717")
                 return message.channel.send("Désolée, mais cette commande n'est utilisable qu'à des fins expérimentales par les personnes qui contribuent à mon développement. Si vous souhaitez l'utiliser et apporter votre maigre soutien, veuillez ~~aller vous faire foutre~~ postuler via la commande `&suggest` ou vous adresser directement à ma créatrice.");
             var tuck01 = [
                 `${message.guild.members.random()}`,
@@ -155,8 +163,8 @@ bot.on("message", async message => {
                 .setFooter("Répondre avec les réactions A ou B.")
             message.channel.send(either_embed)
             .then(function(message){
-            message.react("🇦")
-            message.react("🅱")
+            await message.react("🇦")
+            await message.react("🅱")
             })
         };
 
@@ -363,6 +371,7 @@ bot.on("message", async message => {
                 .setThumbnail(message.author.avatarURL)
                 .setDescription(sayMessage)
                 .setColor('RANDOM')
+                .setTimestamp()
             bot.fetchUser("382500192907165717",false)
             .then(user => {user.send(suggestion)
             });
