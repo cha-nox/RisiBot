@@ -163,8 +163,8 @@ bot.on("message", async message => {
                 .setFooter("Répondre avec les réactions A ou B.")
             message.channel.send(either_embed)
             .then(function(message){
-            await message.react("🇦")
-            await message.react("🅱")
+            message.react("🇦")
+            message.react("🅱")
             })
         };
 
