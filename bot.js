@@ -2,7 +2,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const token = process.env.token;
-
 bot.login(token);
 
 //Boucle pour le statut Discord du bot :
@@ -23,10 +22,10 @@ bot.on("message", async message =>{
         }};
         
     //Pour mettre un sticker :larry: :
-        let larry_event = [":larry:"];
+        let larry_event = [':larry:'];
             let larry_fondintext = false;
-            for (var a in larry_event){
-                if (message.content.toLowerCase().includes(ok_hand_event[a].toLowerCase()))
+            for (var i in larry_event){
+                if (message.content.toLowerCase().includes(ok_hand_event[i].toLowerCase()))
                 larry_fondintext = true;
             if(larry_fondintext){
                 message.channel.send("https://cdn.discordapp.com/emojis/540223339411537932.png");
@@ -44,7 +43,7 @@ bot.on("message", async message => {
 
 //Commande test. [&test] :
         if(command === "test"){
-            if(message.author.id !== "382500192907165717")
+            if(message.author.id !== "382500192907165717" , "246395977450258432")
                 return message.channel.send("Désolée, mais cette commande n'est utilisable qu'à des fins expérimentales par les personnes qui contribuent à mon développement. Si vous souhaitez l'utiliser et apporter votre maigre soutien, veuillez ~~aller vous faire foutre~~ postuler via la commande `&suggest` ou vous adresser directement à ma créatrice.");
             var tuck01 = [
                 `${message.guild.members.random()}`,
@@ -229,27 +228,27 @@ bot.on("message", async message => {
 
             var fake_hack = fake_hacks_list[Math.floor(Math.random() * fake_hacks_list.length)];
             const troll_hack = await message.channel.send(`_Connerie en cours. Veuillez patienter._
-            → **---------- __0%__**`);
+            **→ ---------- __0%__**`);
             troll_hack.edit(`_Connerie en cours. Veuillez patienter._
-            → **●--------- __10%__**`);
+            **→ ●--------- __10%__**`);
             troll_hack.edit(`_Connerie en cours. Veuillez patienter._
-            → **●●-------- __20%__**`);
+            **→ ●●-------- __20%__**`);
             troll_hack.edit(`_Connerie en cours. Veuillez patienter._
-            → **●●●------- __30%__**`);
+            **→ ●●●------- __30%__**`);
             troll_hack.edit(`_Connerie en cours. Veuillez patienter._
-            → **●●●●------ __40%__**`);
+            **→ ●●●●------ __40%__**`);
             troll_hack.edit(`_Connerie en cours. Veuillez patienter._
-            → **●●●●●----- __50%__**`);
+            **→ ●●●●●----- __50%__**`);
             troll_hack.edit(`_Connerie en cours. Veuillez patienter._
-            → **●●●●●●---- __60%__**`);
+            **→ ●●●●●●---- __60%__**`);
             troll_hack.edit(`_Connerie en cours. Veuillez patienter._
-            → **●●●●●●●--- __69%__**`);
+            **→ ●●●●●●●--- __69%__**`);
             troll_hack.edit(`_Connerie en cours. Veuillez patienter._
-            → **●●●●●●●●-- __80%__**`);
+            **→ ●●●●●●●●-- __80%__**`);
             troll_hack.edit(`_Connerie en cours. Veuillez patienter._
-            → **●●●●●●●●●- __90%__**`);
+            **→ ●●●●●●●●●- __90%__**`);
             troll_hack.edit(`_Connerie en cours. Veuillez patienter._
-            → **●●●●●●●●●● __100%__**`);
+            **→ ●●●●●●●●●● __100%__**`);
             troll_hack.edit(`_Voyons voir ce que ça donne..._`);
             troll_hack.edit(fake_hack);
         }
@@ -264,7 +263,7 @@ bot.on("message", async message => {
             var chuck_norris_facts_tuck02 = chuck_norris_facts_tuck01[Math.floor(Math.random() * chuck_norris_facts_tuck01.length)];
             var facts_list = [
                 "Chuck Norris a déjà compté jusqu'à l'infini. Deux fois !",
-                "La Mort se demande souvent ce qu'il y a après Chuck Norris",
+                "Le Père Noël croît en Chuck Norris.",
                 "Les extraterrestres ont peur de se faire capturer par Chuck Norris.",
                 "Les suisses ne sont pas neutres. Ils attendent juste de savoir de quel côté est Chuck Norris.",
                 "Quand il était petit, Chuck Norris n'envoyait pas de lettre au Père Noël. Il lui envoyait des ultimatums.",
@@ -290,7 +289,7 @@ bot.on("message", async message => {
                 "Chuck Norris peut tirer une balle de fusil à mains nues.",
                 "Chuck Norris envoie ses e-mails par la Poste.",
                 "Chuck Norris regarde la télé avec sa radio.",
-                "Chuck Norris a inventé le lance-flammes en pissant sur un briquet.",
+                "Chuck Norris a inventé le lance-flammes en urinant sur la flamme d'un briquet.",
                 "Chuck Norris peut supprimer la corbeille.",
                 "La mort se demande souvent ce qu'il y a après Chuck Norris.",
                 "Quand Chuck Norris entre dans une pièce sombre, il n'allume pas la lumière. Il éteint l'obscurité.",
@@ -314,7 +313,7 @@ bot.on("message", async message => {
                 "Chuck Norris peut faire une roue avant avec un monocycle.",
                 "La peur des araignées s'appelle l'arachnophobie. La peur des espaces publics s'appelle l'agoraphobie. La peur de Chuck Norris s'appelle la logique.",
                 "Chuck Norris mange sa soupe avec une fourchette.",
-                "Un jour, Chuck Norris est allé sur Mars. Depuis, il n'y a plus aucune trace de forme de vie sur la planète rouge.",
+                "Un jour, Chuck Norris est allé sur Mars. Depuis, il n'y a plus aucune trace de formes de vie sur la planète rouge.",
                 "Voldemort a peur de prononcer le nom de Chu... de *vous savez qui*.",
                 "Chuck Norris est le père de Dark Vador.",
                 "La gravité, c'est ce qui fait que la Terre tient sous Chuck Norris.",
@@ -322,13 +321,14 @@ bot.on("message", async message => {
                 "Chuck Norris joue à Pokemon Go avec un téléphone fixe.",
                 "Chuck Norris joue à la roulette russe avec un chargeur plein. Et il gagne à chaque fois.",
                 "Un jour, Chuck Norris à eu un 0/20 à un contrôle de Latin. Depuis, c'est une langue morte.",
-                "Il n'y a pas de théorie de l'évolution, il y a juste une liste d'espèces que Chuck Norris autorise à survivre.",
+                "Il n'y a pas de théorie de l'évolution. Il y a juste une liste d'espèces que Chuck Norris autorise à survivre.",
                 "La seule chose qui arrive a la cheville de Chuck Norris, c'est sa chaussette.",
                 "Les fantômes se racontent des histoires de Chuck Norris pour se faire peur.",
                 "Chuck Norris ne ment pas. C'est la vérité qui se trompe.",
                 `Chuck Norris détient la liste de tous les amateurs de Boku No Pico. D'ailleurs, il a remarqué que ${chuck_norris_facts_tuck02} regarde très souvent.`,
                 "Le meunier fabrique de la farine avec du blé. Chuck Norris, lui, peut fabriquer du blé avec de la farine.",
-                "Chuck Norris sait où se trouve le papa de Stromaé."
+                "Chuck Norris sait où se trouve le papa de Stromaé.",
+                "Chuck Norris ne porte pas de montre. Il décide de l'heure qu'il est."
             ];
 
             var chucknorrisfact = facts_list[Math.floor(Math.random() * facts_list.length)];
@@ -400,7 +400,7 @@ bot.on("message", async message => {
         }; 
 
     //Commande pour afficher un meme sur le manque de respect. [&respect] :
-        if(message.content.startsWith(prefix + "respect")) {
+        if(command === "respect") {
             var respect_links = [
                 "https://cdn.discordapp.com/attachments/576854376451407873/639983272528707588/telechargement.jpg",
                 "https://cdn.discordapp.com/attachments/576854376451407873/639964529031118879/Faut_retrouver_le_respect.jpg",
