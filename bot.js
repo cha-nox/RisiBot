@@ -43,8 +43,7 @@ bot.on("message", async message => {
 
 //Commande test. [&test] :
         if(command === "test"){
-           
-	if(message.author.id !== "382500192907165717" && message.author.id !== "246395977450258432")
+            if(message.author.id !== "382500192907165717" && message.author.id !== "246395977450258432") //ID de Lucas : "246395977450258432"
                 return message.channel.send("Désolée, mais cette commande n'est utilisable qu'à des fins expérimentales par les personnes qui contribuent à mon développement. Si vous souhaitez l'utiliser et apporter votre maigre soutien, veuillez ~~aller vous faire foutre~~ postuler via la commande `&suggest` ou vous adresser directement à ma créatrice.");
             var tuck01 = [
                 `${message.guild.members.random()}`,
@@ -71,15 +70,15 @@ bot.on("message", async message => {
                 randnum = Math.floor(Math.random() * (max - min +1) +min); //On définit le randnum : en gros, chaque random est numéroté.
             }
         if(message.content.startsWith(prefix + "pile")) {
-            random();  //On initialise le random.        
+            random(); //On initialise le random.        
                 if (randnum == 1){ //Chaque nouveau random est numéroté comme ça.
                     message.reply("Et tu tombes sur pile, c'est gagné !"); //Le message que tu envoies. (Réponse du bot, quoi.)
                 }
-                if (randnum == 2){   //Idem
+                if (randnum == 2){ //Idem
                     message.reply("Tu es tombé sur face, pas de CHANCE.");
                 }
-                if (randnum == 3){   //J'avais collé ça dans ma version sur calculatrice... xD
-                    message.reply("Euh, la pièce est restée sur la tranche...");
+                if (randnum == 3){
+                    message.reply("Euh, la pièce est restée sur la tranche..."); //J'avais collé ça dans ma version sur calculatrice... xD
                 }
         }} 
 
@@ -163,8 +162,10 @@ bot.on("message", async message => {
                 .setFooter("Répondre avec les réactions A ou B.")
             message.channel.send(either_embed)
             .then(function(message){
-            message.react("🇦")
-            message.react("🅱")
+                message.react("🇦")
+            })
+            .then(function(message){
+                message.react("🅱")
             })
         };
 
@@ -394,7 +395,7 @@ bot.on("message", async message => {
 
     //Commande pour afficher une reverse card dans le salon. [&reverse] :
         if(command === "reverse"){
-            var reverse = new Discord.RichEmbed()  //C'est le nom de l'embed, et chaque embed doit en avoir un distinct.
+            var reverse = new Discord.RichEmbed() //C'est le nom de l'embed, et chaque embed doit en avoir un distinct.
                 .setColor('RANDOM')
                 .setImage("https://cdn.discordapp.com/attachments/389333591575756803/630076056824446976/yXEiYQ4.png") //Tu as aussi .setTumbnail(" ") pour mettre l'image en mode portrait, en petit.
             message.channel.send(reverse);
