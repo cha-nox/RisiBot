@@ -46,7 +46,7 @@ bot.on("message", async message => {
             const aktivität = args.join(" ");
             if(message.author.id !== ownerID && message.author.id !== contributorID_01) return message.channel.send("Désolée, mais cette commande n'est utilisable qu'à des fins expérimentales par les personnes qui contribuent à mon développement. Si vous souhaitez l'utiliser et apporter votre maigre soutien, veuillez ~~aller vous faire foutre~~ postuler via la commande `&suggest` ou vous adresser directement à ma créatrice.");
             if(!aktivität) return message.reply("AKTIVITÄT ! SCHNELL !");
-            client.user.setActivity(aktivität);
+            bot.user.setActivity(aktivität);
         };
 
 //Commande test. [&test] :
