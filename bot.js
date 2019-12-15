@@ -31,17 +31,18 @@ bot.on("message", async message =>{
                 message.channel.send("https://cdn.discordapp.com/emojis/540223339411537932.png");
         }};
 });
-
-//Boucle contenant les commandes :
+//Boucle spéciale pour les commandes réservées et les commandes expérimentales :
 bot.on("message", async message => {
     const ownerID = "382500192907165717"; //Nyusuka
     const contributorID_01 = "246395977450258432"; //Arkaxii
-    const prefix = '&';
-    if(message.content.indexOf(prefix) !== 0) return;
+    const prefix = 'A&';
+        if(message.content.indexOf(prefix) !== 0) return;
     const args = message.content.slice(prefix.length).trim().split(/ +/g); 
     const command = args.shift().toLowerCase();
 
-//Commande pour changer le statut du bot [&aktivität] :
+//Commandes réservées à Nyusuka et aux contributeurs du développement du bot :
+
+    //Commande pour changer le statut du bot. [&aktivität] :
         if(command === "aktivität"){
             const aktivität = args.join(" ");
             if(message.author.id !== ownerID && message.author.id !== contributorID_01) return message.channel.send("Désolée, mais cette commande n'est utilisable qu'à des fins expérimentales par les personnes qui contribuent à mon développement. Si vous souhaitez l'utiliser et apporter votre maigre soutien, veuillez ~~aller vous faire foutre~~ postuler via la commande `&suggest` ou vous adresser directement à ma créatrice.");
@@ -49,9 +50,11 @@ bot.on("message", async message => {
             bot.user.setActivity(aktivität);
         };
 
-//Commande test. [&test] :
-        if(command === "test"){
-            if(message.author.id !== "382500192907165717" && message.author.id !== "246395977450258432") //ID de Lucas : "246395977450258432" | Mon ID : "382500192907165717"
+//Commandes expérimentales :
+
+    //Commande fourre-tout pour tests. [&test01] :
+        if(command === "test01"){
+            if(message.author.id !== "382500192907165717" && message.author.id !== "246395977450258432")
                 return message.channel.send("Désolée, mais cette commande n'est utilisable qu'à des fins expérimentales par les personnes qui contribuent à mon développement. Si vous souhaitez l'utiliser et apporter votre maigre soutien, veuillez ~~aller vous faire foutre~~ postuler via la commande `&suggest` ou vous adresser directement à ma créatrice.");
             var tuck01 = [
                 `${message.guild.members.random()}`,
@@ -68,9 +71,18 @@ bot.on("message", async message => {
             message.channel.send(tuck04);
         };
 
+});
+
+//Boucle contenant les commandes :
+bot.on("message", async message => {
+    const prefix = '&';
+        if(message.content.indexOf(prefix) !== 0) return;
+    const args = message.content.slice(prefix.length).trim().split(/ +/g); 
+    const command = args.shift().toLowerCase();
+
 //Catégorie "Jeux" :
 
-    //Commande pour faire un pile ou face [&pile/&face]:
+    //Commande pour faire un pile ou face. [&pile/&face]:
         {
             function random(min, max){
                 min = Math.ceil(1);  //C'est le minimum qu'il peut choisir.
