@@ -4,11 +4,6 @@ const bot = new Discord.Client();
 const token = process.env.token;
 bot.login(token);
 
-/*Boucle pour le statut Discord du bot :
-bot.on("ready", () => {
-    bot.user.setActivity("faire chier Céléstin.");
-});*/
-
 //Boucle contenant les évènements :
 bot.on("message", async message =>{
     //Pour réagir aux 👌 :
@@ -31,11 +26,12 @@ bot.on("message", async message =>{
                 message.channel.send("https://cdn.discordapp.com/emojis/540223339411537932.png");
         }};
 });
-//Boucle spéciale pour les commandes réservées et les commandes expérimentales :
+
+//Boucle contenant les commandes :
 bot.on("message", async message => {
     const ownerID = "382500192907165717"; //Nyusuka
     const contributorID_01 = "246395977450258432"; //Arkaxii
-    const prefix = 'A&';
+    const prefix = '&';
         if(message.content.indexOf(prefix) !== 0) return;
     const args = message.content.slice(prefix.length).trim().split(/ +/g); 
     const command = args.shift().toLowerCase();
@@ -71,14 +67,6 @@ bot.on("message", async message => {
             message.channel.send(tuck04);
         };
 
-});
-
-//Boucle contenant les commandes :
-bot.on("message", async message => {
-    const prefix = '&';
-        if(message.content.indexOf(prefix) !== 0) return;
-    const args = message.content.slice(prefix.length).trim().split(/ +/g); 
-    const command = args.shift().toLowerCase();
 
 //Catégorie "Jeux" :
 
