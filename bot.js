@@ -29,8 +29,11 @@ bot.on("message", async message =>{
 
 //Boucle contenant les commandes :
 bot.on("message", async message => {
-    const ownerID = "382500192907165717"; //Nyusuka
-    const contributorID_01 = "246395977450258432"; //Arkaxii
+    //Constantes pour l'ID de la propriétaire et des contributeurs du bot. :
+    const ownerID = "382500192907165717"; //Nyusuka ; propriétaire du bot.
+    const contributorID_01 = "246395977450258432"; //Arkaxii ; testeur et maître du codage.
+
+    //Autres constantes pour le bon focntionnement des commandes. :
     const prefix = '&';
         if(message.content.indexOf(prefix) !== 0) return;
     const args = message.content.slice(prefix.length).trim().split(/ +/g); 
@@ -45,6 +48,7 @@ bot.on("message", async message => {
             if(!aktivität) return message.reply("AKTIVITÄT ! SCHNELL !");
             bot.user.setActivity(aktivität);
             message.delete().catch(O_o=>{});
+            console.log(`Aktivität set as "Joue à ${aktivität}"`);
         };
 
 //Commandes expérimentales :
@@ -68,7 +72,6 @@ bot.on("message", async message => {
             message.channel.send(tuck04);
         };
 
-
 //Catégorie "Jeux" :
 
     //Commande pour faire un pile ou face. [&pile/&face]:
@@ -89,14 +92,14 @@ bot.on("message", async message => {
                 if (randnum == 3){
                     message.reply("Euh, la pièce est restée sur la tranche..."); //J'avais collé ça dans ma version sur calculatrice... xD
                 }
-        }} 
+        }};
 
         {
             function random(min, max){
                 min = Math.ceil(1);
                 max = Math.floor(3);
                 randnum = Math.floor(Math.random() * (max - min +1) +min);
-                }
+            }
         if(message.content.startsWith(prefix + "face")) {
             random(); 
                 if (randnum == 1){
@@ -107,8 +110,8 @@ bot.on("message", async message => {
                 }
                 if (randnum == 3){
                     message.reply("Euh, la pièce est restée sur la tranche...");
-            }
-        }}
+                }
+        }};
 
     //Commande pour créer des cadavres exquis. [&cadavresexquis] :
         if(message.content.startsWith(prefix + "cadavresexquis")) {
@@ -153,7 +156,7 @@ bot.on("message", async message => {
 
     //Commande pour faire un Either.io sur Discord. [&either] :
         if(message.content.startsWith(prefix + "either")) {
-            var either_list = [
+            var either_list = [ //`:regional_indicator_a: ...XXXXX ?\n**OU**\n:b: ...XXXXX ?`,
                 `:regional_indicator_a: ...être chauve ?\n**OU**\n:b: ...être manchot ?`,
                 `:regional_indicator_a: ...le RisiBot ?\n**OU**\n:b: ...Kagura ?`,
                 `:regional_indicator_a: ...Staline ?\n**OU**\n:b: ...Hitler ?`,
@@ -170,11 +173,11 @@ bot.on("message", async message => {
                 .setDescription(either)
                 .setFooter("Répondre avec les réactions A ou B.")
             message.channel.send(either_embed)
-            .then(function(message){
+            .then(message => {
                 message.react("🇦")
-            })
-            .then(function(message){
+            .then(message => {
                 message.react("🅱")
+            })
             })
         };
 
@@ -262,7 +265,7 @@ bot.on("message", async message => {
             **→ ●●●●●●●●●● __100%__**`);
             troll_hack.edit(`_Voyons voir ce que ça donne..._`);
             troll_hack.edit(fake_hack);
-        }
+        };
 
     //Commande pour afficher des Chuck Norris facts. [&chucknorrisfact] :
         if(message.content.startsWith(prefix + "chucknorrisfact")) {
@@ -339,12 +342,13 @@ bot.on("message", async message => {
                 `Chuck Norris détient la liste de tous les amateurs de Boku No Pico. D'ailleurs, il a remarqué que ${chuck_norris_facts_tuck02} regarde très souvent.`,
                 "Le meunier fabrique de la farine avec du blé. Chuck Norris, lui, peut fabriquer du blé avec de la farine.",
                 "Chuck Norris sait où se trouve le papa de Stromaé.",
-                "Chuck Norris ne porte pas de montre. Il décide de l'heure qu'il est."
+                "Chuck Norris ne porte pas de montre. Il décide de l'heure qu'il est.",
+                "Un jour, Chuck Norris a commandé un steak au restarant. Et le steak a obéï."
             ];
 
             var chucknorrisfact = facts_list[Math.floor(Math.random() * facts_list.length)];
             message.channel.send(chucknorrisfact);
-        }
+        };
 
     //Commande pour faire dire quelque chose au bot. [&say] :
         if(message.content.startsWith(prefix + "say")) {
@@ -354,6 +358,12 @@ bot.on("message", async message => {
             const sayMessage = args.join(" ");
             message.delete().catch(O_o=>{});
             message.channel.send(sayMessage);
+        };
+
+    //Commande qui sert à rien. [&nawak] :
+        if(command === "nawak"){
+            message.delete().catch(O_o=>{});
+            console.log(message.author.username + "#" + message.author.discriminator + " vient d'utiliser la commande qui ne sert à rien...");
         };
 
 //Catégorie "Informations" :
@@ -371,7 +381,7 @@ bot.on("message", async message => {
     //Commande de ping. [&ping] :
         if(message.content.startsWith(prefix + "ping")) {
             message.channel.send(`Ping de \` ${new Date().getTime() - message.createdTimestamp} \` ms. \nLatence de l'API de \` ${Math.round(bot.ping)} \` ms.`);
-        }
+        };
 
     //Commande pour laisser des suggestions pour le bot. (Le gens fait la commande avec sa suggestion, le bot me la renvoie en mp puis delete la commande.) [&suggest] :
         if(message.content.startsWith(prefix + "suggest")){
