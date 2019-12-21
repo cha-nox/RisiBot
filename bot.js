@@ -48,7 +48,7 @@ bot.on("message", async message => {
             if(!aktivität) return message.reply("AKTIVITÄT ! SCHNELL !");
             bot.user.setActivity(aktivität);
             message.delete().catch(O_o=>{});
-            console.log(`Aktivität set as "Joue à ${aktivität}"`);
+            console.log(`Le statut du bot à été changé pour "Joue à ${aktivität}" par ${message.author.username}#${message.author.discriminator} (ID : ${message.author.id}).`);
         };
 
 //Commandes expérimentales :
@@ -363,7 +363,7 @@ bot.on("message", async message => {
     //Commande qui sert à rien. [&nawak] :
         if(command === "nawak"){
             message.delete().catch(O_o=>{});
-            console.log(message.author.username + "#" + message.author.discriminator + " vient d'utiliser la commande qui ne sert à rien...");
+            console.log(`${message.author.username}#${message.author.discriminator} (ID : ${message.author.id}) vient d'utiliser la commande qui ne sert à rien...`);
         };
 
 //Catégorie "Informations" :
