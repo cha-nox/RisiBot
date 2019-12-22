@@ -1,4 +1,4 @@
-/Pas touche aux premières constantes. Sinon, ça va moins bien marcher.
+//Pas touche aux premières constantes. Sinon, ça va moins bien marcher.
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const token = process.env.token;
