@@ -173,11 +173,12 @@ bot.on("message", async message => {
                 .setDescription(either)
                 .setFooter("Répondre avec les réactions A ou B.")
             message.channel.send(either_embed)
-            .then(function(message){
+            .then(message => {
                 message.react("🇦")
+            .then( r => {
                 message.react("🅱️")
-            }).catch(function(){    
-            });
+            })
+            })
         };
 
 //Catégorie "Divers" :
@@ -378,6 +379,7 @@ bot.on("message", async message => {
                 .setFooter("Cette liste n'est pas complète pour le moment. Elle s'agrandira a fur et à mesure du développement du bot.")
             message.channel.send(help);
         };
+
     //Commande de ping. [&ping] :
         if(message.content.startsWith(prefix + "ping")) {
             message.channel.send(`Ping de \` ${new Date().getTime() - message.createdTimestamp} \` ms. \nLatence de l'API de \` ${Math.round(bot.ping)} \` ms.`);
