@@ -56,7 +56,7 @@ bot.on("message", async message => {
                 .setThumbnail(message.author.avatarURL)
                 .setDescription(`Le statut du bot à été changé pour "**Joue à** ${aktivität}" par ${message.author.username}#${message.author.discriminator} (ID : ${message.author.id}).`)
                 .setTimestamp()
-            aktivität_log_display.send(aktivität_log);
+            return aktivität_log_display.send(aktivität_log);
         };
 
 //Commandes expérimentales :
