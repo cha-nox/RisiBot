@@ -61,7 +61,6 @@ bot.on("message", async message => {
                 `${message.guild.members.random()}`,
                 `<@${message.author.id}>`
             ];
-
             var tuck02 = tuck01[Math.floor(Math.random() * tuck01.length)];
             var tuck03 = [
                 `1test_pas_ouf.exe = ${tuck02} | Par <@${message.author.id}>.`,
@@ -70,6 +69,42 @@ bot.on("message", async message => {
             ];
             var tuck04 = tuck03[Math.floor(Math.random() * tuck03.length)];
             message.channel.send(tuck04);
+        };
+
+//Catégorie "Informations" :
+
+    //Test pour essayer une réaction au hasard. [&test02] :
+        if(command = "test02"){
+            var random_emoji_react_list = [
+                "🤷‍♂️",
+                "👀",
+                "🎱",
+                "😉",
+                "🤤",
+                "😏",
+                "🍕",
+                "☢",
+                "🔞",
+                "🚾"
+            ];
+            var random_emoji_react = random_emoji_react_list[Math.floor(Math.random() * random_emoji_react_list)];
+            const general_help = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setThumbnail("https://media.discordapp.net/attachments/576853882811187219/658356977885511700/pdp_pour_bot.png")
+                .setDescription(`Test`)
+            message.channel.send(general_help)
+            .then(message => {
+                message.react("💡")
+            .then( r => {
+                message.react("🖼")
+            .then( r =>{
+                message.react("🎮")
+            .then( r =>{
+                message.react(random_emoji_react)
+            })
+            })
+            })
+            })
         };
 
 //Catégorie "Jeux" :
@@ -165,7 +200,6 @@ bot.on("message", async message => {
                 `:regional_indicator_a: ...ne jamais pouvoir avoir de rapports sexuels ?\n**OU**\n:b: ...ne plus jamais pouvoir jouer aux jeux vidéos ?`,
                 `:regional_indicator_a: ...être très sociable mais toujours être préoccupé par les problèmes des autres ?\n**OU**\n:b: ...être antisocial et ne jamais te soucier des autres ?`
             ];
-
             var either = either_list[Math.floor(Math.random() * either_list.length)];
             var either_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
