@@ -20,7 +20,7 @@ bot.on("message", async message =>{
         let larry_event = [':larry:'];
             let larry_fondintext = false;
             for (var i in larry_event){
-                if (message.content.toLowerCase().includes(ok_hand_event[i].toLowerCase()))
+                if (message.content.toLowerCase().includes(larry_event[i].toLowerCase()))
                 larry_fondintext = true;
             if(larry_fondintext){
                 message.channel.send("https://cdn.discordapp.com/emojis/540223339411537932.png");
