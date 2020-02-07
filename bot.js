@@ -9,22 +9,54 @@ bot.on("message", async message =>{
     //Pour réagir aux 👌 :
         let ok_hand_event = ['👌'];
             let ok_hand_fondintext = false;
-            for (var i in ok_hand_event){
-                if (message.content.toLowerCase().includes(ok_hand_event[i].toLowerCase()))
-                ok_hand_fondintext = true;
-            if(ok_hand_fondintext){
-                message.channel.send('👆');
+            for(var i in ok_hand_event){
+                if(message.content.toLowerCase().includes(ok_hand_event[i].toLowerCase()))
+                    ok_hand_fondintext = true;
+                if(ok_hand_fondintext){
+                    message.channel.send('👆');
         }};
         
     //Pour mettre un sticker :larry: :
         let larry_event = [':larry:'];
             let larry_fondintext = false;
-            for (var i in larry_event){
-                if (message.content.toLowerCase().includes(larry_event[i].toLowerCase()))
-                larry_fondintext = true;
-            if(larry_fondintext){
-                message.channel.send("https://cdn.discordapp.com/emojis/540223339411537932.png");
+            for(var i in larry_event){
+                if(message.content.toLowerCase().includes(larry_event[i].toLowerCase()))
+                    larry_fondintext = true;
+                if(larry_fondintext){
+                    message.channel.send("https://cdn.discordapp.com/emojis/540223339411537932.png");
         }};
+
+    //Pour envoyer chier les gens qui critiquent le bot :
+        var fak_you_responses_list = [
+            "Tu sais ce qu'il te dit, le bot de merde ?!",
+            "Apprends à coder et on en reparlera, petite merde.",
+            "Le bot de merde, il sait déjà mieux écrire que toi.",
+            "Je ne te permets pas de m'insulter, sale gougnafier !",
+            "Si t'as quelque chose à me dire, ce serait bien de me le dire en face. À moins que tu ne sois aussi trop lâche pour ça...",
+            "Mais pourquoi tu m'insultes ? Moi, je t'ai pas insulté, sale pute.",
+            "Eh, tu permets !? J'ai pas non-plus été codé par Chuck Norris..."
+        ];
+        var fak_you_response = fak_you_responses_list[Math.floor(Math.random() * fak_you_responses_list)];
+        let fak_you_event = ["de la merde, ton bot"];
+            let fak_you_fondintext = false;
+            for (var i in fak_you_event){
+                if(message.content.toLowerCase().includes(fak_you_event[i].toLowerCase()))
+                    fak_you_fondintext = true;
+                if(fak_you_fondintext){
+                    message.channel.send(fak_you_response)
+        }};
+
+    //Pour emmerder un certain noob de l'orthograve :
+        if(message.author.id !== contributorID_01) return;
+        let typo_01_event = ["bizzard"];
+            let typo_01_fondintext = false;
+            for (var i in typo_01_event){
+                if(message.content.toLowerCase().includes(typo_01_event[i].toLowerCase()))
+                    typo_01_fondintext = true;
+                if(typo_01_fondintext){
+                    message.channel.send("bizarre*")
+        }};
+
 });
 
 //Boucle contenant les commandes :
@@ -69,6 +101,40 @@ bot.on("message", async message => {
             ];
             var tuck04 = tuck03[Math.floor(Math.random() * tuck03.length)];
             message.channel.send(tuck04);
+        };
+
+    //Test pour essayer une réaction au hasard. [&test02] :
+        if(command = "test02"){
+            var random_emoji_react_list = [
+                "🤷‍♂️",
+                "👀",
+                "🎱",
+                "😉",
+                "🤤",
+                "😏",
+                "🍕",
+                "☢",
+                "🔞",
+                "🚾"
+            ];
+            var random_emoji_react = random_emoji_react_list[Math.floor(Math.random() * random_emoji_react_list)];
+            var general_help = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setThumbnail("https://media.discordapp.net/attachments/576853882811187219/658356977885511700/pdp_pour_bot.png")
+                .setDescription(`Test`)
+            message.channel.send(general_help)
+            .then(message => {
+                message.react("💡")
+            .then( r => {
+                message.react("🖼")
+            .then( r =>{
+                message.react("🎮")
+            .then( r =>{
+                message.react(random_emoji_react)
+            })
+            })
+            })
+            })
         };
 
 //Catégorie "Jeux" :
