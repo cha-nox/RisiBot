@@ -4,12 +4,12 @@ const bot = new Discord.Client();
 const token = process.env.token;
 bot.login(token);
 
-//Constantes pour l'ID de la propriétaire et des contributeurs du bot. :
-const ownerID = "382500192907165717"; //Nyusuka ; propriétaire du bot.
-const contributorID_01 = "246395977450258432"; //Arkaxii ; testeur et maître du codage.
-
 //Boucle contenant les évènements :
 bot.on("message", async message =>{
+
+    //Constantes pour l'ID de la propriétaire et des contributeurs du bot. :
+    const ownerID = "382500192907165717"; //Nyusuka ; propriétaire du bot.
+    const contributorID_01 = "246395977450258432"; //Arkaxii ; testeur et maître du codage.
 
     //Pour réagir aux 👌 :
         let ok_hand_event = ['👌'];
@@ -67,7 +67,11 @@ bot.on("message", async message =>{
 //Boucle contenant les commandes :
 bot.on("message", async message => {
 
-    //Constantes pour le bon focntionnement des commandes. :
+    //Constantes pour l'ID de la propriétaire et des contributeurs du bot. :
+    const ownerID = "382500192907165717"; //Nyusuka ; propriétaire du bot.
+    const contributorID_01 = "246395977450258432"; //Arkaxii ; testeur et maître du codage.
+
+    //Autres constantes pour le bon focntionnement des commandes. :
     const prefix = '&';
         if(message.content.indexOf(prefix) !== 0) return;
     const args = message.content.slice(prefix.length).trim().split(/ +/g); 
