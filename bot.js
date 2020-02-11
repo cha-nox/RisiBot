@@ -1,4 +1,4 @@
-//Pas touche aux premières constantes. Sinon, ça va moins bien marcher.
+///Pas touche aux premières constantes. Sinon, ça va moins bien marcher.
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const token = process.env.token;
@@ -213,7 +213,7 @@ bot.on("message", async message => {
             var complément = compléments_liste[Math.floor(Math.random() * compléments_liste.length)];
             var cadavres_exquis = new Discord.RichEmbed()
                 .setColor('RANDOM')
-                .setTitle(sujet + verbe + complément)
+                .setDescription(sujet + verbe + complément)
                 .setFooter(`Demandé par ${message.author.username}.`)
                 .setTimestamp()
             message.channel.send(cadavres_exquis);
@@ -301,7 +301,7 @@ bot.on("message", async message => {
                 "J'avais la flemme de hack ce type, en fait.",
                 "T'as vraiment cru que j'étais un bot de hacking, couillon ?!",
                 "Euh... t'aimerais pas savoir ce que j'ai trouvé sur cette personne, en fait...",
-                "Sainte mère de Dieu, il en a au moins pour 4 Go de lolicons sur son PC !",
+                "Sainte mère de Dieu, cet individu en a au moins pour 4 Go de lolicons sur son PC !",
                 `Je me suis aperçu que je me suis trompé de cible et que j'ai hacké la Maison Blanche...\nPrépare-toi à voir les gros hélicoptères noirs arriver !`
             ];
 
@@ -408,7 +408,10 @@ bot.on("message", async message => {
                 "Le meunier fabrique de la farine avec du blé. Chuck Norris, lui, peut fabriquer du blé avec de la farine.",
                 "Chuck Norris sait où se trouve le papa de Stromaé.",
                 "Chuck Norris ne porte pas de montre. Il décide de l'heure qu'il est.",
-                "Un jour, Chuck Norris a commandé un steak au restarant. Et le steak a obéï."
+                "Un jour, Chuck Norris a commandé un steak au restarant. Et le steak a obéï.",
+                "Chuck Norris a inventé le code qui s'optimise lui-même.",
+                "Chuck Norris peut tuer un cadavre.",
+                "Tout ce que le roi Midas touche devient de l'or. Tout ce que Chuck Norris touche devient mort."
             ];
 
             var chucknorrisfact = facts_list[Math.floor(Math.random() * facts_list.length)];
@@ -439,7 +442,7 @@ bot.on("message", async message => {
             var help = new Discord.RichEmbed()
                 .setColor('RANDOM')
                 .setTitle('Liste des commandes disponibles pour le RisiBot ! :')    
-                .setDescription("**__Informations :__**\n● `&help` _(Pour afficher la liste de toutes les commandes.)_\n● `&invite` _(Pour inviter le bot sur ton serveur.)_\n● `&ping` _(Pour connaitre le temps de réponse (ping) du bot et la latence de l'API Discord.)_\n● `&suggest <Insérez une suggestion ici.>` _(Des questions ? Des remarques ? Des idées de commandes, de Chuck Norris fact, et autres possibilité à proposer ? Soumettez-moi tout cela via cette commande, et je m'en occuperai moi-même dans les plus brefs délais !)_\n \n**__Stickers :__**\n● `&reverse` _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_\n● `&respect` _(Quand tu sens que le respect est mort et que tu veux l'exprimer en beauté.)_\n \n**__Jeux :__**\n● `&pile/&face` _(Pour jouer à Pile ou face.)_\n● `&either` _(Le jeu Either.io adapté sur mesure sur Discord.)_\n● `&cadavresexquis` _(Une phrase amusante se crée aléatoirement rien que pour vous.)_\n \n**__Divers :__**\n● `&chucknorrisfact` _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_\n● `&say <texte>` _(Pour faire dire des conneries au bot.)_\n● `&hack <user>` _(Pour récolter quelques dossiers comprométants sur Céléstin.)_\n● `&nsfw` _(Les connaisseurs sauront à quoi sert cette commande. Pour les autres, je ne vous explique pas, vous êtes probablement encore jeunes et innocents. Ou du moins plus pour très longtemps... :smirk:)_")
+                .setDescription("**__Informations :__**\n● `&help` _(Pour afficher la liste de toutes les commandes.)_\n● `&invite` _(Pour inviter le bot sur ton serveur.)_\n● `&ping` _(Pour connaitre le temps de réponse (ping) du bot et la latence de l'API Discord.)_\n● `&suggest <Insérez une suggestion ici.>` _(Des questions ? Des remarques ? Des idées de commandes, de Chuck Norris fact, et autres possibilité à proposer ? Soumettez-moi tout cela via cette commande, et je m'en occuperai moi-même dans les plus brefs délais !)_\n \n**__Stickers :__**\n● `&reverse` _(Quand t'as besoin d'une reverse card bien placée parce que tu as la flemme d'avoir une bonne répartie.)_\n● `&respect` _(Quand tu sens que le respect est mort et que tu veux l'exprimer en beauté.)_\n \n**__Jeux :__**\n● `&pile/&face` _(Pour jouer à Pile ou face.)_\n● `&either` _(Le jeu Either.io adapté sur mesure sur Discord.)_\n● `&cadavresexquis` _(Une phrase amusante se crée aléatoirement rien que pour vous.)_\n \n**__Divers :__**\n● `&chucknorrisfact` _(Pour afficher un Chuck Norris fact et en apprendre plus sur l'entité la plus puissante de l'univers.)_\n● `&say <texte>` _(Pour faire dire des conneries au bot.)_\n● `&hack <user>` _(Pour récolter quelques dossiers comprométants sur Céléstin.)_\n● `&nsfw` _(Les connaisseurs sauront à quoi sert cette commande. Pour les autres, je ne vous explique pas, vous êtes probablement encore jeunes et innocents. Ou du moins plus pour très longtemps... :smirk:)_\n● `&nawak` _(Personne ne sait vraiment à quoi sert cette commande.)_")
                 .setFooter("Cette liste n'est pas complète pour le moment. Elle s'agrandira a fur et à mesure du développement du bot.")
             message.channel.send(help);
         };
