@@ -47,7 +47,7 @@ bot.on("message", async message =>{
                     message.channel.send(fak_you_response)
         }};
 
-    //Pour emmerder un certain noob de l'orthograve :
+    /*/Pour emmerder un certain noob de l'orthograve :
         if(message.author.id !== "246395977450258432") return;
         let typo_01_event = ["bizzard"];
             let typo_01_fondintext = false;
@@ -56,7 +56,7 @@ bot.on("message", async message =>{
                     typo_01_fondintext = true;
                 if(typo_01_fondintext){
                     message.channel.send("bizarre*")
-                }};
+                }};*/
 
 });
 
