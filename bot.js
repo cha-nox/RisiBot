@@ -1,11 +1,16 @@
-///Pas touche aux premières constantes. Sinon, ça va moins bien marcher.
+//Pas touche aux premières constantes. Sinon, ça va moins bien marcher.
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const token = process.env.token;
 bot.login(token);
 
+//Constantes pour l'ID de la propriétaire et des contributeurs du bot. :
+const ownerID = "382500192907165717"; //Nyusuka ; propriétaire du bot.
+const contributorID_01 = "246395977450258432"; //Arkaxii ; testeur et maître du codage.
+
 //Boucle contenant les évènements :
 bot.on("message", async message =>{
+
     //Pour réagir aux 👌 :
         let ok_hand_event = ['👌'];
             let ok_hand_fondintext = false;
@@ -55,17 +60,14 @@ bot.on("message", async message =>{
                     typo_01_fondintext = true;
                 if(typo_01_fondintext){
                     message.channel.send("bizarre*")
-        }};
+                }};
 
 });
 
 //Boucle contenant les commandes :
 bot.on("message", async message => {
-    //Constantes pour l'ID de la propriétaire et des contributeurs du bot. :
-    const ownerID = "382500192907165717"; //Nyusuka ; propriétaire du bot.
-    const contributorID_01 = "246395977450258432"; //Arkaxii ; testeur et maître du codage.
 
-    //Autres constantes pour le bon focntionnement des commandes. :
+    //Constantes pour le bon focntionnement des commandes. :
     const prefix = '&';
         if(message.content.indexOf(prefix) !== 0) return;
     const args = message.content.slice(prefix.length).trim().split(/ +/g); 
@@ -199,13 +201,14 @@ bot.on("message", async message => {
                 "se prend une sodomie à sec "
             ];
 
-            var compléments_liste = [ //6
+            var compléments_liste = [ //7
                 "avec amour.",
                 "comme un con.",
                 "contre un arbre.",
                 "sur un cheval.",
                 "sans vergogne.",
-                "avec un verre de vodka."
+                "avec un verre de vodka.",
+                `en pensant à ${message.guild.members.random()}.`
             ];
 
             var sujet = sujets_liste[Math.floor(Math.random() * sujets_liste.length)];
