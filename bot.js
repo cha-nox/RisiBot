@@ -7,10 +7,6 @@ bot.login(token);
 //Boucle contenant les évènements :
 bot.on("message", async message =>{
 
-    //Constantes pour l'ID de la propriétaire et des contributeurs du bot. :
-    const ownerID = "382500192907165717"; //Nyusuka ; propriétaire du bot.
-    const contributorID_01 = "246395977450258432"; //Arkaxii ; testeur et maître du codage.
-
     //Pour réagir aux 👌 :
         let ok_hand_event = ['👌'];
             let ok_hand_fondintext = false;
@@ -52,7 +48,7 @@ bot.on("message", async message =>{
         }};
 
     //Pour emmerder un certain noob de l'orthograve :
-        if(message.author.id !== contributorID_01) return;
+        if(message.author.id !== "246395977450258432") return;
         let typo_01_event = ["bizzard"];
             let typo_01_fondintext = false;
             for (var i in typo_01_event){
