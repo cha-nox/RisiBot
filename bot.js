@@ -106,7 +106,7 @@ bot.on("message", async message => {
         };
 
     //Test pour essayer une réaction au hasard. [&test02] :
-        if(command = "test02"){
+        if(command === "test02"){
             var random_emoji_react_list = [
                 "🤷‍♂️",
                 "👀",
