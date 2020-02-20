@@ -29,15 +29,25 @@ bot.on("message", async message =>{
 
     //Pour emmerder un certain noob de l'orthograve :
         let typo_01_event = ["bizzard"];
-        if(message.author.id !== "246395977450258432") return;
+            if(message.author.id !== "246395977450258432") return;
             let typo_01_fondintext = false;
-            for (var i in typo_01_event){
+            for(var i in typo_01_event){
                 if(message.content.toLowerCase().includes(typo_01_event[i].toLowerCase()))
                     typo_01_fondintext = true;
                 if(typo_01_fondintext){
                     message.channel.send("bizarre*")
         }};
 
+    //Dialogue entre bots 1 avec Kagura :
+        let dialogue_01_event = ["Ba mince, c'est BIZZARD ce que tu dit RisiBot"];
+            if(message.author.id !== "513336473609830400") return;
+            let dialogue_01_fondintext = false;
+            for(var i in dialogue_01_event){
+                if(message.content.toLowerCase().includes(dialogue_01_event[i].toLowerCase()))
+                    typo_01_fondintext = true;
+                if(typo_01_fondintext){
+                    message.reply("Ce que je dis est bizarre ? Et le fait que tu te cures le nez, on en parle ?")
+        }};
 });
 
 //Boucle contenant les commandes :
