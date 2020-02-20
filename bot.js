@@ -29,7 +29,7 @@ bot.on("message", async message =>{
 
     //Pour emmerder le plus gentil des noobs de l'orthograve :
         let typo_01_event = ["bizzard"];
-            if(message.author.id !== "246395977450258432") return;
+            /*if(message.author.id !== "246395977450258432") return;*/
             let typo_01_fondintext = false;
             for(var i in typo_01_event){
                 if(message.content.toLowerCase().includes(typo_01_event[i].toLowerCase()))
