@@ -129,10 +129,10 @@ bot.on("message", async message => {
                 message.react("💡")
             .then( r => {
                 message.react("🖼")
-            .then( r =>{
+            .then( r => {
                 message.react("🎮")
-            .then( r =>{
-                message.react("🤷‍♂️" && "👀" && "🎱" && "😉" && "🤤" && "😏" && "🍕" && "☢" && "🔞" && "🚾")
+            .then( r => {
+                message.react("🤷‍♂️" , "👀" , "🎱" , "😉" , "🤤" , "😏" , "🍕" , "☢" , "🔞" , "🚾")
             })
             })
             })
@@ -150,13 +150,13 @@ bot.on("message", async message => {
             }
         if(message.content.startsWith(prefix + "pile")) {
             random(); //On initialise le random.        
-                if (randnum == 1){ //Chaque nouveau random est numéroté comme ça.
+                if(randnum == 1){ //Chaque nouveau random est numéroté comme ça.
                     message.reply("Et tu tombes sur pile, c'est gagné !"); //Le message que tu envoies. (Réponse du bot, quoi.)
                 }
-                if (randnum == 2){ //Idem
+                if(randnum == 2){ //Idem
                     message.reply("Tu es tombé sur face, pas de CHANCE.");
                 }
-                if (randnum == 3){
+                if(randnum == 3){
                     message.reply("Euh, la pièce est restée sur la tranche..."); //J'avais collé ça dans ma version sur calculatrice... xD
                 }
         }};
@@ -169,13 +169,13 @@ bot.on("message", async message => {
             }
         if(message.content.startsWith(prefix + "face")) {
             random(); 
-                if (randnum == 1){
+                if(randnum == 1){
                     message.reply("Et tu tombes sur face, c'est gagné !");
                 }
-                if (randnum == 2){
+                if(randnum == 2){
                     message.reply("Tu es tombé sur pile, pas de CHANCE.");
                 }
-                if (randnum == 3){
+                if(randnum == 3){
                     message.reply("Euh, la pièce est restée sur la tranche...");
                 }
         }};
