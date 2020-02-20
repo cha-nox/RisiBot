@@ -109,7 +109,7 @@ bot.on("message", async message => {
         {
             function random(min, max){
                 min = Math.ceil(1);
-                max = Math.floor(3);
+                max = Math.floor(10);
                 randnum = Math.floor(Math.random() * (max - min +1) +min);
             }
         if(command === "test02"){
