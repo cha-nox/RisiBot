@@ -39,14 +39,14 @@ bot.on("message", async message =>{
         }};
 
     //Dialogue entre bots 1 avec Kagura :
-        let dialogue_01_event = ["Ba mince, c'est BIZZARD ce que tu dit RisiBot"];
+        let dialogue_01_event = ["Ba mince, c'est BIZZARD ce que tu dit"];
             if(message.author.id !== "513336473609830400") return;
             let dialogue_01_fondintext = false;
             for(var i in dialogue_01_event){
                 if(message.content.toLowerCase().includes(dialogue_01_event[i].toLowerCase()))
                     typo_01_fondintext = true;
                 if(typo_01_fondintext){
-                    message.reply("Ce que je dis est bizarre ? Et le fait que tu te cures le nez, on en parle ?")
+                    message.channel.send("Ce que je dis est bizarre ? Et le fait que tu te cures le nez, on en parle ?")
         }};
 });
 
