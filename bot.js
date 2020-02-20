@@ -45,7 +45,7 @@ bot.on("message", async message =>{
             for(var i in dialogue_01_event){
                 if(message.content.toLowerCase().includes(dialogue_01_event[i].toLowerCase()))
                     dialogue_01_fondintext = true;
-                if(typo_01_fondintext){
+                if(dialogue_01_fondintext){
                     message.channel.send("Ce que je dis est bizarre ? Et le fait que tu te cures le nez, on en parle ?")
         }};
 });
