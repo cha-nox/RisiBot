@@ -107,7 +107,7 @@ bot.on("message", async message => {
 
     //Test pour essayer une réaction au hasard. [&test02] :
         if(command === "test02"){
-            var random_emoji_react_list = [
+            /*var random_emoji_react_list = [
                 "🤷‍♂️",
                 "👀",
                 "🎱",
@@ -117,8 +117,8 @@ bot.on("message", async message => {
                 "🍕",
                 "☢",
                 "🔞",
-                "🚾"
-            ];
+                "🚾"random_emoji_react
+            ];*/
             var random_emoji_react = random_emoji_react_list[Math.floor(Math.random() * random_emoji_react_list)];
             var general_help = new Discord.RichEmbed()
                 .setColor('RANDOM')
@@ -132,7 +132,7 @@ bot.on("message", async message => {
             .then( r =>{
                 message.react("🎮")
             .then( r =>{
-                message.react(random_emoji_react)
+                message.react("🤷‍♂️" && "👀" && "🎱" && "😉" && "🤤" && "😏" && "🍕" && "☢" && "🔞" && "🚾")
             })
             })
             })
