@@ -106,6 +106,12 @@ bot.on("message", async message => {
         };
 
     //Test pour essayer une réaction au hasard. [&test02] :
+        {
+            function random(min, max){
+                min = Math.ceil(1);
+                max = Math.floor(3);
+                randnum = Math.floor(Math.random() * (max - min +1) +min);
+            }
         if(command === "test02"){
             /*var random_emoji_react_list = [
                 "🤷‍♂️",
@@ -132,16 +138,46 @@ bot.on("message", async message => {
             .then( r => {
                 message.react("🎮")
             .then( r => {
-                message.react("🤷‍♂️" , "👀" , "🎱" , "😉" , "🤤" , "😏" , "🍕" , "☢" , "🔞" , "🚾")
+                random(); 
+                if(randnum == 1){
+                    message.react("🤷‍♂️");
+                }
+                if(randnum == 2){
+                    message.react("👀");
+                }
+                if(randnum == 3){
+                    message.react("🎱");
+                }
+                if(randnum == 4){
+                    message.react("😉");
+                }
+                if(randnum == 5){
+                    message.react("🤤");
+                }
+                if(randnum == 6){
+                    message.react("😏");
+                }
+                if(randnum == 7){
+                    message.react("🍕");
+                }
+                if(randnum == 8){
+                    message.react("☢");
+                }
+                if(randnum == 9){
+                    message.react("🔞");
+                }
+                if(randnum == 10){
+                    message.react("🚾");
+                }
             })
             })
             })
             })
-        };
+        }};
 
 //Catégorie "Jeux" :
 
-    //Commande pour faire un pile ou face. [&pile/&face]:
+    //Commandes pour faire un Pile ou face. [&pile/&face]:
         {
             function random(min, max){
                 min = Math.ceil(1);  //C'est le minimum qu'il peut choisir.
@@ -168,7 +204,7 @@ bot.on("message", async message => {
                 randnum = Math.floor(Math.random() * (max - min +1) +min);
             }
         if(message.content.startsWith(prefix + "face")) {
-            random(); 
+            random();
                 if(randnum == 1){
                     message.reply("Et tu tombes sur face, c'est gagné !");
                 }
@@ -505,7 +541,7 @@ bot.on("message", async message => {
                 "https://cdn.discordapp.com/attachments/576854376451407873/639983256871239711/images_2.jpg",
                 "https://cdn.discordapp.com/attachments/576854376451407873/639990280614969346/Alerte_Respect_Dispary.jpg"
             ];
-        
+
             var respect_images = respect_links[Math.floor(Math.random() * respect_links.length)];
             var respect_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
