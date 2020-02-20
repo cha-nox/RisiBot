@@ -118,8 +118,8 @@ bot.on("message", async message => {
                 "☢",
                 "🔞",
                 "🚾"random_emoji_react
-            ];*/
-            var random_emoji_react = random_emoji_react_list[Math.floor(Math.random() * random_emoji_react_list)];
+            ];
+            var random_emoji_react = random_emoji_react_list[Math.floor(Math.random() * random_emoji_react_list)];*/
             var general_help = new Discord.RichEmbed()
                 .setColor('RANDOM')
                 .setThumbnail("https://media.discordapp.net/attachments/576853882811187219/658356977885511700/pdp_pour_bot.png")
