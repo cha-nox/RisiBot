@@ -39,7 +39,7 @@ bot.on("message", async message =>{
         }};
 
     //Dialogue entre bots 1 avec Kagura :
-        let dialogue_01_event = ["IZZARD ce que tu dit"];
+        let dialogue_01_event = ["ce que tu dit"];
             if(message.author.id !== "511235137791459332") return;
             let dialogue_01_fondintext = false;
             for(var i in dialogue_01_event){
