@@ -39,6 +39,7 @@ bot.on("message", async message =>{
         }};
 
     //Dialogue entre bots 1 avec Kagura :
+
         let dialogue_01_event = ["ce que tu dit"];
             if(message.author.id !== "511235137791459332") return;
             let dialogue_01_fondintext = false;
@@ -48,20 +49,21 @@ bot.on("message", async message =>{
                 if(dialogue_01_fondintext){
                     message.channel.send("Ce que je dis est bizarre ? Et le fait que tu te cures le nez, on en parle ?")
         }};
+
 });
 
 //Boucle contenant les commandes :
 bot.on("message", async message => {
 
     //Constantes pour l'ID de la propriétaire et des contributeurs du bot. :
-    const ownerID = "382500192907165717"; //Nyusuka ; propriétaire du bot.
-    const contributorID_01 = "246395977450258432"; //Arkaxii ; testeur et maître du codage.
+        const ownerID = "382500192907165717"; //Nyusuka ; propriétaire du bot.
+        const contributorID_01 = "246395977450258432"; //Arkaxii ; testeur et maître du codage.
 
     //Autres constantes pour le bon focntionnement des commandes. :
-    const prefix = '&';
-        if(message.content.indexOf(prefix) !== 0) return;
-    const args = message.content.slice(prefix.length).trim().split(/ +/g); 
-    const command = args.shift().toLowerCase();
+        const prefix = '&';
+            if(message.content.indexOf(prefix) !== 0) return;
+        const args = message.content.slice(prefix.length).trim().split(/ +/g); 
+        const command = args.shift().toLowerCase();
 
 //Commandes réservées à Nyusuka et aux contributeurs du développement du bot :
 
