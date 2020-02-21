@@ -27,6 +27,9 @@ bot.on("message", async message =>{
                     message.channel.send("https://cdn.discordapp.com/emojis/540223339411537932.png");
         }};
 
+});
+bot.on("message", async message =>{
+
     //Pour emmerder le plus gentil des noobs de l'orthograve :
         let typo_01_event = ["bizzard"];
             if(message.author.id !== "246395977450258432") return;
@@ -37,6 +40,8 @@ bot.on("message", async message =>{
                 if(typo_01_fondintext){
                     message.channel.send("bizarre*")
         }};
+    });
+    bot.on("message", async message =>{
 
     //Dialogue entre bots 1 avec Kagura :
 
