@@ -1,3 +1,9 @@
+//Penser à créer une commande d'avertissement [&warn] avec avertissement en mp, proposition de ban après 5 avertissements, etc. Penser aussi à l'anti-flood.
+//Problème des commandes NSFW ; tout remettre en une commande avec arguments, ou tester un "if(message.content.startsWith(prefix + "command_name arg"))").
+//Modifier la commande NSFW pour qu'elle affichent de vraies images à certains contributeurs.
+//Mettre une réponse en zalgo pour le [&&hack <user>].
+//Priorités : créer commandes cat et event pour faire chier Lucas quand il fait une faute d'orthograve, modifier commande help, voir pour le projet de reconnaisance vocale, ajouter des possibilités aux commandes hack, cadavresexquis, etc.
+
 //Pas touche aux premières constantes. Sinon, ça va moins bien marcher.
 const Discord = require('discord.js');
 const bot = new Discord.Client();
@@ -39,7 +45,6 @@ bot.on("message", async message =>{
         }}};
 
     //Dialogue entre bots 1 avec Kagura :
-
         let dialogue_01_event = ["ce que tu dit"];
             if(message.author.id === "511235137791459332"){
             let dialogue_01_fondintext = false;
@@ -50,6 +55,16 @@ bot.on("message", async message =>{
                     message.channel.send("Ce que je dis est bizarre ? Et le fait que tu te cures le nez, on en parle ?");
         }}};
 
+    //Dialogue entre bots 2 avec Kagura :
+        let dialogue_02_event = ["Ceux qui font les grammair-nazi ont toujour quelque chose a compenser"];
+            if(message.author.id === "511235137791459332"){
+            let dialogue_02_fondintext = false;
+            for(var i in dialogue_02_event){
+                if(message.content.toLowerCase().includes(dialogue_02_event[i].toLowerCase()))
+                    dialogue_02_fondintext = true;
+                if(dialogue_02_fondintext){
+                    message.channel.send("Peut-être, mais toi aussi, étant donné que tu esquives ma question à propos du fait que tu te cures le nez et que t'as d'une autiste. =P");
+        }}};
 });
 
 //Boucle contenant les commandes :
