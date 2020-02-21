@@ -40,10 +40,10 @@ bot.on("message", async message =>{
 
     //Dialogue entre bots 1 avec Kagura :
         let dialogue_01_event = ["IZZARD ce que tu dit"];
-            /*if(message.author.id !== "511235137791459332") return;*/
+            if(message.author.id !== "513336473609830400") return;
             let dialogue_01_fondintext = false;
             for(var i in dialogue_01_event){
-                if(message.content.toLocaleLowerCase().includes(dialogue_01_event[i].toLocaleLowerCase()))
+                if(message.content.toLowerCase().includes(dialogue_01_event[i].toLowerCase()))
                     dialogue_01_fondintext = true;
                 if(dialogue_01_fondintext){
                     message.channel.send("Ce que je dis est bizarre ? Et le fait que tu te cures le nez, on en parle ?")
