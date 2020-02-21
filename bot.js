@@ -27,33 +27,28 @@ bot.on("message", async message =>{
                     message.channel.send("https://cdn.discordapp.com/emojis/540223339411537932.png");
         }};
 
-});
-bot.on("message", async message =>{
-
     //Pour emmerder le plus gentil des noobs de l'orthograve :
         let typo_01_event = ["bizzard"];
-            if(message.author.id !== "246395977450258432") return;
+            if(message.author.id === "246395977450258432"){
             let typo_01_fondintext = false;
             for(var i in typo_01_event){
                 if(message.content.toLowerCase().includes(typo_01_event[i].toLowerCase()))
                     typo_01_fondintext = true;
                 if(typo_01_fondintext){
-                    message.channel.send("bizarre*")
-        }};
-    });
-    bot.on("message", async message =>{
+                    message.channel.send("bizarre*");
+        }}};
 
     //Dialogue entre bots 1 avec Kagura :
 
         let dialogue_01_event = ["ce que tu dit"];
-            if(message.author.id !== "511235137791459332") return;
+            if(message.author.id === "511235137791459332"){
             let dialogue_01_fondintext = false;
             for(var i in dialogue_01_event){
                 if(message.content.toLowerCase().includes(dialogue_01_event[i].toLowerCase()))
                     dialogue_01_fondintext = true;
                 if(dialogue_01_fondintext){
-                    message.channel.send("Ce que je dis est bizarre ? Et le fait que tu te cures le nez, on en parle ?")
-        }};
+                    message.channel.send("Ce que je dis est bizarre ? Et le fait que tu te cures le nez, on en parle ?");
+        }}};
 
 });
 
