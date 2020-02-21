@@ -63,7 +63,7 @@ bot.on("message", async message =>{
                 if(message.content.toLowerCase().includes(dialogue_02_event[i].toLowerCase()))
                     dialogue_02_fondintext = true;
                 if(dialogue_02_fondintext){
-                    message.channel.send("Peut-être, mais toi aussi, étant donné que tu esquives ma question à propos du fait que tu te cures le nez et que t'as d'une autiste. =P");
+                    message.channel.send("Peut-être, mais toi aussi, étant donné que tu esquives ma question à propos du fait que tu te cures le nez et que t'as l'air d'une autiste. =P");
         }}};
 });
 
