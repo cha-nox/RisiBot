@@ -40,7 +40,7 @@ bot.on("message", async message =>{
 
     //Dialogue entre bots 1 avec Kagura :
         let dialogue_01_event = ["IZZARD ce que tu dit"];
-            if(message.author.id !== "513336473609830400") return;
+            if(message.author.id !== "511235137791459332") return;
             let dialogue_01_fondintext = false;
             for(var i in dialogue_01_event){
                 if(message.content.toLowerCase().includes(dialogue_01_event[i].toLowerCase()))
