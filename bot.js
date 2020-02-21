@@ -2,7 +2,7 @@
 //Problème des commandes NSFW ; tout remettre en une commande avec arguments, ou tester un "if(message.content.startsWith(prefix + "command_name arg"))").
 //Modifier la commande NSFW pour qu'elle affichent de vraies images à certains contributeurs.
 //Mettre une réponse en zalgo pour le [&&hack <user>].
-//Priorités : créer commandes cat et event pour faire chier Lucas quand il fait une faute d'orthograve, modifier commande help, voir pour le projet de reconnaisance vocale, ajouter des possibilités aux commandes hack, cadavresexquis, etc.
+//Priorités : créer commandes cat, modifier commande help, voir pour le projet de reconnaisance vocale, ajouter des possibilités aux commandes hack, cadavresexquis, etc.
 
 //Pas touche aux premières constantes. Sinon, ça va moins bien marcher.
 const Discord = require('discord.js');
