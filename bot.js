@@ -553,7 +553,7 @@ bot.on("message", async message => {
             .catch(console.error);
             var dumb_server_leaved_notify = new Discord.RichEmbed()
                 .setThumbnail(message.guild.avatarURL)
-                .setDescription(`Extraction du serveur ${message.guild.name()} effectuée avec succès.`)
+                .setDescription(`Extraction du serveur ${message.guild.name} effectuée avec succès.`)
                 .setColor('RANDOM')
                 .setTimestamp()
             bot.fetchUser("382500192907165717", false)
