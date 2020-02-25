@@ -560,7 +560,8 @@ bot.on("message", async message => {
     //Commadne pour enlever le bot du serveur où la commande est effectuée. [&leaveserver] :
         if(command === "leaveserver"){
             if(message.author.id !== ownerID && message.author.id !== contributorID_01) return message.channel.send("Désolée, pour des raisons pratiques, cette commande est uniquement réservé à l'usage exclusif de ma créatrice.");
-            message.guild.leave()
+            message.delete().catch(O_o=>{});
+	    message.guild.leave()
             .then( g => console.log(`Le serveur ${g} a été quitté avec succès.`))
             .catch(console.error);
         };
