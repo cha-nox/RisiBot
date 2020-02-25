@@ -181,6 +181,80 @@ bot.on("message", async message => {
             })
         }};
 
+    //Test pour la commande help [help03] :
+    {
+        function random(min, max){
+            min = Math.ceil(1);
+            max = Math.floor(10);
+            randnum = Math.floor(Math.random() * (max - min +1) +min);
+        }
+    if(command === "help"){
+        /*let pages = ["Informations", "Stickers", "Jeux", "Divers"];
+        let page = 1;*/
+        var help_embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setThumbnail("https://media.discordapp.net/attachments/576853882811187219/658356977885511700/pdp_pour_bot.png")
+            .setTitle('Les commandes disponibles pour le RisiBot sont regroupées par catégories. Voici la liste des catégories ! :')    
+            .setDescription(`:bulb: Informations\n:frame_photo: Stickers\n:video_game: Jeux\n:pencil: Divers`)
+            .setFooter("Cette liste n'est pas complète pour le moment. Elle s'agrandira a fur et à mesure du développement du bot.\nUtilisez les réactions pour afficher la catégorie souhaitée.")
+        message.channel.send(help_embed)
+        .then(message => {
+            message.react("💡")
+        .then( r => {
+            message.react("🖼")
+        .then( r =>{
+            message.react("🎮")
+        .then( r =>{
+            random(); 
+                if(randnum == 1){
+                    message.react("🤷‍♂️");
+                }
+                if(randnum == 2){
+                    message.react("👀");
+                }
+                if(randnum == 3){
+                    message.react("🎱");
+                }
+                if(randnum == 4){
+                    message.react("😉");
+                }
+                if(randnum == 5){
+                    message.react("🤤");
+                }
+                if(randnum == 6){
+                    message.react("😏");
+                }
+                if(randnum == 7){
+                    message.react("🍕");
+                }
+                if(randnum == 8){
+                    message.react("☢");
+                }
+                if(randnum == 9){
+                    message.react("🔞");
+                }
+                if(randnum == 10){
+                    message.react("🚾");
+                }
+        })
+        })
+        })
+        })
+
+        bot.on('messageReactionAdd',async (reaction, user) =>{
+            if(reaction.emoji.name === "💡" && user.id !== bot.user.id){
+                reaction.remove(user)
+                help_embed.setColor('RANDOM')
+                help_embed.setThumbnail("https://media.discordapp.net/attachments/576853882811187219/658356977885511700/pdp_pour_bot.png")
+                help_embed.setTitle(':bulb: Informations')    
+                help_embed.setDescription("● `&help` _(Pour afficher la liste de toutes les commandes.)_\n● `&invite` _(Pour inviter le bot sur ton serveur.)_\n● `&ping` _(Pour connaitre le temps de réponse (ping) du bot et la latence de l'API Discord.)_\n● `&suggest <Insérez une suggestion ici.>` _(Des questions ? Des remarques ? Des idées de commandes, de Chuck Norris fact, et autres possibilité à proposer ? Soumettez-moi tout cela via cette commande, et je m'en occuperai moi-même dans les plus brefs délais !)_")
+                help_embed.setFooter("Cette liste n'est pas complète pour le moment. Elle s'agrandira a fur et à mesure du développement du bot.\nUtilisez les réactions pour afficher la catégorie souhaitée.")
+                message.channel.send(help_embed)
+                message.react("🔙")
+            }
+        });
+    }};
+
 //Catégorie "Jeux" :
 
     //Commandes pour faire un Pile ou face. [&pile/&face]:
@@ -552,7 +626,7 @@ bot.on("message", async message => {
             .then( g => console.log(`Extraction du serveur ${g} effectuée avec succès.`))
             .catch(console.error);
             var dumb_server_leaved_notify = new Discord.RichEmbed()
-                .setThumbnail(message.guild.avatar)
+                .setThumbnail(message.guild.iconURL)
                 .setDescription(`Extraction du serveur ${message.guild.name} effectuée avec succès.`)
                 .setColor('RANDOM')
                 .setTimestamp()
