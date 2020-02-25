@@ -233,7 +233,6 @@ bot.on("message", async message => {
                 `${message.guild.members.random()} `,
                 "Un communiste "
             ];
-
             var verbes_liste = [ //6
                 "bande ",
                 "complote ",
@@ -242,7 +241,6 @@ bot.on("message", async message => {
                 "se suicide ",
                 "se prend une sodomie à sec "
             ];
-
             var compléments_liste = [ //7
                 "avec amour.",
                 "comme un con.",
@@ -252,7 +250,6 @@ bot.on("message", async message => {
                 "avec un verre de vodka.",
                 `en pensant à ${message.guild.members.random()}.`
             ];
-
             var sujet = sujets_liste[Math.floor(Math.random() * sujets_liste.length)];
             var verbe = verbes_liste[Math.floor(Math.random() * verbes_liste.length)];
             var complément = compléments_liste[Math.floor(Math.random() * compléments_liste.length)];
@@ -335,13 +332,9 @@ bot.on("message", async message => {
 
     //Commande de faux hacks. [&hack <user>] :
         if(message.content.startsWith(prefix + "hack")){
-            if(!message.channel.guild)
-                return message.channel.send("Désolé, mais cette commande n'est pas disponible en messages privés.");
-
+            if(!message.channel.guild) return message.channel.send("Désolé, mais cette commande n'est pas disponible en messages privés.");
             let troll_hack_target = message.mentions.members.first();
-            if(!troll_hack_target)
-                return message.reply("Si tu ne mentionne pas un utilisateur valide, je ne risque pas de faire grand chose.");
- 
+            if(!troll_hack_target) return message.reply("Si tu ne mentionne pas un utilisateur valide, je ne risque pas de faire grand chose.");
             var fake_hacks_list = [
                 "J'avais la flemme de hack ce type, en fait.",
                 "T'as vraiment cru que j'étais un bot de hacking, couillon ?!",
@@ -349,7 +342,6 @@ bot.on("message", async message => {
                 "Sainte mère de Dieu, cet individu en a au moins pour 4 Go de lolicons sur son PC !",
                 `Je me suis aperçu que je me suis trompé de cible et que j'ai hacké la Maison Blanche...\nPrépare-toi à voir les gros hélicoptères noirs arriver !`
             ];
-
             var fake_hack = fake_hacks_list[Math.floor(Math.random() * fake_hacks_list.length)];
             const troll_hack = await message.channel.send(`_Connerie en cours. Veuillez patienter._
             **→ ---------- __0%__**`);
@@ -383,7 +375,6 @@ bot.on("message", async message => {
                 `${message.guild.members.random()}`,
                 `<@${message.author.id}>`
             ];
-
             var chuck_norris_facts_tuck02 = chuck_norris_facts_tuck01[Math.floor(Math.random() * chuck_norris_facts_tuck01.length)];
             var facts_list = [
                 "Chuck Norris a déjà compté jusqu'à l'infini. Deux fois !",
@@ -458,16 +449,13 @@ bot.on("message", async message => {
                 "Chuck Norris peut tuer un cadavre.",
                 "Tout ce que le roi Midas touche devient de l'or. Tout ce que Chuck Norris touche devient mort."
             ];
-
             var chucknorrisfact = facts_list[Math.floor(Math.random() * facts_list.length)];
             message.channel.send(chucknorrisfact);
         };
 
     //Commande pour faire dire quelque chose au bot. [&say] :
         if(message.content.startsWith(prefix + "say")){
-            if(!message.channel.guild)
-                return message.channel.send("Désolé, mais cette commande n'est pas disponible en messages privés.");
-
+            if(!message.channel.guild) return message.channel.send("Désolé, mais cette commande n'est pas disponible en messages privés.");
             const sayMessage = args.join(" ");
             message.delete().catch(O_o=>{});
             message.channel.send(sayMessage);
@@ -507,10 +495,9 @@ bot.on("message", async message => {
                 .setDescription(sayMessage)
                 .setColor('RANDOM')
                 .setTimestamp()
-            bot.fetchUser("382500192907165717",false)
+            bot.fetchUser("382500192907165717", false)
             .then(user => {user.send(suggestion)
             });
-
             message.reply("Moi et mon créateur vous remercions de cette proposition. Nous l'examinerons dès que possible !");
         };
 
@@ -557,12 +544,20 @@ bot.on("message", async message => {
 
 //Catégorie "Administration et modération":
 
-    //Commadne pour enlever le bot du serveur où la commande est effectuée. [&leaveserver] :
+    //Commande pour enlever le bot du serveur où la commande est effectuée. [&leaveserver] :
         if(command === "leaveserver"){
             if(message.author.id !== ownerID && message.author.id !== contributorID_01) return message.channel.send("Désolée, pour des raisons pratiques, cette commande est uniquement réservé à l'usage exclusif de ma créatrice.");
             message.delete().catch(O_o=>{});
-	    message.guild.leave()
-            .then( g => console.log(`Le serveur ${g} a été quitté avec succès.`))
+            message.guild.leave()
+            .then( g => console.log(`Extraction du serveur ${g} effectuée avec succès.`))
             .catch(console.error);
+            var dumb_server_leaved_notify = new Discord.RichEmbed()
+                .setThumbnail(message.guild.avatarURL)
+                .setDescription(`Extraction du serveur ${g} effectuée avec succès.`)
+                .setColor('RANDOM')
+                .setTimestamp()
+            bot.fetchUser("382500192907165717", false)
+            .then(user => {user.send(dumb_server_leaved_notify)
+            });
         };
 });
