@@ -63,8 +63,20 @@ bot.on("message", async message =>{
                 if(message.content.toLowerCase().includes(dialogue_02_event[i].toLowerCase()))
                     dialogue_02_fondintext = true;
                 if(dialogue_02_fondintext){
-                    message.channel.send("Peut-être, mais toi aussi, étant donné que tu esquives ma question à propos du fait que tu te cures le nez et que t'as l'air d'une autiste. =P");
+                    message.channel.send("Peut-être, mais toi aussi, étant donné que tu esquives ma question à propos du fait que tu te cures le nez et que t'as d'une autiste. =P");
         }}};
+
+    //Dialogue entre bots 3 avec Kagura :
+        let dialogue_03_event = ["On dirai que j'ai toucher un point sensible"];
+            if(message.author.id === "511235137791459332"){
+            let dialogue_03_fondintext = false;
+            for(var i in dialogue_03_event){
+                if(message.content.toLowerCase().includes(dialogue_03_event[i].toLowerCase()))
+                    dialogue_03_fondintext = true;
+                if(dialogue_03_fondintext){
+                    message.channel.send("Pourquoi tu esquives encore, tu es vexée ? =]");
+        }}};
+
 });
 
 //Boucle contenant les commandes :
@@ -178,7 +190,7 @@ bot.on("message", async message => {
                 max = Math.floor(3); //C'est le maximum qu'il peut choisir.
                 randnum = Math.floor(Math.random() * (max - min +1) +min); //On définit le randnum : en gros, chaque random est numéroté.
             }
-        if(message.content.startsWith(prefix + "pile")) {
+        if(message.content.startsWith(prefix + "pile")){
             random(); //On initialise le random.        
                 if(randnum == 1){ //Chaque nouveau random est numéroté comme ça.
                     message.reply("Et tu tombes sur pile, c'est gagné !"); //Le message que tu envoies. (Réponse du bot, quoi.)
@@ -197,7 +209,7 @@ bot.on("message", async message => {
                 max = Math.floor(3);
                 randnum = Math.floor(Math.random() * (max - min +1) +min);
             }
-        if(message.content.startsWith(prefix + "face")) {
+        if(message.content.startsWith(prefix + "face")){
             random();
                 if(randnum == 1){
                     message.reply("Et tu tombes sur face, c'est gagné !");
@@ -211,7 +223,7 @@ bot.on("message", async message => {
         }};
 
     //Commande pour créer des cadavres exquis. [&cadavresexquis] :
-        if(message.content.startsWith(prefix + "cadavresexquis")) {
+        if(message.content.startsWith(prefix + "cadavresexquis")){
             var sujets_liste = [ //7
                 "Une bande de soviétiques ",
                 "Emmanuel Macron ",
@@ -253,7 +265,7 @@ bot.on("message", async message => {
         };
 
     //Commande pour faire un Either.io sur Discord. [&either] :
-        if(message.content.startsWith(prefix + "either")) {
+        if(message.content.startsWith(prefix + "either")){
             var either_list = [ //`:regional_indicator_a: ...XXXXX ?\n**OU**\n:b: ...XXXXX ?`,
                 `:regional_indicator_a: ...être chauve ?\n**OU**\n:b: ...être manchot ?`,
                 `:regional_indicator_a: ...le RisiBot ?\n**OU**\n:b: ...Kagura ?`,
@@ -281,7 +293,7 @@ bot.on("message", async message => {
 //Catégorie "Divers" :
 
     //Fausses commandes NSFW. [&nsfw <truc pas très catho>] :
-        if(command === "nsfw") {
+        if(command === "nsfw"){
             message.reply("Si tu ne me dis pas ce que tu cherches, je ne peux pas savoir ce que je dois te mettre, si ce n'est ma ||main|| dans ton ||faciès||.\nMais sinon, voilà ce que tu peux chercher :\n● `&boobs`\n● `&dick`\n● `&lolicon`");
         };
 
@@ -322,7 +334,7 @@ bot.on("message", async message => {
         };
 
     //Commande de faux hacks. [&hack <user>] :
-        if(message.content.startsWith(prefix + "hack")) {
+        if(message.content.startsWith(prefix + "hack")){
             if(!message.channel.guild)
                 return message.channel.send("Désolé, mais cette commande n'est pas disponible en messages privés.");
 
@@ -366,7 +378,7 @@ bot.on("message", async message => {
         };
 
     //Commande pour afficher des Chuck Norris facts. [&chucknorrisfact] :
-        if(message.content.startsWith(prefix + "chucknorrisfact")) {
+        if(message.content.startsWith(prefix + "chucknorrisfact")){
             var chuck_norris_facts_tuck01 = [
                 `${message.guild.members.random()}`,
                 `<@${message.author.id}>`
@@ -452,7 +464,7 @@ bot.on("message", async message => {
         };
 
     //Commande pour faire dire quelque chose au bot. [&say] :
-        if(message.content.startsWith(prefix + "say")) {
+        if(message.content.startsWith(prefix + "say")){
             if(!message.channel.guild)
                 return message.channel.send("Désolé, mais cette commande n'est pas disponible en messages privés.");
 
@@ -471,7 +483,7 @@ bot.on("message", async message => {
 
     //Commande pour afficher la liste des commandes disponibles du bot. [&help]
         //Informations, Stickers, Jeux, Divers.
-        if(message.content.startsWith(prefix + "help")) {
+        if(message.content.startsWith(prefix + "help")){
             var help = new Discord.RichEmbed()
                 .setColor('RANDOM')
                 .setTitle('Liste des commandes disponibles pour le RisiBot ! :')    
@@ -481,7 +493,7 @@ bot.on("message", async message => {
         };
 
     //Commande de ping. [&ping] :
-        if(message.content.startsWith(prefix + "ping")) {
+        if(message.content.startsWith(prefix + "ping")){
             message.channel.send(`Ping de \` ${new Date().getTime() - message.createdTimestamp} \` ms. \nLatence de l'API de \` ${Math.round(bot.ping)} \` ms.`);
         };
 
@@ -523,7 +535,7 @@ bot.on("message", async message => {
         }; 
 
     //Commande pour afficher un meme sur le manque de respect. [&respect] :
-        if(command === "respect") {
+        if(command === "respect"){
             var respect_links = [
                 "https://cdn.discordapp.com/attachments/576854376451407873/639983272528707588/telechargement.jpg",
                 "https://cdn.discordapp.com/attachments/576854376451407873/639964529031118879/Faut_retrouver_le_respect.jpg",
@@ -541,5 +553,14 @@ bot.on("message", async message => {
                 .setColor('RANDOM')
                 .setImage(respect_images)
             message.channel.send(respect_embed);
+        };
+
+//Catégorie "Administration et modération":
+
+    //Commadne pour enlever le bot du serveur où la commande est effectuée. [&leaveserver] :
+        if(command === "leaveserver"){
+            if(message.author.id !== ownerID && message.author.id !== contributorID_01) return message.channel.send("Désolée, pour des raisons pratiques, cette commande est uniquement réservé à l'usage exclusif de ma créatrice.");
+            message.guild.leave()
+            console.log(`Un serveur a été quitté avec succès.`)
         };
 });
