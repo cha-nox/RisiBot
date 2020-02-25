@@ -63,7 +63,7 @@ bot.on("message", async message =>{
                 if(message.content.toLowerCase().includes(dialogue_02_event[i].toLowerCase()))
                     dialogue_02_fondintext = true;
                 if(dialogue_02_fondintext){
-                    message.channel.send("Peut-être, mais toi aussi, étant donné que tu esquives ma question à propos du fait que tu te cures le nez et que t'as d'une autiste. =P");
+                    message.channel.send("Peut-être, mais toi aussi, étant donné que tu esquives ma question à propos du fait que tu te cures le nez et que t'as un peu l'air d'une autiste. =P");
         }}};
 
     //Dialogue entre bots 3 avec Kagura :
@@ -552,7 +552,7 @@ bot.on("message", async message => {
             .then( g => console.log(`Extraction du serveur ${g} effectuée avec succès.`))
             .catch(console.error);
             var dumb_server_leaved_notify = new Discord.RichEmbed()
-                .setThumbnail(message.guild.avatarURL)
+                .setThumbnail(message.guild.avatar)
                 .setDescription(`Extraction du serveur ${message.guild.name} effectuée avec succès.`)
                 .setColor('RANDOM')
                 .setTimestamp()
