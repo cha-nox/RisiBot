@@ -1,7 +1,7 @@
 //Penser à créer une commande d'avertissement [&warn] avec avertissement en mp, proposition de ban après 5 avertissements, etc. Penser aussi à l'anti-flood.
 //Problème des commandes NSFW ; tout remettre en une commande avec arguments, ou tester un "if(message.content.startsWith(prefix + "command_name arg"))").
 //Modifier la commande NSFW pour qu'elle affichent de vraies images à certains contributeurs.
-//Mettre une réponse en zalgo pour le [&&hack <user>].
+//Mettre une réponse en zalgo pour le [&hack <user>].
 //Priorités : créer commandes cat, modifier commande help, voir pour le projet de reconnaisance vocale, ajouter des possibilités aux commandes hack, cadavresexquis, etc.
 
 //Pas touche aux premières constantes. Sinon, ça va moins bien marcher.
