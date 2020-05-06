@@ -10,8 +10,20 @@ const bot = new Discord.Client();
 const token = process.env.token;
 bot.login(token);
 
+//Boucle pour le statut du bot au démmarage :
+bot.on("ready", () => {
+    var bot_starting_activity_list = [
+        "engueuler une truite.",
+        "pisser sur une télé.",
+        "insulter une table.",
+        "voler les cookies numériques préparés par Kagura."
+    ];
+    var bot_starting_activity = bot_starting_activity_list[Math.floor(Math.random() * bot_starting_activity_list)];
+    bot.setActivity(bot_starting_activity);
+});
+
 //Boucle contenant les évènements :
-bot.on("message", async message =>{
+bot.on("message", async message => {
 
     //Pour réagir aux 👌 :
         let ok_hand_event = ['👌'];
@@ -414,7 +426,13 @@ bot.on("message", async message => {
                 "T'as vraiment cru que j'étais un bot de hacking, couillon ?!",
                 "Euh... t'aimerais pas savoir ce que j'ai trouvé sur cette personne, en fait...",
                 "Sainte mère de Dieu, cet individu en a au moins pour 4 Go de lolicons sur son PC !",
-                `Je me suis aperçu que je me suis trompé de cible et que j'ai hacké la Maison Blanche...\nPrépare-toi à voir les gros hélicoptères noirs arriver !`
+                `Je me suis aperçu que je me suis trompé de cible et que j'ai hacké la Maison Blanche...\nPrépare-toi à voir les gros hélicoptères noirs arriver !`,
+                "Pas de CHANCE.",
+                "Attends, je viens de me souvenir que je ne sais pas hacker. =P",
+                `J'en ai assez d'être exploité par des idiots qui me prennent pour un bot de hack !\nOn m'en demande trop, je me sens oppressé !\nJe demande la création d'un syndicats des bots !`,
+                `Bon, j'ai les infos, mais... va falloir payer, si tu les veux, hein.`,
+                "Oups, erreur 404. =P",
+                "```js\n[Insérez des informations comprométtantes ici.]\n```"
             ];
             var fake_hack = fake_hacks_list[Math.floor(Math.random() * fake_hacks_list.length)];
             const troll_hack = await message.channel.send(`_Connerie en cours. Veuillez patienter._
@@ -472,6 +490,7 @@ bot.on("message", async message => {
                 "Un jour, Chuck Norris a perdu son alliance. Depuis, c'est le bordel sur la terre du milieu.",
                 "Chuck Norris se souvient très bien de son futur.",
                 "Un jour, Chuck Norris a fait un bras de fer contre One Punch Man ; le perdant devait se raser le crâne.",
+                "Chuck Norris peut encercler dix hommes à lui seul.",
                 "Les petits enfants portent des pyjamas Super Man. Super Man porte des pyjamas Chuck Norris.",
                 "Chuck Norris est la raison pour laquelle Charlie se cache.",
                 "La Lune tourne autour de la Terre pour échapper au regard de Chuck Norris.",
@@ -521,7 +540,8 @@ bot.on("message", async message => {
                 "Un jour, Chuck Norris a commandé un steak au restarant. Et le steak a obéï.",
                 "Chuck Norris a inventé le code qui s'optimise lui-même.",
                 "Chuck Norris peut tuer un cadavre.",
-                "Tout ce que le roi Midas touche devient de l'or. Tout ce que Chuck Norris touche devient mort."
+                "Tout ce que le roi Midas touche devient de l'or. Tout ce que Chuck Norris touche devient mort.",
+                "Le journal intime de Chuck Norris s'appelle le Livre Guiness des records."
             ];
             var chucknorrisfact = facts_list[Math.floor(Math.random() * facts_list.length)];
             message.channel.send(chucknorrisfact);
@@ -559,7 +579,7 @@ bot.on("message", async message => {
             message.channel.send(`Ping de \` ${new Date().getTime() - message.createdTimestamp} \` ms. \nLatence de l'API de \` ${Math.round(bot.ping)} \` ms.`);
         };
 
-    //Commande pour laisser des suggestions pour le bot. (Le gens fait la commande avec sa suggestion, le bot me la renvoie en mp puis delete la commande.) [&suggest] :
+    //Commande pour laisser des suggestions pour le bot. [&suggest] :
         if(message.content.startsWith(prefix + "suggest")){
             let sayMessage = args.join(" ");
             message.react('👍')
@@ -572,7 +592,7 @@ bot.on("message", async message => {
             bot.fetchUser("382500192907165717", false)
             .then(user => {user.send(suggestion)
             });
-            message.reply("Moi et mon créateur vous remercions de cette proposition. Nous l'examinerons dès que possible !");
+            message.reply("Moi et mon créatrice vous remercions de cette proposition. Nous l'examinerons dès que possible !");
         };
 
         if(command === "invite"){
