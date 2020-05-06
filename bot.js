@@ -19,7 +19,7 @@ bot.on("ready", () => {
         "voler les cookies numériques préparés par Kagura."
     ];
     var bot_starting_activity = bot_starting_activity_list[Math.floor(Math.random() * bot_starting_activity_list)];
-    bot.setActivity(bot_starting_activity);
+    bot.setActivity(`${bot_starting_activity}`);
 });
 
 //Boucle contenant les évènements :
