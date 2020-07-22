@@ -11,7 +11,7 @@ const token = process.env.token;
 bot.login(token);
 
 //Boucle pour le statut du bot au démmarage :
-bot.on("ready", async message => {
+bot.on("ready", () => {
     var bot_starting_activity_list = [
         "engueuler une truite.",
         "pisser sur une télé.",
