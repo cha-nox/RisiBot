@@ -11,7 +11,7 @@ const token = process.env.token;
 bot.login(token);
 
 //Boucle pour le statut du bot au démmarage :
-bot.on("ready", () => {
+/*bot.on("ready", () => {
     var bot_starting_activity_list = [
         "engueuler une truite.",
         "pisser sur une télé.",
@@ -20,7 +20,7 @@ bot.on("ready", () => {
     ];
     var bot_starting_activity = bot_starting_activity_list[Math.floor(Math.random() * bot_starting_activity_list)];
     bot.setActivity(bot_starting_activity)
-});
+});*/
 
 //Boucle contenant les évènements :
 bot.on("message", async message => {
@@ -541,7 +541,8 @@ bot.on("message", async message => {
                 "Chuck Norris a inventé le code qui s'optimise lui-même.",
                 "Chuck Norris peut tuer un cadavre.",
                 "Tout ce que le roi Midas touche devient de l'or. Tout ce que Chuck Norris touche devient mort.",
-                "Le journal intime de Chuck Norris s'appelle le Livre Guiness des records."
+                "Le journal intime de Chuck Norris s'appelle le Livre Guiness des records.",
+                "Chuck Norris peut casser trois pattes à un canard.",
             ];
             var chucknorrisfact = facts_list[Math.floor(Math.random() * facts_list.length)];
             message.channel.send(chucknorrisfact);
@@ -563,7 +564,7 @@ bot.on("message", async message => {
 
 //Catégorie "Informations" :
 
-    //Commande pour afficher la liste des commandes disponibles du bot. [&help]
+    //Commande pour afficher la liste des commandes disponibles du bot. [&help] :
         //Informations, Stickers, Jeux, Divers.
         if(message.content.startsWith(prefix + "help")){
             var help = new Discord.RichEmbed()
@@ -592,7 +593,7 @@ bot.on("message", async message => {
             bot.fetchUser("382500192907165717", false)
             .then(user => {user.send(suggestion)
             });
-            message.reply("Moi et mon créatrice vous remercions de cette proposition. Nous l'examinerons dès que possible !");
+            message.reply("Moi et ma créatrice vous remercions de cette proposition. Nous l'examinerons dès que possible !");
         };
 
         if(command === "invite"){
@@ -643,7 +644,7 @@ bot.on("message", async message => {
             if(message.author.id !== ownerID && message.author.id !== contributorID_01) return message.channel.send("Désolée, pour des raisons pratiques, cette commande est uniquement réservé à l'usage exclusif de ma créatrice.");
             message.delete().catch(O_o=>{});
             message.guild.leave()
-            .then( g => console.log(`Extraction du serveur ${g} effectuée avec succès.`))
+            .then(g => console.log(`Extraction du serveur ${g} effectuée avec succès.`))
             .catch(console.error);
             var dumb_server_leaved_notify = new Discord.RichEmbed()
                 .setThumbnail(message.guild.iconURL)
