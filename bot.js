@@ -253,7 +253,7 @@ bot.on("message", async message => {
         })
         })
 
-        bot.on('messageReactionAdd',async (reaction, user) =>{
+        bot.on('messageReactionAdd', async (reaction, user) =>{
             if(reaction.emoji.name === "💡" && user.id !== bot.user.id){
                 reaction.remove(user)
                 helpt_embed.setColor('RANDOM')
@@ -319,22 +319,24 @@ bot.on("message", async message => {
                 `${message.guild.members.random()} `,
                 "Un communiste "
             ];
-            var verbes_liste = [ //6
+            var verbes_liste = [ //7
                 "bande ",
                 "complote ",
                 "marche ",
                 "pisse ",
                 "se suicide ",
-                "se prend une sodomie à sec "
+                "se prend une sodomie à sec ",
+		"mange ses morts "
             ];
-            var compléments_liste = [ //7
+            var compléments_liste = [ //8
                 "avec amour.",
                 "comme un con.",
                 "contre un arbre.",
                 "sur un cheval.",
                 "sans vergogne.",
                 "avec un verre de vodka.",
-                `en pensant à ${message.guild.members.random()}.`
+                `en pensant à ${message.guild.members.random()}.`,
+		`en faisant un doigt d'honneur à ${message.guild.members.random()}.`
             ];
             var sujet = sujets_liste[Math.floor(Math.random() * sujets_liste.length)];
             var verbe = verbes_liste[Math.floor(Math.random() * verbes_liste.length)];
