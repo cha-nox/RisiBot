@@ -1,0 +1,6 @@
+services:
+  risibot:
+    image: risibot:latest
+    container_name: risibot
+    env_file: ./.env
+    restart: unless-stopped
